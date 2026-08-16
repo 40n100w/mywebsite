@@ -38,12 +38,12 @@ All internal assets use relative paths, so the site works at both a user/organiz
 ## Experience
 
 - Chronological, scroll-driven narrative
-- Twelve distinct period-specific visual environments
+- Twelve original AI-generated, period-specific visual environments
 - Persistent reading progress and current-era indicator
 - Full period index for non-linear exploration
-- Dates, defining characteristics, touchstones, and artists
+- Dates, defining characteristics, historical context, landmark works, and artists
 - Responsive layout and reduced-motion support
 
 ## Notes
 
-The visual interpretations are created entirely with CSS, so there are no image licenses or heavy image downloads to manage. The site uses Google Fonts with robust local fallbacks.
+The chapter images are original, historically inspired editorial interpretations rather than reproductions of existing artworks. CSS provides the surrounding period-specific visual system. The site uses Google Fonts with robust local fallbacks.
