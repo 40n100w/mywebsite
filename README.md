@@ -1,6 +1,6 @@
-# Northline Studio
+# Epoch — A Journey Through Art History
 
-A handcrafted, responsive static portfolio website for an independent digital studio. Built with semantic HTML, modern CSS, and a small amount of vanilla JavaScript—no framework or build step required.
+A handcrafted, responsive journey through 40,000 years of art history. Twelve immersive chapters lead visitors from prehistoric cave art through the contemporary period. Built with semantic HTML, modern CSS, and vanilla JavaScript—no framework or build step required.
 
 ## Preview locally
 
@@ -35,13 +35,15 @@ All internal assets use relative paths, so the site works at both a user/organiz
     └── main.js
 ```
 
-## Customize
+## Experience
 
-- Replace the studio name and copy in `index.html`.
-- Update `hello@northline.studio` to a working email address.
-- Adjust the color variables at the top of `css/styles.css`.
-- Replace the placeholder social profile links in the footer.
+- Chronological, scroll-driven narrative
+- Twelve distinct period-specific visual environments
+- Persistent reading progress and current-era indicator
+- Full period index for non-linear exploration
+- Dates, defining characteristics, touchstones, and artists
+- Responsive layout and reduced-motion support
 
 ## Notes
 
-The site uses Google Fonts with robust local fallbacks. If visitors are offline or Google Fonts is unavailable, the layout remains functional using system fonts.
+The visual interpretations are created entirely with CSS, so there are no image licenses or heavy image downloads to manage. The site uses Google Fonts with robust local fallbacks.

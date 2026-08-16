@@ -3,122 +3,140 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Northline is an independent digital studio creating clear, useful, and memorable experiences.">
-  <meta name="theme-color" content="#f2efea">
-  <meta property="og:title" content="Northline — Independent digital studio">
-  <meta property="og:description" content="Thoughtful digital experiences for ambitious people and teams.">
+  <meta name="description" content="A visual journey through the major periods of art history, from prehistoric marks to contemporary ideas.">
+  <meta name="theme-color" content="#17150f">
+  <meta property="og:title" content="Epoch — A journey through art history">
+  <meta property="og:description" content="Walk through 40,000 years of art, one era at a time.">
   <meta property="og:type" content="website">
-  <title>Northline — Independent digital studio</title>
+  <title>Epoch — A journey through art history</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to the journey</a>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Northline, home">
-      <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M3 30V6l30 24V6"/></svg>
-      <span>Northline</span>
-    </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-      <span>Menu</span><i></i><i></i>
-    </button>
-    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-      <a href="#work">Work</a>
-      <a href="#approach">Approach</a>
-      <a href="#about">About</a>
-      <a class="nav-cta" href="mailto:hello@northline.studio">Start a project <span>↗</span></a>
+    <a class="brand" href="#top" aria-label="Epoch, home"><span class="brand-mark">E</span><span>EPOCH</span></a>
+    <p class="header-era" aria-live="polite"><span>Now viewing</span><b id="current-era">Introduction</b></p>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span>Periods</span><i></i><i></i></button>
+    <nav id="site-nav" class="site-nav" aria-label="Art periods">
+      <p>Jump to a period</p>
+      <div>
+        <a href="#prehistoric"><span>01</span> Prehistoric</a><a href="#ancient"><span>02</span> Ancient</a>
+        <a href="#medieval"><span>03</span> Medieval</a><a href="#renaissance"><span>04</span> Renaissance</a>
+        <a href="#baroque"><span>05</span> Baroque</a><a href="#neoclassicism"><span>06</span> Neoclassicism</a>
+        <a href="#romanticism"><span>07</span> Romanticism</a><a href="#realism"><span>08</span> Realism</a>
+        <a href="#impressionism"><span>09</span> Impressionism</a><a href="#post-impressionism"><span>10</span> Post-Impressionism</a>
+        <a href="#modernism"><span>11</span> Modernism</a><a href="#contemporary"><span>12</span> Contemporary</a>
+      </div>
     </nav>
   </header>
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
 
   <main id="main">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <p class="eyebrow reveal">Independent digital studio · New York / Everywhere</p>
-      <h1 id="hero-title" class="reveal">Good ideas,<br><em>made real.</em></h1>
-      <div class="hero-bottom reveal">
-        <p>We partner with ambitious people and teams to shape brands and digital products that feel inevitable.</p>
-        <a class="circle-link" href="#work" aria-label="Explore selected work"><span>Explore<br>our work</span><b>↓</b></a>
+    <section class="hero" id="top" data-era="Introduction">
+      <div class="hero-copy reveal">
+        <p class="kicker">40,000 years · 12 chapters · One human impulse</p>
+        <h1>The story of art is the story of <em>us.</em></h1>
+        <p class="intro">Walk through the ideas, revolutions, and restless imaginations that changed how we see the world.</p>
       </div>
-      <div class="orb orb-one" aria-hidden="true"></div>
-      <div class="orb orb-two" aria-hidden="true"></div>
+      <div class="hero-art" aria-hidden="true"><i></i><i></i><i></i><span>40K</span></div>
+      <a class="begin" href="#prehistoric"><span>Begin the journey</span><b>↓</b></a>
     </section>
 
-    <section class="work section" id="work" aria-labelledby="work-title">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Selected work · 2023–26</p>
-        <h2 id="work-title">A few things<br>we’ve <em>loved</em> making.</h2>
+    <section class="era prehistoric" id="prehistoric" data-era="Prehistoric Art">
+      <div class="era-number">01</div><div class="era-date">c. 40,000–3,000 BCE</div>
+      <div class="era-visual cave-visual" aria-label="Abstract interpretation of prehistoric cave painting">
+        <div class="hand">✋</div><div class="bison"><i></i><b></b><span></span></div><div class="cave-marks">••• &nbsp; / / &nbsp; ✣</div>
       </div>
-      <div class="projects">
-        <article class="project project-wide reveal">
-          <a href="#contact" aria-label="View Vale case study">
-            <div class="project-art art-vale">
-              <span class="vale-word">VALE</span><span class="vale-mark">V</span>
-              <span class="project-index">01</span>
-            </div>
-            <div class="project-meta"><h3>Vale</h3><p>Identity · Digital product · 2026</p><span>View project ↗</span></div>
-          </a>
-        </article>
-        <article class="project reveal">
-          <a href="#contact" aria-label="View Common Ground case study">
-            <div class="project-art art-common">
-              <div class="common-shape"><i></i><i></i><i></i></div>
-              <p>COMMON<br>GROUND</p><span class="project-index">02</span>
-            </div>
-            <div class="project-meta"><h3>Common Ground</h3><p>Strategy · Brand system · 2025</p><span>View project ↗</span></div>
-          </a>
-        </article>
-        <article class="project reveal">
-          <a href="#contact" aria-label="View Lunar case study">
-            <div class="project-art art-lunar">
-              <div class="moon"></div><p>LUNAR<br><small>objects for slower living</small></p>
-              <span class="project-index">03</span>
-            </div>
-            <div class="project-meta"><h3>Lunar</h3><p>Commerce · Art direction · 2024</p><span>View project ↗</span></div>
-          </a>
-        </article>
-      </div>
+      <article class="era-copy reveal"><p class="kicker">The first marks</p><h2>Before words,<br>there were <em>images.</em></h2><p>Deep inside caves, early humans traced hands, hunted animals, and left signs whose meanings are still mysterious. Art began as ritual, memory, map, and magic—all at once.</p><dl><div><dt>Look for</dt><dd>Animals, handprints, earth pigments</dd></div><div><dt>Touchstone</dt><dd>Lascaux Cave paintings, France</dd></div></dl></article>
+      <a class="next-era" href="#ancient">Civilization rises <span>↓</span></a>
     </section>
 
-    <section class="statement section" id="approach" aria-labelledby="approach-title">
-      <p class="eyebrow reveal">How we think</p>
-      <h2 id="approach-title" class="reveal">Clarity is the strategy.<br><em>Curiosity is the method.</em></h2>
-      <div class="statement-grid">
-        <p class="big-copy reveal">We ask good questions, find the signal, and make work that earns its place in people’s lives.</p>
-        <div class="services reveal">
-          <p>From first thought to final pixel:</p>
-          <ul>
-            <li><span>01</span> Strategy &amp; positioning</li>
-            <li><span>02</span> Brand identity</li>
-            <li><span>03</span> Digital design</li>
-            <li><span>04</span> Creative development</li>
-          </ul>
-        </div>
-      </div>
+    <section class="era ancient" id="ancient" data-era="Ancient Art">
+      <div class="era-number">02</div><div class="era-date">c. 3,000 BCE–400 CE</div>
+      <div class="era-visual ancient-visual" aria-hidden="true"><div class="sun"></div><div class="profile">𓁶</div><div class="columns"><i></i><i></i><i></i><i></i></div></div>
+      <article class="era-copy reveal"><p class="kicker">Gods, rulers, order</p><h2>Art builds an<br><em>eternal world.</em></h2><p>From Egypt to Greece and Rome, art gave visible form to power and belief. Ideal bodies, monumental architecture, and strict visual systems promised order against the chaos of time.</p><dl><div><dt>Look for</dt><dd>Monuments, ideal forms, mythology</dd></div><div><dt>Touchstones</dt><dd>Nefertiti · Parthenon · Pantheon</dd></div></dl></article>
+      <a class="next-era" href="#medieval">Empires transform <span>↓</span></a>
     </section>
 
-    <section class="about section" id="about" aria-labelledby="about-title">
-      <div class="about-art reveal" aria-hidden="true"><span>N</span><div></div></div>
-      <div class="about-copy reveal">
-        <p class="eyebrow">Small by design</p>
-        <h2 id="about-title">Senior minds.<br><em>No layers.</em></h2>
-        <p>Northline is a compact, independent studio. You work directly with the people doing the work—from the first conversation through launch.</p>
-        <p>For every project, we build the right small team from a trusted circle of designers, writers, strategists, and developers.</p>
-        <a class="text-link" href="mailto:hello@northline.studio">Meet the studio <span>↗</span></a>
-      </div>
+    <section class="era medieval" id="medieval" data-era="Medieval Art">
+      <div class="era-number">03</div><div class="era-date">c. 400–1400</div>
+      <div class="era-visual medieval-visual" aria-hidden="true"><div class="window"><i></i><b>✦</b><span></span></div></div>
+      <article class="era-copy reveal"><p class="kicker">Light made sacred</p><h2>Heaven enters<br><em>the picture.</em></h2><p>Medieval art turned away from earthly realism toward spiritual meaning. Gold grounds, illuminated pages, and soaring cathedrals made the invisible feel present.</p><dl><div><dt>Look for</dt><dd>Gold leaf, icons, stained glass</dd></div><div><dt>Touchstones</dt><dd>Book of Kells · Chartres Cathedral</dd></div></dl></article>
+      <a class="next-era" href="#renaissance">The world opens <span>↓</span></a>
     </section>
 
-    <section class="contact section" id="contact" aria-labelledby="contact-title">
-      <p class="eyebrow reveal">Have something in mind?</p>
-      <h2 id="contact-title" class="reveal">Let’s make something<br><em>worth remembering.</em></h2>
-      <a class="email-link reveal" href="mailto:hello@northline.studio">hello@northline.studio <span>↗</span></a>
+    <section class="era renaissance" id="renaissance" data-era="The Renaissance">
+      <div class="era-number">04</div><div class="era-date">c. 1400–1600</div>
+      <div class="era-visual renaissance-visual" aria-hidden="true"><div class="perspective"><i></i><i></i><i></i><i></i><i></i></div><div class="figure">○<br>╱│╲<br>╱ ╲</div></div>
+      <article class="era-copy reveal"><p class="kicker">A new humanism</p><h2>The world gains<br><em>dimension.</em></h2><p>Artists studied anatomy, nature, antiquity, and light. Linear perspective opened a window into believable space, while the individual—artist and subject alike—stepped into focus.</p><dl><div><dt>Look for</dt><dd>Perspective, anatomy, balance</dd></div><div><dt>Artists</dt><dd>Leonardo · Michelangelo · Raphael</dd></div></dl></article>
+      <a class="next-era" href="#baroque">Stillness breaks <span>↓</span></a>
+    </section>
+
+    <section class="era baroque" id="baroque" data-era="Baroque">
+      <div class="era-number">05</div><div class="era-date">c. 1600–1750</div>
+      <div class="era-visual baroque-visual" aria-hidden="true"><div class="spotlight"></div><div class="pearl">B</div><div class="swoop"></div></div>
+      <article class="era-copy reveal"><p class="kicker">Drama in motion</p><h2>Turn up<br><em>the emotion.</em></h2><p>Baroque art stages the instant everything changes. Bodies twist, fabric surges, and a single shaft of light cuts through darkness. The viewer is no longer outside the scene—they are in it.</p><dl><div><dt>Look for</dt><dd>Movement, contrast, theatricality</dd></div><div><dt>Artists</dt><dd>Caravaggio · Bernini · Artemisia</dd></div></dl></article>
+      <a class="next-era" href="#neoclassicism">Reason returns <span>↓</span></a>
+    </section>
+
+    <section class="era neoclassicism" id="neoclassicism" data-era="Neoclassicism">
+      <div class="era-number">06</div><div class="era-date">c. 1750–1850</div>
+      <div class="era-visual neo-visual" aria-hidden="true"><div class="temple"><b></b><i></i><i></i><i></i><i></i><span></span></div><p>RATIO</p></div>
+      <article class="era-copy reveal"><p class="kicker">Virtue &amp; reason</p><h2>Order becomes<br><em>revolutionary.</em></h2><p>Inspired by archaeology and Enlightenment ideals, artists revived the clean lines and moral gravity of antiquity. Art became a stage for civic duty, sacrifice, and the new republic.</p><dl><div><dt>Look for</dt><dd>Clarity, restraint, classical dress</dd></div><div><dt>Artists</dt><dd>Jacques-Louis David · Angelica Kauffman</dd></div></dl></article>
+      <a class="next-era" href="#romanticism">Feeling rebels <span>↓</span></a>
+    </section>
+
+    <section class="era romanticism" id="romanticism" data-era="Romanticism">
+      <div class="era-number">07</div><div class="era-date">c. 1780–1850</div>
+      <div class="era-visual romantic-visual" aria-hidden="true"><div class="storm"></div><div class="mountains"></div><div class="wanderer"></div></div>
+      <article class="era-copy reveal"><p class="kicker">The sublime unleashed</p><h2>Reason meets<br><em>the wild.</em></h2><p>Romantic artists chose awe over order and feeling over rules. Storms, revolutions, ruins, and untamed landscapes reveal nature—and human emotion—as beautiful, terrifying forces.</p><dl><div><dt>Look for</dt><dd>Nature, intensity, the sublime</dd></div><div><dt>Artists</dt><dd>Turner · Goya · Caspar David Friedrich</dd></div></dl></article>
+      <a class="next-era" href="#realism">Eyes turn outward <span>↓</span></a>
+    </section>
+
+    <section class="era realism" id="realism" data-era="Realism">
+      <div class="era-number">08</div><div class="era-date">c. 1840–1880</div>
+      <div class="era-visual realism-visual" aria-hidden="true"><div class="horizon"></div><div class="workers"><i></i><i></i><i></i></div><p>HERE<br>&amp; NOW</p></div>
+      <article class="era-copy reveal"><p class="kicker">Life without a filter</p><h2>The everyday<br><em>takes center stage.</em></h2><p>No gods, no heroes—just laborers, city streets, and ordinary life. Realists insisted that the present was worthy of serious art and used observation as a form of social truth.</p><dl><div><dt>Look for</dt><dd>Work, daily life, social critique</dd></div><div><dt>Artists</dt><dd>Courbet · Millet · Rosa Bonheur</dd></div></dl></article>
+      <a class="next-era" href="#impressionism">Light begins to move <span>↓</span></a>
+    </section>
+
+    <section class="era impressionism" id="impressionism" data-era="Impressionism">
+      <div class="era-number">09</div><div class="era-date">c. 1860–1886</div>
+      <div class="era-visual impression-visual" aria-hidden="true"><div class="paint-sun"></div><div class="lilies"><i></i><i></i><i></i><i></i><i></i></div><div class="strokes"></div></div>
+      <article class="era-copy reveal"><p class="kicker">Painting the instant</p><h2>Catch the light<br><em>before it changes.</em></h2><p>Portable paint tubes and modern city life took artists outdoors. Broken brushstrokes and pure color captured fleeting weather, leisure, and the sensation of seeing in real time.</p><dl><div><dt>Look for</dt><dd>Visible brushwork, light, modern leisure</dd></div><div><dt>Artists</dt><dd>Monet · Morisot · Degas</dd></div></dl></article>
+      <a class="next-era" href="#post-impressionism">Color breaks free <span>↓</span></a>
+    </section>
+
+    <section class="era post-impressionism" id="post-impressionism" data-era="Post-Impressionism">
+      <div class="era-number">10</div><div class="era-date">c. 1886–1905</div>
+      <div class="era-visual post-visual" aria-hidden="true"><div class="star-swirl">✦</div><div class="post-sun"></div><div class="post-land"></div></div>
+      <article class="era-copy reveal"><p class="kicker">Beyond appearances</p><h2>Color finds<br><em>an inner life.</em></h2><p>There was no single next step. Cézanne built nature from shapes, Van Gogh charged it with emotion, Seurat systematized color, and Gauguin sought symbolic worlds.</p><dl><div><dt>Look for</dt><dd>Structure, symbolism, expressive color</dd></div><div><dt>Artists</dt><dd>Van Gogh · Cézanne · Seurat</dd></div></dl></article>
+      <a class="next-era" href="#modernism">The rules dissolve <span>↓</span></a>
+    </section>
+
+    <section class="era modernism" id="modernism" data-era="Modernism">
+      <div class="era-number">11</div><div class="era-date">c. 1905–1970</div>
+      <div class="era-visual modern-visual" aria-hidden="true"><div class="square s1"></div><div class="square s2"></div><div class="circle"></div><div class="line"></div><p>FORM<br>FREED</p></div>
+      <article class="era-copy reveal"><p class="kicker">Make it new</p><h2>Art reinvents<br><em>its own language.</em></h2><p>Photography, war, machines, and radical politics fractured old certainties. From Cubism to abstraction, Dada to Pop, artists questioned not just how to make art—but what art could be.</p><dl><div><dt>Movements</dt><dd>Fauvism · Cubism · Surrealism · Pop</dd></div><div><dt>Artists</dt><dd>Matisse · Picasso · Kahlo · Warhol</dd></div></dl></article>
+      <a class="next-era" href="#contemporary">The present expands <span>↓</span></a>
+    </section>
+
+    <section class="era contemporary" id="contemporary" data-era="Contemporary Art">
+      <div class="era-number">12</div><div class="era-date">c. 1970–Now</div>
+      <div class="era-visual contemporary-visual" aria-hidden="true"><div class="portal"><i></i><i></i><i></i></div><p>?</p></div>
+      <article class="era-copy reveal"><p class="kicker">No single center</p><h2>Anything can be<br><em>the medium.</em></h2><p>Installation, performance, video, code, social practice, painting—the contemporary field holds them all. Artists work across cultures and disciplines to question identity, power, technology, and our shared future.</p><dl><div><dt>Look for</dt><dd>Pluralism, participation, new media</dd></div><div><dt>Artists</dt><dd>Kusama · Basquiat · Ai Weiwei · Walker</dd></div></dl></article>
+      <a class="next-era" href="#epilogue">Where next? <span>↓</span></a>
+    </section>
+
+    <section class="epilogue" id="epilogue" data-era="The next epoch">
+      <p class="kicker reveal">The story is unfinished</p>
+      <h2 class="reveal">Every period was once<br><em>the present.</em></h2>
+      <p class="reveal">What will define ours?</p>
+      <a class="restart reveal" href="#top">Walk through again <span>↑</span></a>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <a class="brand brand-footer" href="#top"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M3 30V6l30 24V6"/></svg><span>Northline</span></a>
-    <p>Independent digital studio<br>New York / Everywhere</p>
-    <div><a href="https://www.instagram.com/" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/" rel="noopener noreferrer">LinkedIn ↗</a></div>
-    <p>© <span id="year">2026</span> Northline Studio</p>
-  </footer>
+  <footer><a class="brand" href="#top"><span class="brand-mark">E</span><span>EPOCH</span></a><p>A pocket journey through art history.<br>Made for curious eyes.</p><p>© <span id="year">2026</span> Epoch</p></footer>
 </body>
 </html>
