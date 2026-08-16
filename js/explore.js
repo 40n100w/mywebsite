@@ -14,7 +14,7 @@ const periods = [
 ];
 
 const params=new URLSearchParams(location.search);let index=periods.findIndex(p=>p.id===params.get('era'));if(index<0)index=0;const p=periods[index];
-document.title=`${p.name} — Epoch`;document.documentElement.style.setProperty('--accent', ['#b7442a','#d7a63f','#e7c654','#d9d0b8','#8b151b','#c7b88e','#566d61','#9c8661','#a7c9df','#e9bd24','#e32822','#dcff44'][index]);
+document.title=`${p.name} — Art Compass`;document.documentElement.style.setProperty('--accent', ['#b7442a','#d7a63f','#e7c654','#d9d0b8','#8b151b','#c7b88e','#566d61','#9c8661','#a7c9df','#e9bd24','#e32822','#dcff44'][index]);
 const $=id=>document.getElementById(id);$('chapter').textContent=`Chapter ${String(index+1).padStart(2,'0')} · ${p.date}`;$('title').textContent=p.name;$('summary').textContent=p.summary;$('back-link').href=`./#${p.id}`;
 $('art-image').src=`assets/art/${p.id}.jpg`;$('art-image').alt=`Original visual interpretation of ${p.name}`;$('art-caption').textContent=p.art;
 $('architecture-image').src=`assets/explore/${p.id}-architecture.jpg`;$('architecture-image').alt=`Original architectural study inspired by ${p.name}`;$('architecture-caption').textContent=p.design[0].split('|')[1];

@@ -1,4 +1,4 @@
-# Epoch — A Journey Through Art History
+# Art Compass — Navigate Art History
 
 A handcrafted, responsive journey through 40,000 years of art history. Twelve immersive chapters lead visitors from prehistoric cave art through the contemporary period. Built with semantic HTML, modern CSS, and vanilla JavaScript—no framework or build step required.
 
