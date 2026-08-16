@@ -39,9 +39,12 @@ All internal assets use relative paths, so the site works at both a user/organiz
 
 - Chronological, scroll-driven narrative
 - Twelve original AI-generated, period-specific visual environments
+- Dedicated explorer view for every period with 36 total original images
 - Persistent reading progress and current-era indicator
 - Full period index for non-linear exploration
 - Dates, defining characteristics, historical context, landmark works, and artists
+- Political, social, economic, and military impact analysis
+- Architecture, furniture, decorative design, and graphic-design context
 - Responsive layout and reduced-motion support
 
 ## Notes

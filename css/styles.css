@@ -28,3 +28,6 @@
 .era-context ul{list-style:none;padding:0}
 .era-context li+li{margin-top:.25rem}
 .era-context+dl{margin-top:2rem}
+.explore-link{display:flex;justify-content:space-between;align-items:center;margin-top:1.5rem;padding:1rem;border:1px solid currentColor;font:400 .65rem 'DM Mono',monospace;text-transform:uppercase;transition:.25s}
+.explore-link:hover{background:currentColor}.prehistoric .explore-link:hover,.ancient .explore-link:hover,.renaissance .explore-link:hover,.neoclassicism .explore-link:hover,.realism .explore-link:hover,.impressionism .explore-link:hover,.post-impressionism .explore-link:hover,.modernism .explore-link:hover,.contemporary .explore-link:hover{color:#f1ede2}.medieval .explore-link:hover,.baroque .explore-link:hover,.romanticism .explore-link:hover{color:#17150f}
+.explore-link+dl{margin-top:2rem}

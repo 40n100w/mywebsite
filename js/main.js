@@ -26,6 +26,11 @@ Object.entries(periodDetails).forEach(([id, [why, works]]) => {
   context.className = 'era-context';
   context.innerHTML = `<div><h3>Why it emerged</h3><p>${why}</p></div><div><h3>Works to know</h3><ul>${works.split('|').map((work) => `<li>${work}</li>`).join('')}</ul></div>`;
   copy.insertBefore(context, facts);
+  const exploreLink = document.createElement('a');
+  exploreLink.className = 'explore-link';
+  exploreLink.href = `explore.html?era=${id}`;
+  exploreLink.innerHTML = `Explore ${copy.closest('.era').dataset.era} <span>→</span>`;
+  copy.insertBefore(exploreLink, facts);
 });
 
 // Treat #top as a UI action rather than a deep link. Normalize it immediately
