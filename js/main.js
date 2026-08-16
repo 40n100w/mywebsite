@@ -3,6 +3,13 @@ const navigation = document.querySelector('.site-nav');
 const progressBar = document.getElementById('progress-bar');
 const currentEra = document.getElementById('current-era');
 
+// Treat #top as a UI action rather than a deep link. Normalize it immediately
+// so a restored scroll position cannot produce a visible smooth-scroll jump.
+if (window.location.hash === '#top') {
+  history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+}
+
 function closeMenu() {
   menuButton.setAttribute('aria-expanded', 'false');
   navigation.classList.remove('is-open');
@@ -17,6 +24,15 @@ menuButton.addEventListener('click', () => {
 });
 navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
 document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeMenu(); });
+
+document.querySelectorAll('a[href="#top"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    closeMenu();
+    history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  });
+});
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
