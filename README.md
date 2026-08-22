@@ -49,4 +49,15 @@ All internal assets use relative paths, so the site works at both a user/organiz
 
 ## Notes
 
-The chapter images are original, historically inspired editorial interpretations rather than reproductions of existing artworks. CSS provides the surrounding period-specific visual system. The site uses Google Fonts with robust local fallbacks.
+The chapter images are AI-generated, historically inspired editorial interpretations rather than reproductions of existing artworks. They are illustrative and should not be treated as primary sources or exact reconstructions of historical objects, people, or places.
+
+Historical dates and interpretations are provided for general educational use. Visitors should consult museum, archive, or scholarly sources before relying on the site for academic research.
+
+## Privacy and security
+
+- The site has no analytics, advertising, cookies, forms, accounts, or user tracking.
+- It does not collect, transmit, or store visitor information.
+- Fonts and all other assets are served from the repository; the site makes no third-party requests.
+- A restrictive Content Security Policy limits the resources that pages can load.
+
+Never commit credentials, private keys, personal information, or environment files. The included `.gitignore` blocks common local and secret-bearing files, but contributors should still review staged changes before publishing.
