@@ -6,7 +6,24 @@
 /* Featured artist studies */
 .work-row{grid-template-columns:3rem minmax(180px,.75fr) 1fr 1fr;gap:2rem;padding:2rem 0;align-items:center}
 .work-row>span{align-self:start}
-.work-image{width:100%;aspect-ratio:4/3;margin:0;background-image:var(--work-image);background-size:300% auto;background-position:var(--work-position) center;background-repeat:no-repeat;border:1px solid #ffffff22}
+.work-image{display:block;width:100%;aspect-ratio:4/3;margin:0;object-fit:cover;border:1px solid #ffffff22}
 .work-row h3 small{font:400 .62rem 'DM Mono';letter-spacing:.02em}
 .work-row p b{display:block;margin-bottom:.65rem;font:400 .6rem 'DM Mono';letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
 @media(max-width:750px){.work-row{grid-template-columns:2rem 1fr;gap:1.5rem}.work-image,.work-row h3,.work-row p{grid-column:2}.work-image{aspect-ratio:16/10}}
+
+/* Historical cause-and-consequence analysis */
+.section-lede{max-width:46rem;font-size:1.05rem;line-height:1.7}
+.exchange-section{padding:clamp(7rem,12vw,12rem) var(--pad);background:#d9d3c7;color:var(--ink)}
+.exchange-section .section-intro{margin-bottom:6rem}
+.exchange-section .section-intro>p:last-child{font-size:1.05rem;line-height:1.7}
+.exchange-list{border-top:1px solid #777166}
+.exchange-row{display:grid;grid-template-columns:minmax(150px,.7fr) minmax(220px,1fr) 2rem minmax(220px,1fr);gap:clamp(1.5rem,3vw,3.5rem);padding:2.5rem 0;border-bottom:1px solid #777166;align-items:start}
+.exchange-heading{display:grid;grid-template-columns:2rem 1fr;gap:.75rem;align-items:start}
+.exchange-heading span,.exchange-row b{font:400 .6rem 'DM Mono';letter-spacing:.1em;text-transform:uppercase}
+.exchange-heading span{opacity:.55;padding-top:.45rem}
+.exchange-heading h3{margin:0;font-size:clamp(1.2rem,2vw,1.8rem);line-height:1.1;letter-spacing:-.035em}
+.exchange-row b{display:block;margin-bottom:.85rem;color:#5b554b}
+.exchange-row p{margin:0;font-size:.92rem;line-height:1.65}
+.exchange-row>i{font:400 1.1rem 'DM Mono';font-style:normal;padding-top:2rem;opacity:.5}
+@media(max-width:900px){.exchange-row{grid-template-columns:1fr 1fr}.exchange-heading{grid-column:1/-1}.exchange-row>i{display:none}}
+@media(max-width:600px){.exchange-section .section-intro{margin-bottom:4rem}.exchange-row{grid-template-columns:1fr;gap:1.5rem}.exchange-heading{grid-column:1}.exchange-row>div:not(.exchange-heading){padding-left:2.75rem}.exchange-row>div:last-child{padding-top:1.5rem;border-top:1px solid #77716666}}

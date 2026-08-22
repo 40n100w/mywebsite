@@ -13,6 +13,21 @@ const periods = [
   {id:'contemporary',name:'Contemporary Art',date:'c. 1970–Now',summary:'With no single center or medium, artists use objects, bodies, data, communities, and spaces to question the present.',art:'Installation, participation, image circulation, code, reused material, performance, and painting coexist in a plural field.',impacts:['Political|Civil-rights, feminist, queer, Indigenous, and decolonial movements changed whose histories enter museums and public space.','Social|Identity, migration, ecology, surveillance, and networked life make audiences participants rather than only viewers.','Economic|Global fairs, mega-galleries, cultural tourism, and digital markets coexist with institutional critique and community practice.','Military|Cold War legacies, terrorism, occupation, drones, displacement, and protest shape work about borders, memory, and power.'],works:['Untitled|Jean-Michel Basquiat · 1982|Layered figures, words, and symbols confront race, history, value, and urban culture.','Infinity Mirror Rooms|Yayoi Kusama · 1965–present|Reflection, repetition, and the viewer create an immersive perceptual environment.','A Subtlety|Kara Walker · 2014|Monumental scale links sugar, labor, race, gender, and industrial space.'],design:['Architecture|Adaptive reuse, parametric form, community co-design, and low-carbon material systems broaden architectural priorities.','Furniture|Recycled biomaterials, digital fabrication, modularity, and collectible experimentation blur craft and technology.','Design|Interfaces, service systems, accessibility, circularity, and participatory methods expand design beyond physical objects.']}
 ];
 
+const workImages={
+  prehistoric:['lascaux','venus-willendorf','stonehenge'],
+  ancient:['nefertiti','parthenon','augustus-prima-porta'],
+  medieval:['book-kells','bayeux-tapestry','chartres-cathedral'],
+  renaissance:['birth-venus','mona-lisa','michelangelo-david'],
+  baroque:['calling-st-matthew','bernini-david','judith-holofernes'],
+  neoclassicism:['oath-horatii','cornelia','george-washington'],
+  romanticism:['third-may-1808','wanderer-sea-fog','slave-ship'],
+  realism:['stone-breakers','gleaners','horse-fair'],
+  impressionism:['impression-sunrise','cradle','ballet-class'],
+  'post-impressionism':['sunday-grande-jatte','starry-night','mont-sainte-victoire'],
+  modernism:['les-demoiselles-avignon','composition-viii','two-fridas'],
+  contemporary:['untitled-basquiat','infinity-mirror-rooms','subtlety']
+};
+
 const params=new URLSearchParams(location.search);let index=periods.findIndex(p=>p.id===params.get('era'));if(index<0)index=0;const p=periods[index];
 document.title=`${p.name} — Art Compass`;document.documentElement.style.setProperty('--accent', ['#b7442a','#d7a63f','#e7c654','#d9d0b8','#8b151b','#c7b88e','#566d61','#9c8661','#a7c9df','#e9bd24','#e32822','#dcff44'][index]);
 const $=id=>document.getElementById(id);$('chapter').textContent=`Chapter ${String(index+1).padStart(2,'0')} · ${p.date}`;$('title').textContent=p.name;$('summary').textContent=p.summary;$('back-link').href=`./#${p.id}`;
@@ -20,7 +35,8 @@ $('art-image').src=`assets/art/${p.id}.jpg`;$('art-image').alt=`Original visual 
 $('architecture-image').src=`assets/explore/${p.id}-architecture.jpg`;$('architecture-image').alt=`Original architectural study inspired by ${p.name}`;$('architecture-caption').textContent=p.design[0].split('|')[1];
 $('design-image').src=`assets/explore/${p.id}-design.jpg`;$('design-image').alt=`Original furniture and decorative design study inspired by ${p.name}`;$('design-caption').textContent=p.design[1].split('|')[1];
 $('impacts').innerHTML=p.impacts.map((x,i)=>{const [h,t]=x.split('|');return `<article class="impact"><span class="num">0${i+1}</span><h3>${h}</h3><p>${t}</p></article>`}).join('');
-$('works').innerHTML=p.works.map((x,i)=>{const [h,m,t]=x.split('|');const position=i===0?'0%':i===1?'50%':'100%';return `<article class="work-row"><span>0${i+1}</span><figure class="work-image" role="img" aria-label="Original visual study of ${h}" style="--work-image:url('assets/works/${p.id}.jpg');--work-position:${position}"></figure><h3>${h}<br><small>${m}</small></h3><p><b>What they added</b>${t}</p></article>`}).join('');
+$('exchange-list').innerHTML=periodContext[p.id].map(([lens,cause,effect],i)=>`<article class="exchange-row"><div class="exchange-heading"><span>${String(i+1).padStart(2,'0')}</span><h3>${lens}</h3></div><div><b>What shaped the art</b><p>${cause}</p></div><i aria-hidden="true">→</i><div><b>What the art changed</b><p>${effect}</p></div></article>`).join('');
+$('works').innerHTML=p.works.map((x,i)=>{const [h,m,t]=x.split('|');return `<article class="work-row"><span>0${i+1}</span><img class="work-image" src="assets/works/${workImages[p.id][i]}.jpg" alt="Original visual study showing the contribution of ${h}" loading="lazy"><h3>${h}<br><small>${m}</small></h3><p><b>What they added</b>${t}</p></article>`}).join('');
 $('design-intro').textContent=`The period’s ideas did not stop at art. They changed the spaces people built, the objects they touched, and the visual systems that organized daily life.`;
 $('design-notes').innerHTML=p.design.map(x=>{const[h,t]=x.split('|');return `<article><h3>${h}</h3><p>${t}</p></article>`}).join('');
 const previous=periods[(index-1+periods.length)%periods.length],next=periods[(index+1)%periods.length];$('previous').href=`explore.html?era=${previous.id}`;$('previous').textContent=`← ${previous.name}`;$('next').href=`explore.html?era=${next.id}`;$('next').textContent=`${next.name} →`;
