@@ -27,3 +27,23 @@
 .exchange-row>i{font:400 1.1rem 'DM Mono';font-style:normal;padding-top:2rem;opacity:.5}
 @media(max-width:900px){.exchange-row{grid-template-columns:1fr 1fr}.exchange-heading{grid-column:1/-1}.exchange-row>i{display:none}}
 @media(max-width:600px){.exchange-section .section-intro{margin-bottom:4rem}.exchange-row{grid-template-columns:1fr;gap:1.5rem}.exchange-heading{grid-column:1}.exchange-row>div:not(.exchange-heading){padding-left:2.75rem}.exchange-row>div:last-child{padding-top:1.5rem;border-top:1px solid #77716666}}
+
+/* Books and geographic context */
+.books-section,.map-section{padding:clamp(7rem,12vw,12rem) var(--pad)}
+.books-section{background:#efe9dc}
+.books-section .section-intro,.map-section .section-intro{margin-bottom:6rem}
+.books-list{border-top:1px solid}
+.book-row{display:grid;grid-template-columns:3rem minmax(230px,.8fr) 1fr;gap:clamp(1.5rem,4vw,5rem);padding:2.25rem 0;border-bottom:1px solid;align-items:start}
+.book-row>span{font:400 .62rem 'DM Mono';opacity:.55}
+.book-row h3{margin:0;font-size:clamp(1.45rem,3vw,2.8rem);line-height:1.05;letter-spacing:-.045em;font-weight:500}
+.book-row h3 small{display:block;margin-top:.75rem;font:400 .62rem 'DM Mono';letter-spacing:.04em}
+.book-row p{margin:0;max-width:42rem;font-size:.92rem;line-height:1.7}
+.map-section{background:#181713;color:#eee8dc}
+.map-frame{max-width:1200px;margin:auto}
+#period-map{display:block;width:100%;height:auto;background:#23221e;border:1px solid #ffffff33}
+#period-map path{stroke:#181713;stroke-width:.65;vector-effect:non-scaling-stroke;transition:opacity .2s}
+.map-land{fill:#4b4943}.map-influence{fill:#9b875d}.map-core{fill:var(--accent)}
+.map-legend{display:flex;flex-wrap:wrap;gap:1.25rem 2.5rem;margin-top:1.25rem;font:400 .62rem 'DM Mono';text-transform:uppercase;letter-spacing:.06em}
+.map-legend span{display:flex;align-items:center;gap:.6rem}.map-legend i{width:1.2rem;height:1.2rem;border:1px solid #ffffff55}.core-key{background:var(--accent)}.influence-key{background:#9b875d}
+#map-note{max-width:56rem;margin:2rem 0 0;font-size:.84rem;line-height:1.65;color:#c8c1b5}
+@media(max-width:700px){.books-section .section-intro,.map-section .section-intro{margin-bottom:4rem}.book-row{grid-template-columns:2rem 1fr}.book-row p{grid-column:2}.map-legend{display:grid;gap:.75rem}#map-note{font-size:.78rem}}

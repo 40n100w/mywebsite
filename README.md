@@ -49,6 +49,8 @@ All internal assets use relative paths, so the site works at both a user/organiz
 - Dates, defining characteristics, historical context, landmark works, and artists
 - Political, social, economic, and military impact analysis
 - Two-way historical analysis across belief, culture, economics, power, and technology: what shaped each period and what its art changed in return
+- Key literary, philosophical, religious, and oral works that shaped each period’s thinking
+- Local, privacy-safe world maps showing representative centers and wider zones of influence or exchange
 - Architecture, furniture, decorative design, and graphic-design context
 - Responsive layout and reduced-motion support
 
@@ -57,6 +59,8 @@ All internal assets use relative paths, so the site works at both a user/organiz
 The chapter images are AI-generated, historically inspired editorial interpretations rather than reproductions of existing artworks. They are illustrative and should not be treated as primary sources or exact reconstructions of historical objects, people, or places.
 
 Historical dates and interpretations are provided for general educational use. Visitors should consult museum, archive, or scholarly sources before relying on the site for academic research.
+
+World boundaries are derived from the public-domain [Natural Earth](https://www.naturalearthdata.com/) 1:110m dataset. Modern national boundaries are used only as geographic orientation for historical regions and do not imply that present-day states existed during the period shown.
 
 ## Privacy and security
 

@@ -36,6 +36,17 @@ $('architecture-image').src=`assets/explore/${p.id}-architecture.jpg`;$('archite
 $('design-image').src=`assets/explore/${p.id}-design.jpg`;$('design-image').alt=`Original furniture and decorative design study inspired by ${p.name}`;$('design-caption').textContent=p.design[1].split('|')[1];
 $('impacts').innerHTML=p.impacts.map((x,i)=>{const [h,t]=x.split('|');return `<article class="impact"><span class="num">0${i+1}</span><h3>${h}</h3><p>${t}</p></article>`}).join('');
 $('exchange-list').innerHTML=periodContext[p.id].map(([lens,cause,effect],i)=>`<article class="exchange-row"><div class="exchange-heading"><span>${String(i+1).padStart(2,'0')}</span><h3>${lens}</h3></div><div><b>What shaped the art</b><p>${cause}</p></div><i aria-hidden="true">→</i><div><b>What the art changed</b><p>${effect}</p></div></article>`).join('');
+const resources=periodResources[p.id];
+$('books-list').innerHTML=resources.books.map(([title,meta,why],i)=>`<article class="book-row"><span>${String(i+1).padStart(2,'0')}</span><h3>${title}<small>${meta}</small></h3><p>${why}</p></article>`).join('');
+
+const projectPoint=([longitude,latitude])=>[(longitude+180)/360*1000,(90-latitude)/180*500];
+const ringPath=ring=>ring.map((point,i)=>{const[x,y]=projectPoint(point);return`${i?'L':'M'}${x.toFixed(2)},${y.toFixed(2)}`}).join('')+'Z';
+const geometryPath=geometry=>geometry.type==='Polygon'?geometry.coordinates.map(ringPath).join(''):geometry.coordinates.map(polygon=>polygon.map(ringPath).join('')).join('');
+fetch('assets/world-110m.geojson').then(response=>{if(!response.ok)throw new Error('Map data unavailable');return response.json()}).then(world=>{
+  const group=$('map-countries'),core=new Set(resources.core),influence=resources.influence==='all'?null:new Set(resources.influence);
+  world.features.forEach(feature=>{const code=feature.properties.ADM0_A3,path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',geometryPath(feature.geometry));path.setAttribute('class',core.has(code)?'map-core':resources.influence==='all'||influence.has(code)?'map-influence':'map-land');path.appendChild(document.createElementNS('http://www.w3.org/2000/svg','title')).textContent=feature.properties.ADMIN;group.appendChild(path)});
+}).catch(()=>{$('map-countries').innerHTML='<text x="500" y="250" text-anchor="middle">Map unavailable</text>'});
+$('map-title').textContent=`World context for ${p.name}`;$('map-description').textContent=`Representative centers and wider influence associated with ${p.name}. Modern borders are used only for orientation.`;$('map-note').textContent=resources.note;
 $('works').innerHTML=p.works.map((x,i)=>{const [h,m,t]=x.split('|');return `<article class="work-row"><span>0${i+1}</span><img class="work-image" src="assets/works/${workImages[p.id][i]}.jpg" alt="Original visual study showing the contribution of ${h}" loading="lazy"><h3>${h}<br><small>${m}</small></h3><p><b>What they added</b>${t}</p></article>`}).join('');
 $('design-intro').textContent=`The period’s ideas did not stop at art. They changed the spaces people built, the objects they touched, and the visual systems that organized daily life.`;
 $('design-notes').innerHTML=p.design.map(x=>{const[h,t]=x.split('|');return `<article><h3>${h}</h3><p>${t}</p></article>`}).join('');
