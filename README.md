@@ -28,6 +28,9 @@ All internal assets use relative paths, so the site works at both a user/organiz
 ├── index.html
 ├── 404.html
 ├── assets/
+│   ├── art/
+│   ├── explore/
+│   ├── works/
 │   └── favicon.svg
 ├── css/
 │   └── styles.css
@@ -40,6 +43,7 @@ All internal assets use relative paths, so the site works at both a user/organiz
 - Chronological, scroll-driven narrative
 - Twelve original AI-generated, period-specific visual environments
 - Dedicated explorer view for every period with 36 total original images
+- Illustrated artist and maker studies explaining what each featured work contributed to its period
 - Persistent reading progress and current-era indicator
 - Full period index for non-linear exploration
 - Dates, defining characteristics, historical context, landmark works, and artists

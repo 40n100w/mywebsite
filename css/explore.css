@@ -2,3 +2,11 @@
 @media(max-width:750px){.explore-hero{min-height:70vh}.impact-grid,.section-intro,.visual-gallery,.design-notes{grid-template-columns:1fr}.impact:nth-child(even){padding-left:0;border-left:0}.section-intro h2,.section-intro>p:last-child{grid-column:1}.work-row{grid-template-columns:2rem 1fr}.work-row p{grid-column:2}.visual-gallery figure+figure{margin-top:3rem}.period-nav a{padding:3rem 1.2rem;font-size:1.1rem}footer{display:block}footer p{margin-top:2rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 .brand svg{width:30px;height:30px;fill:currentColor;stroke:currentColor;stroke-width:1;flex:0 0 auto}.brand svg path{stroke:none}.brand svg circle:first-child{fill:none}.brand svg circle:last-child{stroke:none}
+
+/* Featured artist studies */
+.work-row{grid-template-columns:3rem minmax(180px,.75fr) 1fr 1fr;gap:2rem;padding:2rem 0;align-items:center}
+.work-row>span{align-self:start}
+.work-image{width:100%;aspect-ratio:4/3;margin:0;background-image:var(--work-image);background-size:300% auto;background-position:var(--work-position) center;background-repeat:no-repeat;border:1px solid #ffffff22}
+.work-row h3 small{font:400 .62rem 'DM Mono';letter-spacing:.02em}
+.work-row p b{display:block;margin-bottom:.65rem;font:400 .6rem 'DM Mono';letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+@media(max-width:750px){.work-row{grid-template-columns:2rem 1fr;gap:1.5rem}.work-image,.work-row h3,.work-row p{grid-column:2}.work-image{aspect-ratio:16/10}}
