@@ -1,0 +1,5 @@
+const CACHE='art-compass-v3';
+const CORE=['./','index.html','explore.html','about.html','sources.html','glossary.html','corrections.html','css/styles.css','css/explore.css','css/info.css','js/main.js','js/context.js','js/books-maps.js','js/story.js','js/learning.js','js/work-records.js','js/artwork-media.js','js/world-map.js','js/explore.js','js/glossary.js','js/sources.js','assets/favicon.svg','manifest.webmanifest'];
+self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',event=>{if(event.request.method!=='GET'||new URL(event.request.url).origin!==location.origin)return;event.respondWith(caches.match(event.request).then(cached=>cached||fetch(event.request).then(response=>{if(response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy))}return response}).catch(()=>caches.match('index.html'))))});

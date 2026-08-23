@@ -58,6 +58,13 @@ All internal assets use relative paths, so the site works at both a user/organiz
 - A navigable time rail, period-specific 3D hero portals, pointer parallax, and scroll-depth transitions with reduced-motion fallbacks
 - A period-specific eight-act narrative that moves from historical setting and intellectual catalyst through visual breakthroughs, makers, cultural consequences, legacy, and transition
 - Era-level museum and heritage sources, reflection prompts, a public glossary, accessible map text, and a visible motion control
+- Explicit source, medium, location, dimensions where available, and two close-looking prompts for every featured work
+- Full-image viewing that preserves each work’s natural proportions
+- Previous-era comparisons and live act progress throughout each eight-part chapter
+- Era-specific visual ruptures, visual DNA, emotional arcs, physical-scale studies, and animated exchange-route narratives
+- Guided close-looking reveals and cross-era page transitions with reduced-motion fallbacks
+- Three-item chapter synthesis, a knowledge check, and optional progress stored only in the visitor’s browser
+- Embedded map data for direct offline reading plus an installable service-worker shell when served over HTTP
 
 ## Notes
 
@@ -65,7 +72,7 @@ The works-and-makers sections combine licensed reproductions with AI-generated s
 
 Historical dates and interpretations are provided for general educational use. Visitors should consult museum, archive, or scholarly sources before relying on the site for academic research.
 
-World boundaries are derived from the public-domain [Natural Earth](https://www.naturalearthdata.com/) 1:110m dataset. Modern national boundaries are used only as geographic orientation for historical regions and do not imply that present-day states existed during the period shown.
+World boundaries are derived from the public-domain Natural Earth 1:110m dataset. Modern national boundaries are used only as geographic orientation for historical regions and do not imply that present-day states existed during the period shown.
 
 ## Privacy and security
 
@@ -80,8 +87,10 @@ Never commit credentials, private keys, personal information, or environment fil
 
 - `about.html` explains the project’s method, generated imagery, geographic framework, and limitations.
 - `sources.html` collects museum and cultural-heritage sources used by the era pages.
+- `js/work-records.js` keeps all 36 work records keyed to their own source so citations cannot drift by display order.
 - `glossary.html` defines recurring visual concepts.
 - `corrections.html` describes the public correction process without adding a tracking form.
+- `review.html` states the current independent-review status and the criteria for future specialist sign-off.
 - `NOTICE.md` records current rights and third-party attribution. Creative Commons terms apply to the individual files identified in `js/artwork-media.js`; no broader open license is granted unless a separate license is added later.
 - `scripts/fetch-open-art.mjs` rebuilds the licensed-image candidate records and can download verified reproductions for offline use.
 

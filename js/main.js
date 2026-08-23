@@ -84,3 +84,4 @@ function updateProgress() {
 addEventListener('scroll', updateProgress, { passive: true });
 updateProgress();
 document.getElementById('year').textContent = new Date().getFullYear();
+if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js');
