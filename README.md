@@ -42,8 +42,8 @@ All internal assets use relative paths, so the site works at both a user/organiz
 
 - Chronological, scroll-driven narrative
 - Twelve original AI-generated, period-specific visual environments
-- Dedicated explorer view for every period with 36 total original images
-- 36 standalone artist and maker studies explaining what each featured work contributed to its period
+- Dedicated explorer view for every period with 36 featured works
+- Locally stored public-domain and Creative Commons reproductions where reuse is verified, with clearly labeled interpretive studies elsewhere
 - Persistent reading progress and current-era indicator
 - Full period index for non-linear exploration
 - Dates, defining characteristics, historical context, landmark works, and artists
@@ -57,10 +57,11 @@ All internal assets use relative paths, so the site works at both a user/organiz
 - Twelve individually art-directed explorer themes, each using the visual language of its period while sharing an accessible content system
 - A navigable time rail, period-specific 3D hero portals, pointer parallax, and scroll-depth transitions with reduced-motion fallbacks
 - A period-specific eight-act narrative that moves from historical setting and intellectual catalyst through visual breakthroughs, makers, cultural consequences, legacy, and transition
+- Era-level museum and heritage sources, reflection prompts, a public glossary, accessible map text, and a visible motion control
 
 ## Notes
 
-The chapter images are AI-generated, historically inspired editorial interpretations rather than reproductions of existing artworks. They are illustrative and should not be treated as primary sources or exact reconstructions of historical objects, people, or places.
+The works-and-makers sections combine licensed reproductions with AI-generated studies where reusable imagery is unavailable or uncertain. Reproductions display their image license, creator credit, and provenance link. Chapter, architecture, design, and any explicitly labeled study images are AI-generated editorial interpretations rather than documentary evidence.
 
 Historical dates and interpretations are provided for general educational use. Visitors should consult museum, archive, or scholarly sources before relying on the site for academic research.
 
@@ -74,3 +75,14 @@ World boundaries are derived from the public-domain [Natural Earth](https://www.
 - A restrictive Content Security Policy limits the resources that pages can load.
 
 Never commit credentials, private keys, personal information, or environment files. The included `.gitignore` blocks common local and secret-bearing files, but contributors should still review staged changes before publishing.
+
+## Editorial and rights information
+
+- `about.html` explains the project’s method, generated imagery, geographic framework, and limitations.
+- `sources.html` collects museum and cultural-heritage sources used by the era pages.
+- `glossary.html` defines recurring visual concepts.
+- `corrections.html` describes the public correction process without adding a tracking form.
+- `NOTICE.md` records current rights and third-party attribution. Creative Commons terms apply to the individual files identified in `js/artwork-media.js`; no broader open license is granted unless a separate license is added later.
+- `scripts/fetch-open-art.mjs` rebuilds the licensed-image candidate records and can download verified reproductions for offline use.
+
+Run `sh scripts/validate.sh` before publishing. The same validation runs automatically through GitHub Actions.
