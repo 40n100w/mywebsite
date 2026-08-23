@@ -47,3 +47,152 @@
 .map-legend span{display:flex;align-items:center;gap:.6rem}.map-legend i{width:1.2rem;height:1.2rem;border:1px solid #ffffff55}.core-key{background:var(--accent)}.influence-key{background:#9b875d}
 #map-note{max-width:56rem;margin:2rem 0 0;font-size:.84rem;line-height:1.65;color:#c8c1b5}
 @media(max-width:700px){.books-section .section-intro,.map-section .section-intro{margin-bottom:4rem}.book-row{grid-template-columns:2rem 1fr}.book-row p{grid-column:2}.map-legend{display:grid;gap:.75rem}#map-note{font-size:.78rem}}
+
+/* Evolution of thought */
+.idea-study{display:grid;grid-template-columns:minmax(260px,.8fr) 1.2fr;gap:clamp(3rem,7vw,8rem);margin-bottom:7rem;padding:clamp(2rem,5vw,5rem);background:#181713;color:#eee8dc}
+.idea-study:has(>div:only-child){grid-template-columns:1fr}
+.idea-study>div>h3{margin:.5rem 0 1.25rem;font-size:clamp(2.5rem,6vw,6rem);font-weight:500;line-height:.9;letter-spacing:-.065em}
+.idea-study>div>p:last-child{max-width:45rem;font-size:1rem;line-height:1.75;color:#c8c1b5}
+.forms-study{margin:0;display:grid;grid-template-columns:1fr 2rem 1fr;gap:1.25rem;align-items:center;text-align:center}
+.forms-study>div{display:grid;justify-items:center;gap:.9rem}.forms-study i{display:block;width:min(15vw,170px);aspect-ratio:1;border:2px solid var(--accent)}
+.drawn-circle{border-radius:48% 52% 47% 53%/51% 46% 54% 49%;transform:rotate(-4deg);filter:drop-shadow(2px 1px 0 #c08c62)}
+.ideal-circle{border-radius:50%}
+.forms-study b{font:400 .64rem 'DM Mono';letter-spacing:.08em;text-transform:uppercase}.forms-study span{font-size:.72rem;color:#aaa49a}.forms-study>em{font:400 1.2rem 'DM Mono';font-style:normal;color:var(--accent)}
+.forms-study figcaption{grid-column:1/-1;margin-top:1rem;font-size:.75rem;line-height:1.5;color:#aaa49a}
+@media(max-width:800px){.idea-study{grid-template-columns:1fr;margin-bottom:5rem}.forms-study i{width:min(30vw,150px)}}
+@media(max-width:480px){.forms-study{grid-template-columns:1fr}.forms-study>em{transform:rotate(90deg)}.forms-study figcaption{grid-column:1}}
+
+/* Period-specific art direction */
+body[data-era]{--era-paper:#f1ede2;--era-ink:#17150f;--era-field:#d9d3c7;--era-dark:#181713;--era-muted:#777166;--era-radius:0;background:var(--era-paper);color:var(--era-ink)}
+body[data-era]>.skip-link:focus{color:#111}
+body[data-era]>header{position:relative;z-index:10;background:var(--era-paper);color:var(--era-ink);border-color:color-mix(in srgb,var(--era-ink) 24%,transparent)}
+body[data-era] .explore-hero{position:relative;isolation:isolate;overflow:hidden;background:var(--era-paper);color:var(--era-ink)}
+body[data-era] .explore-hero>*:not(.era-motif){position:relative;z-index:2}
+body[data-era] .era-motif,body[data-era] .era-motif i{position:absolute;display:block;pointer-events:none}
+body[data-era] .origins{background:var(--accent);color:var(--era-ink)}
+body[data-era] .exchange-section{background:var(--era-field);color:var(--era-ink)}
+body[data-era] .books-section,body[data-era] .design-section{background:var(--era-paper);color:var(--era-ink)}
+body[data-era] .works-section,body[data-era] .map-section,body[data-era] .idea-study,body[data-era] .period-nav{background:var(--era-dark);color:#f4efe6}
+body[data-era] .hero-image img,body[data-era] .visual-gallery img,body[data-era] .work-image{border-radius:var(--era-radius)}
+body[data-era] .impact,body[data-era] .exchange-list,body[data-era] .exchange-row,body[data-era] .books-list,body[data-era] .book-row,body[data-era] .design-notes article{border-color:color-mix(in srgb,var(--era-ink) 48%,transparent)}
+body[data-era] .exchange-row b{color:color-mix(in srgb,var(--era-ink) 72%,transparent)}
+body[data-era] footer{color:var(--era-ink)}
+
+/* 01 — marks, fire, and organic stone */
+body[data-era="prehistoric"]{--era-paper:#201811;--era-ink:#f0d9b6;--era-field:#38271b;--era-dark:#0f0c09;--era-muted:#a77d51;--era-radius:42% 58% 48% 52%/8% 8% 10% 10%}
+body[data-era="prehistoric"] .explore-hero{background:radial-gradient(circle at 78% 45%,#7a3a1e 0 2%,transparent 20%),radial-gradient(circle at 72% 45%,#4a2818,transparent 38%),#201811}
+body[data-era="prehistoric"] .explore-hero h1{font-family:Georgia,serif;font-weight:400;letter-spacing:-.055em;max-width:8ch}
+body[data-era="prehistoric"] .era-motif{inset:12% 3% 8% 55%;border:2px solid #b0602f;border-radius:48% 52% 43% 57%/55% 45% 55% 45%;transform:rotate(-9deg);opacity:.55}
+body[data-era="prehistoric"] .era-motif:before{content:'•••  ╱ ╱  ✣';position:absolute;inset:45% 10%;font:2rem Georgia;letter-spacing:.5em;color:#d39a60}
+body[data-era="prehistoric"] .hero-image{padding:4vw;background:#120e0a}body[data-era="prehistoric"] .hero-image img{clip-path:polygon(2% 8%,18% 2%,35% 6%,53% 1%,73% 5%,96% 2%,99% 92%,82% 98%,62% 94%,40% 99%,17% 95%,1% 89%)}
+body[data-era="prehistoric"] .impact-grid{grid-template-columns:repeat(4,1fr)}body[data-era="prehistoric"] .impact{border-left:1px solid;padding-left:1.5rem}
+
+/* 02 — measure, monument, and civic order */
+body[data-era="ancient"]{--era-paper:#e8ddbf;--era-ink:#241d13;--era-field:#d3c194;--era-dark:#172229;--era-muted:#8f7441}
+body[data-era="ancient"] .explore-hero{text-align:center;align-items:center;background:linear-gradient(90deg,transparent 49.9%,#9b7a3d55 50%,transparent 50.1%),#e8ddbf}
+body[data-era="ancient"] .explore-hero h1{text-transform:uppercase;font-family:Georgia,serif;font-size:clamp(4rem,10vw,10rem);letter-spacing:.045em;border-block:1px solid;padding:.18em 0}
+body[data-era="ancient"] .lede{max-width:42rem}body[data-era="ancient"] .era-motif{width:min(55vw,650px);height:42%;bottom:0;left:50%;transform:translateX(-50%);border-top:12px solid #9b7a3d33;background:repeating-linear-gradient(90deg,transparent 0 11%,#9b7a3d22 11% 16%,transparent 16% 25%);z-index:-1}
+body[data-era="ancient"] .hero-image img{aspect-ratio:2.2/1}body[data-era="ancient"] .impact h3,body[data-era="ancient"] .book-row h3{font-family:Georgia,serif}
+
+/* 03 — illuminated page and sacred verticality */
+body[data-era="medieval"]{--era-paper:#13213b;--era-ink:#f1d66c;--era-field:#23385d;--era-dark:#080e1b;--era-muted:#ba9c3e}
+body[data-era="medieval"] .explore-hero{align-items:center;text-align:center;background:radial-gradient(ellipse at 50% 115%,#33578b 0 28%,transparent 29%),#13213b}
+body[data-era="medieval"] .origins,body[data-era="medieval"] footer{color:#13213b}
+body[data-era="medieval"] .explore-hero:after{content:'';position:absolute;inset:7% 4%;border:1px solid #f1d66c88;outline:5px double #f1d66c33;pointer-events:none}
+body[data-era="medieval"] .explore-hero h1{font-family:Georgia,serif;text-shadow:0 3px 0 #7d2032;max-width:9ch}
+body[data-era="medieval"] .hero-image img{clip-path:polygon(0 12%,8% 0,92% 0,100% 12%,100% 100%,0 100%)}body[data-era="medieval"] .overline{letter-spacing:.2em}
+body[data-era="medieval"] .work-row,body[data-era="medieval"] .book-row{border-bottom:1px solid #d5b94d66}
+
+/* 04 — humanist clarity and constructed perspective */
+body[data-era="renaissance"]{--era-paper:#ede7d7;--era-ink:#34291f;--era-field:#c8bda5;--era-dark:#263e35;--era-muted:#8a7259}
+body[data-era="renaissance"] .explore-hero{background:linear-gradient(135deg,transparent 49.9%,#8d6f4733 50%,transparent 50.1%),linear-gradient(45deg,transparent 49.9%,#8d6f4722 50%,transparent 50.1%),#ede7d7;background-size:18vw 18vw}
+body[data-era="renaissance"] .explore-hero h1{font-family:Georgia,serif;font-weight:400;max-width:8ch}
+body[data-era="renaissance"] .lede,body[data-era="renaissance"] .down{margin-left:34%}
+body[data-era="renaissance"] .era-motif{width:min(36vw,460px);aspect-ratio:1;right:5%;top:18%;border:1px solid #8d6f4777;border-radius:50%;box-shadow:inset 0 0 0 4vw #ede7d7,inset 0 0 0 calc(4vw + 1px) #8d6f4777;z-index:-1}
+body[data-era="renaissance"] .hero-image{display:grid;grid-template-columns:1fr 8fr 1fr;background:#263e35}body[data-era="renaissance"] .hero-image img,body[data-era="renaissance"] .hero-image figcaption{grid-column:2}
+
+/* 05 — theatrical motion and chiaroscuro */
+body[data-era="baroque"]{--era-paper:#120d0e;--era-ink:#f0d7b0;--era-field:#291719;--era-dark:#050404;--era-muted:#94434a}
+body[data-era="baroque"] .explore-hero{background:radial-gradient(ellipse at 15% 15%,#f2c27d55,transparent 38%),#120d0e}
+body[data-era="baroque"] .explore-hero h1{font-family:Georgia,serif;font-style:italic;font-weight:400;transform:skewY(-3deg);text-shadow:12px 14px 35px #000}
+body[data-era="baroque"] .lede{margin-left:38%}body[data-era="baroque"] .hero-image{background:#050404;padding:0 7vw 7vw}body[data-era="baroque"] .hero-image img{clip-path:polygon(8% 0,100% 0,92% 100%,0 100%);filter:contrast(1.15) saturate(.82)}
+body[data-era="baroque"] .impact:nth-child(odd),body[data-era="baroque"] .book-row:nth-child(odd){transform:translateX(3vw)}
+
+/* 06 — rational restraint and classical discipline */
+body[data-era="neoclassicism"]{--era-paper:#eeeae0;--era-ink:#20242a;--era-field:#d8d3c8;--era-dark:#242b35;--era-muted:#777a7f}
+body[data-era="neoclassicism"] .explore-hero{align-items:center;text-align:center;border:clamp(10px,2vw,28px) solid #eeeae0;outline:1px solid #20242a;outline-offset:-3vw}
+body[data-era="neoclassicism"] .explore-hero h1{font-family:Georgia,serif;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(3.5rem,9vw,9rem)}
+body[data-era="neoclassicism"] .lede{max-width:40rem}body[data-era="neoclassicism"] .impact-grid{gap:2rem}body[data-era="neoclassicism"] .impact{border:1px solid;padding:2rem}
+
+/* 07 — storm, solitude, and the sublime */
+body[data-era="romanticism"]{--era-paper:#d9dfdc;--era-ink:#1d2929;--era-field:#8fa09d;--era-dark:#152224;--era-muted:#657774}
+body[data-era="romanticism"] .explore-hero{justify-content:flex-end;background:linear-gradient(#b9c8cc,#d9dfdc 46%,#61706b 47%,#263a35 100%)}
+body[data-era="romanticism"] .explore-hero h1{font-family:Georgia,serif;font-style:italic;font-weight:400;max-width:9ch;text-shadow:0 2px 20px #fff8}
+body[data-era="romanticism"] .era-motif{width:40vw;height:28vw;right:-4%;bottom:-12%;background:#1e302d;clip-path:polygon(0 100%,28% 35%,40% 58%,61% 8%,100% 100%);opacity:.8}
+body[data-era="romanticism"] .hero-image img{aspect-ratio:2.4/1;filter:saturate(.78) contrast(1.08)}body[data-era="romanticism"] .exchange-row{border-bottom:0;border-top:1px solid}
+
+/* 08 — direct observation and the printed public sphere */
+body[data-era="realism"]{--era-paper:#d9d3c3;--era-ink:#25231e;--era-field:#b8ae98;--era-dark:#24231f;--era-muted:#756e5e}
+body[data-era="realism"] .explore-hero{display:grid;grid-template-columns:1.1fr .9fr;align-content:center;column-gap:5vw;background:repeating-linear-gradient(0deg,transparent 0 31px,#25231e12 32px),#d9d3c3}
+body[data-era="realism"] .explore-hero h1{font-family:Georgia,serif;grid-row:2/5;grid-column:1;font-size:clamp(4rem,9vw,9rem)}body[data-era="realism"] .explore-hero .lede,body[data-era="realism"] .explore-hero .down{grid-column:2}
+body[data-era="realism"] .impact-grid{grid-template-columns:1fr}body[data-era="realism"] .impact{display:grid;grid-template-columns:3rem .5fr 1fr;gap:2rem;padding:1.5rem 0}body[data-era="realism"] .impact h3{margin:0}
+
+/* 09 — air, light, and the fleeting instant */
+body[data-era="impressionism"]{--era-paper:#edf2ed;--era-ink:#294050;--era-field:#cbdde0;--era-dark:#344c58;--era-muted:#76919c;--era-radius:2rem}
+body[data-era="impressionism"] .explore-hero{background:radial-gradient(circle at 78% 24%,#f5c36d 0 5%,transparent 6%),linear-gradient(145deg,#d9e9ef,#f3e7dc 55%,#b9d5c9)}
+body[data-era="impressionism"] .explore-hero h1{font-family:Georgia,serif;font-style:italic;font-weight:400;color:#395f70;text-shadow:3px 3px 0 #fff8}
+body[data-era="impressionism"] .era-motif{inset:10% -5% 5% 45%;background:repeating-linear-gradient(165deg,transparent 0 14px,#739fb01f 15px 19px,transparent 20px 34px);filter:blur(2px);z-index:-1}
+body[data-era="impressionism"] .hero-image{padding:3vw;background:#d8e6e5}body[data-era="impressionism"] .work-row{border:0;margin:1rem 0;padding:2rem;background:#ffffff66;border-radius:2rem}
+
+/* 10 — structure, symbol, and expressive color */
+body[data-era="post-impressionism"]{--era-paper:#f0c947;--era-ink:#172f52;--era-field:#dc7b42;--era-dark:#102946;--era-muted:#6f5633}
+body[data-era="post-impressionism"] .explore-hero{background:radial-gradient(circle at 75% 30%,#ef5f34 0 8%,transparent 8.5%),repeating-radial-gradient(circle at 75% 30%,transparent 0 30px,#17345b22 31px 36px),#f0c947}
+body[data-era="post-impressionism"] .explore-hero h1{color:#17345b;transform:rotate(-2deg);font-weight:600;text-shadow:5px 5px 0 #f3e6bc}
+body[data-era="post-impressionism"] .hero-image{padding:4vw;background:#102946}body[data-era="post-impressionism"] .hero-image img{outline:8px solid #ef5f34;transform:rotate(1deg)}
+body[data-era="post-impressionism"] .book-row:nth-child(2){transform:translateX(3vw)}
+
+/* 11 — machine-age grid and radical form */
+body[data-era="modernism"]{--era-paper:#eee8d8;--era-ink:#121212;--era-field:#ded8c8;--era-dark:#111;--era-muted:#666}
+body[data-era="modernism"] .explore-hero{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:auto 1fr auto;align-items:center;background:linear-gradient(90deg,transparent 49.7%,#111 50%,transparent 50.3%),linear-gradient(0deg,transparent 49.7%,#111 50%,transparent 50.3%),#eee8d8;background-size:16.666% 100%,100% 33.333%}
+body[data-era="modernism"] .explore-hero .overline{grid-column:1/3}body[data-era="modernism"] .explore-hero h1{grid-column:1/7;text-transform:uppercase;font-weight:600;letter-spacing:-.08em}body[data-era="modernism"] .lede{grid-column:3/6}body[data-era="modernism"] .down{grid-column:5/7}
+body[data-era="modernism"] .era-motif{right:8%;top:13%;width:12vw;aspect-ratio:1;border-radius:50%;background:#e32822;box-shadow:-15vw 18vw 0 -3vw #1454a0;z-index:-1}
+body[data-era="modernism"] .hero-image{display:grid;grid-template-columns:2fr 5fr 1fr;background:#111}body[data-era="modernism"] .hero-image img,body[data-era="modernism"] .hero-image figcaption{grid-column:2}
+body[data-era="modernism"] .impact-grid{grid-template-columns:repeat(4,1fr)}body[data-era="modernism"] .impact{border-left:4px solid;padding-left:1rem}
+
+/* 12 — networked plurality and luminous space */
+body[data-era="contemporary"]{--era-paper:#0b0b0c;--era-ink:#f4f4ee;--era-field:#17171b;--era-dark:#050506;--era-muted:#888;--era-radius:1rem}
+body[data-era="contemporary"] .explore-hero{background:radial-gradient(circle at 78% 52%,#dcff4433,transparent 18%),linear-gradient(125deg,#0b0b0c 0 62%,#191926 62%)}
+body[data-era="contemporary"] .explore-hero h1{font-weight:500;color:#fff;text-shadow:4px 0 #ff2d85,-4px 0 #2ee8ff;max-width:9ch}
+body[data-era="contemporary"] .era-motif{right:8%;top:18%;width:min(34vw,430px);aspect-ratio:1;border:2px solid #dcff44;border-radius:50%;box-shadow:0 0 55px #dcff4455,inset 0 0 55px #2ee8ff33}
+body[data-era="contemporary"] .era-motif i{inset:18%;border:1px solid #ff2d85;border-radius:50%}body[data-era="contemporary"] .era-motif i:nth-child(2){inset:34%;border-color:#2ee8ff}body[data-era="contemporary"] .era-motif i:nth-child(3){inset:47%;background:#dcff44}
+body[data-era="contemporary"] .work-row{border:1px solid #ffffff22;border-radius:1rem;padding:1.5rem;margin:1rem 0}body[data-era="contemporary"] .map-section{background:#101014}
+
+@media(max-width:900px){body[data-era="prehistoric"] .impact-grid,body[data-era="modernism"] .impact-grid{grid-template-columns:repeat(2,1fr)}body[data-era="renaissance"] .lede,body[data-era="renaissance"] .down,body[data-era="baroque"] .lede{margin-left:0}body[data-era="realism"] .explore-hero{display:flex}body[data-era="modernism"] .explore-hero{display:flex}}
+@media(max-width:600px){body[data-era="prehistoric"] .impact-grid,body[data-era="modernism"] .impact-grid{grid-template-columns:1fr}body[data-era="ancient"] .explore-hero h1{letter-spacing:0}body[data-era="baroque"] .impact:nth-child(odd),body[data-era="baroque"] .book-row:nth-child(odd),body[data-era="post-impressionism"] .book-row:nth-child(2){transform:none}body[data-era="realism"] .impact{grid-template-columns:2rem 1fr}body[data-era="realism"] .impact p{grid-column:2}body[data-era="renaissance"] .hero-image,body[data-era="modernism"] .hero-image{display:block}body[data-era="contemporary"] .era-motif{opacity:.35}}
+
+/* Spatial time orientation and depth */
+.time-rail{position:sticky;top:0;z-index:9;display:grid;grid-template-columns:minmax(160px,.28fr) 1fr;align-items:center;gap:2rem;padding:.7rem var(--pad);background:color-mix(in srgb,var(--era-paper) 91%,transparent);color:var(--era-ink);border-bottom:1px solid color-mix(in srgb,var(--era-ink) 20%,transparent);backdrop-filter:blur(14px)}
+.time-rail p{margin:0;line-height:1.2}.time-rail p span{display:block;font:400 .52rem 'DM Mono';letter-spacing:.12em;text-transform:uppercase;opacity:.55}.time-rail p b{font-size:.72rem;font-weight:500}
+.time-rail>div{position:relative;display:grid;grid-template-columns:repeat(12,1fr);align-items:center}.time-rail>div:before{content:'';position:absolute;left:3%;right:3%;top:8px;height:1px;background:color-mix(in srgb,var(--era-ink) 35%,transparent)}
+.time-rail a{position:relative;display:grid;justify-items:center;gap:.35rem;min-width:0;text-align:center}.time-rail a i{position:relative;z-index:1;width:7px;height:7px;border:1px solid currentColor;border-radius:50%;background:var(--era-paper);transition:transform .2s,background .2s,box-shadow .2s}.time-rail a span,.time-rail a small{position:absolute;top:1.25rem;opacity:0;pointer-events:none;background:var(--era-dark);color:#f4efe6;padding:.35rem .5rem;white-space:nowrap;font:400 .58rem 'DM Mono';transition:opacity .2s,transform .2s;transform:translateY(-3px)}.time-rail a small{top:2.7rem;color:#bbb5aa}.time-rail a:hover span,.time-rail a:hover small,.time-rail a:focus-visible span,.time-rail a:focus-visible small{opacity:1;transform:none}.time-rail a[aria-current=page] i{width:15px;height:15px;background:var(--accent);border-color:var(--era-ink);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 24%,transparent)}
+.explore-hero{--look-x:0deg;--look-y:0deg;--scroll-z:0px;perspective:1100px}
+.depth-stage{position:absolute;z-index:0;inset:8% 4%;transform-style:preserve-3d;transform:rotateX(var(--look-x)) rotateY(var(--look-y)) translateZ(var(--scroll-z));transition:transform .18s ease-out;pointer-events:none}
+.depth-stage i{position:absolute;display:block;inset:var(--depth-inset);border:1px solid color-mix(in srgb,var(--accent) var(--depth-line),transparent);transform:translateZ(var(--depth-z)) rotate(var(--depth-rotate));opacity:var(--depth-alpha)}
+.depth-stage i:nth-child(1){--depth-inset:0;--depth-z:-165px;--depth-rotate:0deg;--depth-alpha:.65;--depth-line:42%;--depth-blur:0}.depth-stage i:nth-child(2){--depth-inset:6%;--depth-z:-110px;--depth-rotate:2deg;--depth-alpha:.55;--depth-line:35%;--depth-blur:1px}.depth-stage i:nth-child(3){--depth-inset:12%;--depth-z:-55px;--depth-rotate:4deg;--depth-alpha:.45;--depth-line:28%;--depth-blur:2px}.depth-stage i:nth-child(4){--depth-inset:18%;--depth-z:0;--depth-rotate:6deg;--depth-alpha:.35;--depth-line:21%;--depth-blur:3px}
+body[data-era="prehistoric"] .depth-stage i{border-radius:47% 53% 45% 55%/52% 44% 56% 48%}body[data-era="ancient"] .depth-stage i,body[data-era="neoclassicism"] .depth-stage i{border-width:0 1px;border-radius:0}body[data-era="medieval"] .depth-stage i{clip-path:polygon(50% 0,100% 22%,100% 100%,0 100%,0 22%)}body[data-era="renaissance"] .depth-stage i{border-radius:50%}body[data-era="baroque"] .depth-stage i{border-radius:50% 0}body[data-era="romanticism"] .depth-stage i{clip-path:polygon(0 100%,30% 25%,45% 62%,67% 5%,100% 100%)}body[data-era="impressionism"] .depth-stage i{border-radius:50%;filter:blur(var(--depth-blur))}body[data-era="post-impressionism"] .depth-stage i{border-radius:50%}body[data-era="modernism"] .depth-stage i{border-width:2px;border-color:color-mix(in srgb,var(--accent) 55%,transparent)}body[data-era="contemporary"] .depth-stage i{border-radius:50%;box-shadow:0 0 30px color-mix(in srgb,var(--accent) 25%,transparent)}
+.motion-ready main>section,.motion-ready .hero-image{opacity:0;transform:translateY(42px) scale(.985);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.75,.2,1)}.motion-ready main>section.in-view,.motion-ready .hero-image.in-view{opacity:1;transform:none}.motion-ready .explore-hero{opacity:1;transform:none}
+.work-row{transform-style:preserve-3d}.work-image{transition:transform .45s cubic-bezier(.2,.75,.2,1),filter .45s}.work-row:hover .work-image{transform:perspective(800px) rotateY(3deg) translateZ(14px);filter:saturate(1.08)}
+@media(max-width:800px){.time-rail{grid-template-columns:1fr;padding:.6rem var(--pad);gap:.55rem}.time-rail p{display:flex;justify-content:space-between;gap:1rem}.time-rail p span{display:none}.time-rail a span,.time-rail a small{display:none}.depth-stage{inset:12% 2%}}
+@media(prefers-reduced-motion:reduce){.depth-stage{transform:none;transition:none}.motion-ready main>section,.motion-ready .hero-image{opacity:1;transform:none;transition:none}.work-image{transition:none}.work-row:hover .work-image{transform:none}}
+
+/* Narrative sequence */
+.story-thesis{max-width:18ch;margin:1.25rem 0;font-family:Georgia,serif;font-size:clamp(1.35rem,2.7vw,2.7rem);font-style:italic;line-height:1.25;letter-spacing:-.025em}
+.story-act{position:relative}.story-act:before{content:attr(data-act);position:absolute;z-index:2;top:2rem;left:var(--pad);font:400 .55rem 'DM Mono';letter-spacing:.13em;text-transform:uppercase;opacity:.62}
+.story-bridge{max-width:54rem;margin:2rem 0 0;font-family:Georgia,serif;font-size:clamp(1.25rem,2.3vw,2.1rem);line-height:1.45;letter-spacing:-.02em}
+.seeing-section{padding:clamp(8rem,15vw,15rem) var(--pad);background:var(--era-paper);color:var(--era-ink)}
+.seeing-section>div{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(3rem,8vw,9rem);align-items:start}.seeing-section h2{margin:0;font-size:clamp(3.5rem,8vw,8rem);font-weight:500;line-height:.84;letter-spacing:-.07em}.seeing-section h2 em{font-family:Georgia,serif;font-weight:400}.seeing-section #story-seeing{margin-top:4rem;max-width:46rem;font-size:clamp(1.05rem,1.8vw,1.4rem);line-height:1.75}
+.work-row p .work-role{color:#f4efe6;font-family:Georgia,serif;font-size:clamp(1rem,1.5vw,1.25rem);font-style:italic;letter-spacing:0;text-transform:none;line-height:1.3}.work-row p .work-role+ b{margin-top:1.5rem}
+.legacy-section{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(3rem,8vw,10rem);padding:clamp(8rem,14vw,14rem) var(--pad);background:var(--accent);color:var(--era-ink)}
+.legacy-section h2{margin:1rem 0 2rem;font-size:clamp(3.5rem,8vw,8rem);font-weight:500;line-height:.84;letter-spacing:-.07em}.legacy-section h2 em{font-family:Georgia,serif;font-weight:400}.legacy-section>div>p:last-child{max-width:52rem;font-size:clamp(1.05rem,1.8vw,1.35rem);line-height:1.75}.legacy-section aside{align-self:end;padding:2rem;border-top:1px solid}.legacy-section aside h3{margin:1rem 0;font-family:Georgia,serif;font-size:clamp(1.5rem,2.5vw,2.5rem);font-weight:400;line-height:1.1}.legacy-section aside p:last-child{font-size:.9rem;line-height:1.7}
+body[data-era="medieval"] .legacy-section{color:#13213b}body[data-era="baroque"] .seeing-section,body[data-era="contemporary"] .seeing-section{background:var(--era-dark);color:#f4efe6}body[data-era="impressionism"] .seeing-section{background:linear-gradient(145deg,#edf2ed,#cbdde0)}body[data-era="post-impressionism"] .seeing-section{background:#f0c947}body[data-era="modernism"] .seeing-section{background:linear-gradient(90deg,#eee8d8 0 68%,#e32822 68%)}
+@media(max-width:760px){.story-act:before{top:1rem}.seeing-section>div,.legacy-section{grid-template-columns:1fr}.seeing-section #story-seeing{margin-top:1rem}.legacy-section aside{padding:2rem 0}.story-thesis{max-width:24ch}}

@@ -29,14 +29,18 @@ const workImages={
 };
 
 const params=new URLSearchParams(location.search);let index=periods.findIndex(p=>p.id===params.get('era'));if(index<0)index=0;const p=periods[index];
-document.title=`${p.name} — Art Compass`;document.documentElement.style.setProperty('--accent', ['#b7442a','#d7a63f','#e7c654','#d9d0b8','#8b151b','#c7b88e','#566d61','#9c8661','#a7c9df','#e9bd24','#e32822','#dcff44'][index]);
+const story=periodStories[p.id];
+document.body.dataset.era=p.id;document.title=`${p.name} — Art Compass`;document.documentElement.style.setProperty('--accent', ['#b7442a','#d7a63f','#e7c654','#d9d0b8','#8b151b','#c7b88e','#566d61','#9c8661','#a7c9df','#e9bd24','#e32822','#dcff44'][index]);
 const $=id=>document.getElementById(id);$('chapter').textContent=`Chapter ${String(index+1).padStart(2,'0')} · ${p.date}`;$('title').textContent=p.name;$('summary').textContent=p.summary;$('back-link').href=`./#${p.id}`;
+$('story-thesis').textContent=story.thesis;$('story-world').textContent=story.world;$('story-catalyst').textContent=story.catalyst;$('story-seeing').textContent=story.seeing;$('story-legacy').textContent=story.legacy;$('story-transition').textContent=story.transition;
+$('time-now').textContent=`${p.name} · ${p.date}`;$('time-stops').innerHTML=periods.map((period,i)=>`<a href="explore.html?era=${period.id}" ${i===index?'aria-current="page"':''}><i></i><span>${period.name}</span><small>${period.date}</small></a>`).join('');
 $('art-image').src=`assets/art/${p.id}.jpg`;$('art-image').alt=`Original visual interpretation of ${p.name}`;$('art-caption').textContent=p.art;
 $('architecture-image').src=`assets/explore/${p.id}-architecture.jpg`;$('architecture-image').alt=`Original architectural study inspired by ${p.name}`;$('architecture-caption').textContent=p.design[0].split('|')[1];
 $('design-image').src=`assets/explore/${p.id}-design.jpg`;$('design-image').alt=`Original furniture and decorative design study inspired by ${p.name}`;$('design-caption').textContent=p.design[1].split('|')[1];
 $('impacts').innerHTML=p.impacts.map((x,i)=>{const [h,t]=x.split('|');return `<article class="impact"><span class="num">0${i+1}</span><h3>${h}</h3><p>${t}</p></article>`}).join('');
 $('exchange-list').innerHTML=periodContext[p.id].map(([lens,cause,effect],i)=>`<article class="exchange-row"><div class="exchange-heading"><span>${String(i+1).padStart(2,'0')}</span><h3>${lens}</h3></div><div><b>What shaped the art</b><p>${cause}</p></div><i aria-hidden="true">→</i><div><b>What the art changed</b><p>${effect}</p></div></article>`).join('');
 const resources=periodResources[p.id];
+$('idea-study').innerHTML=`<div><p class="overline">Defining shift in thought</p><h3>${periodIdeas[p.id][0]}</h3><p>${periodIdeas[p.id][1]}</p></div>${p.id==='ancient'?'<figure class="forms-study" aria-label="An imperfect physical circle compared with the concept of a perfect circle"><div><i class="drawn-circle"></i><b>The drawn circle</b><span>Physical · changing · imperfect</span></div><em>→</em><div><i class="ideal-circle"></i><b>The perfect circle</b><span>Intelligible · exact · ideal</span></div><figcaption>The drawing is only an example. The perfect mathematical circle is grasped through reason.</figcaption></figure>':''}`;
 $('books-list').innerHTML=resources.books.map(([title,meta,why],i)=>`<article class="book-row"><span>${String(i+1).padStart(2,'0')}</span><h3>${title}<small>${meta}</small></h3><p>${why}</p></article>`).join('');
 
 const projectPoint=([longitude,latitude])=>[(longitude+180)/360*1000,(90-latitude)/180*500];
@@ -47,7 +51,19 @@ fetch('assets/world-110m.geojson').then(response=>{if(!response.ok)throw new Err
   world.features.forEach(feature=>{const code=feature.properties.ADM0_A3,path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',geometryPath(feature.geometry));path.setAttribute('class',core.has(code)?'map-core':resources.influence==='all'||influence.has(code)?'map-influence':'map-land');path.appendChild(document.createElementNS('http://www.w3.org/2000/svg','title')).textContent=feature.properties.ADMIN;group.appendChild(path)});
 }).catch(()=>{$('map-countries').innerHTML='<text x="500" y="250" text-anchor="middle">Map unavailable</text>'});
 $('map-title').textContent=`World context for ${p.name}`;$('map-description').textContent=`Representative centers and wider influence associated with ${p.name}. Modern borders are used only for orientation.`;$('map-note').textContent=resources.note;
-$('works').innerHTML=p.works.map((x,i)=>{const [h,m,t]=x.split('|');return `<article class="work-row"><span>0${i+1}</span><img class="work-image" src="assets/works/${workImages[p.id][i]}.jpg" alt="Original visual study showing the contribution of ${h}" loading="lazy"><h3>${h}<br><small>${m}</small></h3><p><b>What they added</b>${t}</p></article>`}).join('');
+$('works').innerHTML=p.works.map((x,i)=>{const [h,m,t]=x.split('|');return `<article class="work-row"><span>0${i+1}</span><img class="work-image" src="assets/works/${workImages[p.id][i]}.jpg" alt="Original visual study showing the contribution of ${h}" loading="lazy"><h3>${h}<br><small>${m}</small></h3><p><b class="work-role">${story.roles[i]}</b><b>What changed here</b>${t}</p></article>`}).join('');
 $('design-intro').textContent=`The period’s ideas did not stop at art. They changed the spaces people built, the objects they touched, and the visual systems that organized daily life.`;
 $('design-notes').innerHTML=p.design.map(x=>{const[h,t]=x.split('|');return `<article><h3>${h}</h3><p>${t}</p></article>`}).join('');
 const previous=periods[(index-1+periods.length)%periods.length],next=periods[(index+1)%periods.length];$('previous').href=`explore.html?era=${previous.id}`;$('previous').textContent=`← ${previous.name}`;$('next').href=`explore.html?era=${next.id}`;$('next').textContent=`${next.name} →`;
+
+const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+if(!reducedMotion.matches){
+  document.body.classList.add('motion-ready');
+  const hero=document.querySelector('.explore-hero');let frame;
+  const setView=(x,y)=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{hero.style.setProperty('--look-x',`${x}deg`);hero.style.setProperty('--look-y',`${y}deg`)})};
+  hero.addEventListener('pointermove',event=>{const box=hero.getBoundingClientRect();setView(((event.clientY-box.top)/box.height-.5)*-8,((event.clientX-box.left)/box.width-.5)*10)});
+  hero.addEventListener('pointerleave',()=>setView(0,0));
+  addEventListener('scroll',()=>{const depth=Math.min(1,scrollY/Math.max(hero.offsetHeight,1));hero.style.setProperty('--scroll-z',`${Math.round(depth*-90)}px`)},{passive:true});
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');observer.unobserve(entry.target)}}),{threshold:.08,rootMargin:'0px 0px -8%'});
+  document.querySelectorAll('main>section,.hero-image').forEach(section=>observer.observe(section));
+}

@@ -50,9 +50,13 @@ All internal assets use relative paths, so the site works at both a user/organiz
 - Political, social, economic, and military impact analysis
 - Two-way historical analysis across belief, culture, economics, power, and technology: what shaped each period and what its art changed in return
 - Key literary, philosophical, religious, and oral works that shaped each period’s thinking
+- A defining intellectual shift for every period, including an illustrated explanation of Plato’s ideal Forms
 - Local, privacy-safe world maps showing representative centers and wider zones of influence or exchange
 - Architecture, furniture, decorative design, and graphic-design context
 - Responsive layout and reduced-motion support
+- Twelve individually art-directed explorer themes, each using the visual language of its period while sharing an accessible content system
+- A navigable time rail, period-specific 3D hero portals, pointer parallax, and scroll-depth transitions with reduced-motion fallbacks
+- A period-specific eight-act narrative that moves from historical setting and intellectual catalyst through visual breakthroughs, makers, cultural consequences, legacy, and transition
 
 ## Notes
 
