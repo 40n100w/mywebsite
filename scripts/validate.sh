@@ -1,6 +1,6 @@
 #!/bin/sh
 set -eu
-for file in js/main.js js/context.js js/books-maps.js js/story.js js/learning.js js/study-data.js js/experience-data.js js/work-records.js js/artwork-media.js js/world-map.js js/explore.js js/glossary.js js/sources.js sw.js; do node --check "$file"; done
+for file in js/*.js sw.js; do node --check "$file"; done
 node - <<'NODE'
 const fs=require('fs'),vm=require('vm'),box={window:{}};
 vm.runInNewContext(fs.readFileSync('js/work-records.js','utf8'),box);

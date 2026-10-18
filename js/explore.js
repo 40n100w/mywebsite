@@ -23,7 +23,7 @@ const $=id=>document.getElementById(id);$('chapter').textContent=`Chapter ${Stri
 $('era-answer').textContent=experience.answer;$('emotion-arc').innerHTML=`<span>${experience.emotion[0]}</span><i aria-hidden="true"></i><span>${experience.emotion[1]}</span>`;
 $('story-thesis').textContent=story.thesis;$('story-world').textContent=story.world;$('story-catalyst').textContent=story.catalyst;$('story-seeing').textContent=story.seeing;$('story-legacy').textContent=story.legacy;$('story-transition').textContent=story.transition;
 $('glossary-jump').innerHTML=`Vocabulary for this chapter: ${eraGlossary[p.id].map(term=>`<a href="glossary.html#term-${term.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}">${term}</a>`).join(' · ')}`;
-$('time-now').textContent=`${p.name} · ${p.date}`;$('time-stops').innerHTML=periods.map((period,i)=>`<a href="explore.html?era=${period.id}" ${i===index?'aria-current="page"':''}><i></i><span>${period.name}</span><small>${period.date}</small></a>`).join('');
+$('time-now').textContent=`${p.name} · ${p.date}`;$('time-stops').innerHTML=periods.map((period,i)=>`<a href="explore.html?era=${period.id}" aria-label="${period.name}, ${period.date}" ${i===index?'aria-current="page"':''}><i>${String(i+1).padStart(2,'0')}</i><span>${period.name}</span><small>${period.date}</small></a>`).join('');
 $('architecture-image').src=`assets/explore/${p.id}-architecture.jpg`;$('architecture-image').alt=`Original architectural study inspired by ${p.name}`;$('architecture-caption').textContent=p.design[0].split('|')[1];
 $('design-image').src=`assets/explore/${p.id}-design.jpg`;$('design-image').alt=`Original furniture and decorative design study inspired by ${p.name}`;$('design-caption').textContent=p.design[1].split('|')[1];
 $('impacts').innerHTML=p.impacts.map((x,i)=>{const [h,t]=x.split('|');return `<article class="impact"><span class="num">0${i+1}</span><h3>${h}</h3><p>${t}</p></article>`}).join('');
@@ -60,16 +60,6 @@ const study=studyData[p.id],quiz=study.quiz;$('takeaways').innerHTML=study.takea
 const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
 const motionButton=$('motion-toggle');if(reducedMotion.matches){motionButton.textContent='Motion reduced';motionButton.disabled=true;motionButton.setAttribute('aria-pressed','true')}
 motionButton.addEventListener('click',()=>{const paused=document.body.classList.toggle('motion-paused');motionButton.setAttribute('aria-pressed',String(paused));motionButton.textContent=paused?'Resume motion':'Pause motion';if(paused)document.querySelectorAll('main>section,.hero-image').forEach(section=>section.classList.add('in-view'))});
-if(!reducedMotion.matches){
-  document.body.classList.add('motion-ready');
-  const hero=document.querySelector('.explore-hero');let frame;
-  const setView=(x,y)=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{hero.style.setProperty('--look-x',`${x}deg`);hero.style.setProperty('--look-y',`${y}deg`)})};
-  hero.addEventListener('pointermove',event=>{const box=hero.getBoundingClientRect();setView(((event.clientY-box.top)/box.height-.5)*-8,((event.clientX-box.left)/box.width-.5)*10)});
-  hero.addEventListener('pointerleave',()=>setView(0,0));
-  addEventListener('scroll',()=>{const depth=Math.min(1,scrollY/Math.max(hero.offsetHeight,1));hero.style.setProperty('--scroll-z',`${Math.round(depth*-90)}px`)},{passive:true});
-  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');observer.unobserve(entry.target)}}),{threshold:.08,rootMargin:'0px 0px -8%'});
-  document.querySelectorAll('main>section,.hero-image').forEach(section=>observer.observe(section));
-}
 const acts=[...document.querySelectorAll('.story-act')];const actObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){const act=acts.indexOf(entry.target)+1;$('time-now').textContent=`${p.name} · Act ${act} of ${acts.length}`}}),{rootMargin:'-35% 0px -55%',threshold:0});acts.forEach(act=>actObserver.observe(act));
 if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js');
-document.querySelectorAll('.period-nav a,.time-rail a').forEach(link=>link.addEventListener('click',event=>{if(reducedMotion.matches)return;event.preventDefault();document.body.classList.add('era-leaving');setTimeout(()=>location.href=link.href,260)}));
+document.querySelectorAll('.period-nav a,.time-rail a').forEach(link=>link.addEventListener('click',event=>{if(reducedMotion.matches||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;event.preventDefault();document.body.classList.add('era-leaving');setTimeout(()=>location.href=link.href,260)}));

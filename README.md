@@ -54,8 +54,12 @@ All internal assets use relative paths, so the site works at both a user/organiz
 - Local, privacy-safe world maps showing representative centers and wider zones of influence or exchange
 - Architecture, furniture, decorative design, and graphic-design context
 - Responsive layout and reduced-motion support
-- Twelve individually art-directed explorer themes, each using the visual language of its period while sharing an accessible content system
-- A navigable time rail, period-specific 3D hero portals, pointer parallax, and scroll-depth transitions with reduced-motion fallbacks
+- Twelve distinct chapter compositions, from illuminated manuscript and measured folio to illustrated journal and experimental publication
+- Twelve generated architectural surrounds, from cave mouths and carved portals to garden arbors and experimental pavilions; image-based chapter entrances and homepage previews
+- An artwork-led opening, chapter contents, numbered time rail, and accessible mobile period selector
+- Locally hosted, licensed typography and responsive layouts with reduced-motion support
+- A visual homepage index previewing all twelve chapter designs
+- Keyboard-operable teaching studies for perspective, composition, scale, color, and viewing context
 - A period-specific eight-act narrative that moves from historical setting and intellectual catalyst through visual breakthroughs, makers, cultural consequences, legacy, and transition
 - Era-level museum and heritage sources, reflection prompts, a public glossary, accessible map text, and a visible motion control
 - Explicit source, medium, location, dimensions where available, and two close-looking prompts for every featured work
@@ -95,3 +99,11 @@ Never commit credentials, private keys, personal information, or environment fil
 - `scripts/fetch-open-art.mjs` rebuilds the licensed-image candidate records and can download verified reproductions for offline use.
 
 Run `sh scripts/validate.sh` before publishing. The same validation runs automatically through GitHub Actions.
+
+## Design and browser checks
+
+`js/art-direction.js` describes each chapter’s visual interpretation and featured artwork. `js/period-experience.js` adds its opening composition and interactive teaching study; `css/explore.css` carries each visual language through the full chapter. Keep artwork attribution and interpretive-study labels visible when changing images. The homepage index is static HTML and remains navigable without JavaScript.
+
+`css/architecture.css` builds the chapter entrances from the twelve transparent WebP illustrations in `assets/architecture/`. These AI-generated architectural studies are labeled as imagined settings. On desktop the structures surround live text and artwork; on phones they appear above the reading area. The homepage loads chapter-preview images lazily. The service worker caches images as they are visited instead of downloading the entire image set at install time.
+
+The optional browser smoke check requires Playwright and Chromium (both supplied in the prepared cloud environment). Start the Python server above, then run `node scripts/smoke-browser.cjs`. Set `SITE_URL` or `CHROMIUM_PATH` when using a different local server or browser binary. It checks all chapters, mobile layouts, visual-study controls, viewing images, quiz feedback, saved progress, navigation, and offline reading.
