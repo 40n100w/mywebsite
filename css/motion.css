@@ -1,0 +1,83 @@
+/* Moving atmosphere sits behind live content and never changes the artwork itself. */
+.motion-scene { --depth-y: 0px; --light-x: 0px; --light-y: 0px; }
+.hero.motion-scene { position: relative; isolation: isolate; overflow: clip; }
+.era-atmosphere { position: absolute; inset: 0; z-index: -2; overflow: clip; pointer-events: none; contain: paint; mask: linear-gradient(#000 35%, transparent 100%); }
+.atmosphere-light, .atmosphere-echo { display: block; position: absolute; inset: -8%; opacity: .5; transform-origin: center; }
+.atmosphere-light { background: var(--light-field); }
+.atmosphere-echo { background: var(--echo-field); opacity: .35; }
+.motion-enabled .era-atmosphere { translate: var(--light-x) var(--light-y); }
+.motion-enabled .architectural-surround { translate: 0 var(--depth-y); }
+.motion-enabled .atmosphere-light { animation: var(--light-motion, passing-light) var(--light-duration, 22s) ease-in-out infinite alternate; }
+.motion-enabled .atmosphere-echo { animation: var(--echo-motion, passing-light) var(--echo-duration, 28s) ease-in-out -9s infinite alternate-reverse; }
+.motion-enabled .motion-scene:not(.scene-visible) .era-atmosphere *,
+.motion-enabled.motion-suspended .era-atmosphere * { animation-play-state: paused; }
+
+[data-atmosphere='home'] { --light-field: radial-gradient(ellipse at 85% 45%, #e8c77a66, transparent 55%); --echo-field: radial-gradient(ellipse at 5% 65%, #94acb642, transparent 45%); }
+[data-atmosphere='prehistoric'] { --light-field: radial-gradient(ellipse at 10% 100%, #f58d25a6, transparent 65%); --echo-field: radial-gradient(ellipse at 100% 65%, #db5a1e66, transparent 60%); --light-motion: firelight; --light-duration: 8s; --echo-duration: 11s; }
+[data-atmosphere='ancient'] { --light-field: linear-gradient(115deg, transparent 35%, #ffe9a7a6 47%, #fffae780 51%, transparent 65%); --echo-field: radial-gradient(ellipse at 0 0, #b77b1733, transparent 60%); --light-duration: 26s; }
+[data-atmosphere='medieval'] { --light-field: conic-gradient(from 150deg at 75% 0, transparent 0deg, #b434471c 9deg, #b4344752 14deg, transparent 24deg, #be9b2066 29deg, transparent 38deg, #315e9447 45deg, transparent 59deg); --echo-field: radial-gradient(ellipse at 10% 80%, #375cae33, transparent 50%); --light-motion: stained-light; --light-duration: 24s; }
+[data-atmosphere='renaissance'] { --light-field: linear-gradient(120deg, transparent 25%, #fffbdf99 40%, transparent 62%); --echo-field: linear-gradient(90deg, #9c69331a, transparent 45%, #e0af3529); --light-duration: 24s; }
+[data-atmosphere='baroque'] { --light-field: conic-gradient(from 205deg at 100% 0, transparent 0deg, #edb95d73 12deg, #fff2be99 19deg, transparent 29deg); --echo-field: radial-gradient(ellipse at 0 70%, #9e3d3d66, transparent 65%); --light-motion: theatrical-light; --light-duration: 18s; }
+[data-atmosphere='neoclassicism'] { --light-field: linear-gradient(100deg, transparent 25%, #ffffff80 50%, transparent 75%); --echo-field: none; --light-motion: measured-light; --light-duration: 28s; }
+[data-atmosphere='romanticism'] { --light-field: radial-gradient(ellipse at 20% 90%, #d1e6e29c, transparent 60%); --echo-field: radial-gradient(ellipse at 100% 65%, #ccdadc80, transparent 55%); --light-motion: drifting-mist; --echo-motion: drifting-mist; --light-duration: 24s; --echo-duration: 32s; }
+[data-atmosphere='realism'] { --light-field: linear-gradient(135deg, #fff2cf66, transparent 60%); --echo-field: none; --light-motion: measured-light; --light-duration: 30s; }
+[data-atmosphere='impressionism'] { --light-field: radial-gradient(ellipse at 20% 10%, #fff4a8a6, transparent 45%), radial-gradient(ellipse at 75% 75%, #b7ceaa80, transparent 50%); --echo-field: radial-gradient(ellipse at 90% 15%, #c6b6df99, transparent 50%); --light-motion: garden-light; --light-duration: 17s; }
+[data-atmosphere='post-impressionism'] { --light-field: repeating-conic-gradient(from 15deg at 15% 40%, transparent 0deg 18deg, #e5a02b29 20deg 32deg, transparent 35deg 55deg); --echo-field: radial-gradient(ellipse at 90% 80%, #31588a4d, transparent 60%); --light-motion: brush-current; --light-duration: 20s; }
+[data-atmosphere='modernism'] { --light-field: linear-gradient(90deg, #bd40331c 0 18%, transparent 18% 85%, #e8bc3966 85%); --echo-field: linear-gradient(0deg, transparent 25%, #285b8e26 25% 36%, transparent 36%); --light-motion: moving-planes; --echo-motion: moving-planes; --light-duration: 18s; --echo-duration: 24s; }
+[data-atmosphere='contemporary'] { --light-field: conic-gradient(from 60deg at 80% 40%, transparent, #aab7e866, transparent, #ebaac452, transparent, #a9d6bc66, transparent); --echo-field: radial-gradient(ellipse at 0 80%, #ffffffa6, transparent 60%); --light-motion: spectral-light; --light-duration: 22s; }
+
+.atmosphere-motes { position: absolute; inset: 0; }
+.atmosphere-motes i { position: absolute; left: calc(9% + var(--mote) * 17%); bottom: 10%; width: 3px; height: 3px; border-radius: 50%; background: #ffe6a7; opacity: 0; }
+.motion-enabled .atmosphere-motes i { animation: rising-mote 14s calc(var(--mote) * -2.1s) linear infinite; }
+[data-atmosphere='ancient'] .atmosphere-motes i { background: #ad762b; width: 2px; height: 2px; }
+[data-atmosphere='impressionism'] .atmosphere-motes i { background: #b17a9b; width: 5px; height: 3px; border-radius: 70% 0; }
+
+@keyframes firelight { 0%,100% { opacity: .45; transform: scale(1); } 35% { opacity: .8; transform: scale(1.06) translate(1%, -1%); } 70% { opacity: .6; transform: scale(1.03) translate(-1%, 1%); } }
+@keyframes passing-light { from { transform: translate(-5%, -2%); opacity: .35; } to { transform: translate(5%, 2%); opacity: .7; } }
+@keyframes stained-light { from { transform: rotate(-6deg) translate(-2%, 0); opacity: .4; } to { transform: rotate(7deg) translate(2%, 3%); opacity: .75; } }
+@keyframes theatrical-light { from { transform: rotate(-8deg); opacity: .4; } to { transform: rotate(9deg); opacity: .8; } }
+@keyframes measured-light { from { opacity: .3; transform: translateX(-1%); } to { opacity: .55; transform: translateX(1%); } }
+@keyframes drifting-mist { from { transform: translate(-8%, 3%); opacity: .3; } to { transform: translate(8%, -3%); opacity: .65; } }
+@keyframes garden-light { from { transform: translate(-3%, -2%) rotate(-4deg); opacity: .45; } to { transform: translate(4%, 3%) rotate(5deg); opacity: .8; } }
+@keyframes brush-current { from { transform: rotate(-4deg) scale(1); opacity: .35; } to { transform: rotate(5deg) scale(1.04); opacity: .7; } }
+@keyframes moving-planes { from { transform: translate(-18px, 8px); } to { transform: translate(18px, -8px); } }
+@keyframes spectral-light { from { transform: rotate(-10deg) scale(1); opacity: .4; } to { transform: rotate(10deg) scale(1.05); opacity: .7; } }
+@keyframes rising-mote { 0% { transform: translate(0, 0); opacity: 0; } 20% { opacity: .6; } 80% { opacity: .35; } 100% { transform: translate(20px, -220px); opacity: 0; } }
+
+.home-motion { min-height: 44px; border: 1px solid #292d2950; background: transparent; padding: .6rem .8rem; font: .7rem var(--mono); }
+.home-motion:disabled { cursor: default; }
+html.motion-paused { scroll-behavior: auto; view-transition-name: none; }
+body.motion-paused *, body.motion-paused *::before, body.motion-paused *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .motion-enabled .chapter-card .card-art img:not(.card-architecture) { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+  .motion-enabled .chapter-card:hover .card-art img:not(.card-architecture) { transform: translateY(-5px); }
+  .motion-enabled .cover-piece:hover img { transform: translateY(-4px); }
+  .motion-enabled .down .arrow-icon, .motion-enabled .begin span { transition: transform .25s; }
+  .motion-enabled .down:hover .arrow-icon, .motion-enabled .begin:hover span { transform: translateY(3px); }
+}
+@media (max-width: 760px) {
+  .site-header { gap: .5rem; }
+  .site-header .brand { gap: .4rem; font-size: .65rem; }
+  .site-header .brand svg { width: 24px; height: 24px; }
+  .site-header .menu-toggle { padding-inline: .3rem; font-size: .7rem; }
+  .site-header .menu-toggle span { padding-left: .4rem; }
+  .home-motion { max-width: 64px; padding: .3rem .45rem; font-size: .65rem; line-height: 1.4; }
+  .motion-enabled .hero-image-button::before { translate: 0 var(--depth-y); }
+  .era-atmosphere { bottom: auto; height: min(620px, 80vh); }
+  .atmosphere-motes i:nth-child(n+4) { display: none; }
+  .atmosphere-light, .atmosphere-echo { inset: -5%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .era-atmosphere { display: none; }
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+/* Browsers without document transitions keep ordinary link navigation. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root) { animation: chapter-out 160ms ease-out both; }
+  ::view-transition-new(root) { animation: chapter-in 240ms ease-in both; }
+}
+@keyframes chapter-out { to { opacity: 0; } }
+@keyframes chapter-in { from { opacity: 0; } }
+@media (forced-colors: active) { .era-atmosphere, .hero-image-button::before { display: none; } }

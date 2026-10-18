@@ -1,0 +1,100 @@
+/* Motion lifecycle and navigation checks, with real animation enabled. */
+const assert = require('node:assert/strict');
+const {chromium} = require('playwright');
+const base = process.env.SITE_URL || 'http://127.0.0.1:8000';
+const eras = ['prehistoric','ancient','medieval','renaissance','baroque','neoclassicism','romanticism','realism','impressionism','post-impressionism','modernism','contemporary'];
+
+(async () => {
+  const browser = await chromium.launch({executablePath:process.env.CHROMIUM_PATH || '/usr/bin/chromium', args:['--no-sandbox']});
+  try {
+    const context = await browser.newContext({viewport:{width:390,height:844}, isMobile:true, hasTouch:true, reducedMotion:'no-preference', serviceWorkers:'block'});
+    await context.addInitScript(() => {
+      window.motionFrameRequests = 0;
+      const request = window.requestAnimationFrame;
+      window.requestAnimationFrame = callback => { window.motionFrameRequests++; return request(callback); };
+    });
+    const page = await context.newPage();
+    const errors = [];
+    page.on('pageerror', error => errors.push(error.message));
+    page.on('response', response => { if(response.status() >= 400) errors.push(`${response.status()}: ${response.url()}`); });
+    for (const era of ['home', ...eras]) {
+      await page.goto(`${base}/${era === 'home' ? '' : `explore.html?era=${era}`}`);
+      await page.waitForFunction(() => document.querySelector('.scene-visible'));
+      assert(await page.locator('.era-atmosphere').evaluate(el => el.getAttribute('aria-hidden') === 'true'));
+      await page.waitForFunction(() => document.querySelector('.atmosphere-light').getAnimations().some(a => a.currentTime > 50 && a.playState === 'running'));
+      const before = await page.locator('.atmosphere-light').evaluate(el => getComputedStyle(el).transform);
+      await page.waitForFunction(previous => getComputedStyle(document.querySelector('.atmosphere-light')).transform !== previous, before);
+      assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${era}: no animation overflow`);
+      await page.locator('#motion-toggle').tap();
+      assert.equal(await page.locator('#motion-toggle').textContent(), 'Resume motion');
+      assert.equal(await page.evaluate(() => document.getAnimations().filter(a => a.playState === 'running').length), 0, `${era}: pause stops CSS and JS animation`);
+      await page.locator('#motion-toggle').tap();
+    }
+    console.log('Passed live movement and pause/resume for the home and all 12 periods.');
+    await page.goto(`${base}/explore.html?era=medieval`);
+    await page.waitForFunction(() => document.querySelector('.scene-visible'));
+    await page.locator('#synthesis').scrollIntoViewIfNeeded();
+    await page.waitForFunction(() => !document.querySelector('.scene-visible'));
+    assert(await page.locator('.era-atmosphere').evaluate(el => el.getAnimations({subtree:true}).every(a => a.playState === 'paused')), 'Off-screen ambient animations sleep');
+    await page.evaluate(() => scrollTo({top:0, behavior:'instant'}));
+    await page.waitForFunction(() => document.querySelector('.scene-visible'));
+    await page.locator('[data-sheet=mobile-contents]').tap();
+    assert(await page.locator('.era-atmosphere').evaluate(el => el.getAnimations({subtree:true}).every(a => a.playState === 'paused')), 'Background animation sleeps behind a dialog');
+    await page.keyboard.press('Escape');
+    await page.waitForFunction(() => document.querySelector('.atmosphere-light').getAnimations().some(a => a.playState === 'running'));
+    await page.waitForFunction(() => document.getAnimations().every(a => a.effect.getTiming().iterations === Infinity));
+    const frames = await page.evaluate(() => window.motionFrameRequests);
+    await page.waitForTimeout(300);
+    assert.equal(await page.evaluate(() => window.motionFrameRequests), frames, 'No idle JavaScript animation loop');
+    await page.locator('#motion-toggle').tap();
+    await page.reload();
+    assert.equal(await page.locator('#motion-toggle').textContent(), 'Resume motion', 'Pause survives reload');
+    await page.locator('header .brand').tap();
+    await page.waitForURL(`${base}/`);
+    assert.equal(await page.locator('#motion-toggle').textContent(), 'Resume motion', 'Pause follows readers home');
+    await page.emulateMedia({reducedMotion:'reduce'});
+    await page.waitForFunction(() => document.getElementById('motion-toggle').disabled);
+    assert(await page.locator('#motion-toggle').isDisabled());
+    assert.equal(await page.evaluate(() => document.getAnimations().length), 0);
+    await page.emulateMedia({reducedMotion:'no-preference'});
+    await page.waitForFunction(() => !document.getElementById('motion-toggle').disabled);
+    assert.equal(await page.locator('#motion-toggle').textContent(), 'Resume motion', 'OS preference changes preserve manual pause');
+    await page.locator('#motion-toggle').tap();
+    await page.emulateMedia({reducedMotion:'reduce'});
+    await page.waitForFunction(() => document.getElementById('motion-toggle').disabled);
+    await page.reload();
+    assert.equal(await page.evaluate(() => document.getAnimations().length), 0, 'Reduced motion has no entrance animation');
+    await page.emulateMedia({reducedMotion:'no-preference'});
+    await page.waitForFunction(() => !document.getElementById('motion-toggle').disabled);
+    await page.waitForFunction(() => document.querySelector('.atmosphere-light').getAnimations().some(a => a.playState === 'running'));
+    await page.locator('.cover-medieval').tap();
+    await page.waitForURL('**/explore.html?era=medieval');
+    await page.locator('.mobile-dock > a').tap();
+    await page.waitForURL('**/explore.html?era=renaissance');
+    await page.goBack();
+    await page.waitForURL('**/explore.html?era=medieval');
+    assert(await page.locator('h1').isVisible(), 'Back navigation restores the chapter');
+    assert(await page.locator('.hero-image-button').isEnabled());
+    assert.deepEqual(errors, [], 'No motion runtime or network errors');
+    console.log('Passed off-screen suspension, dialog suspension, idle scheduling, persisted preference, live OS preference changes, and back navigation.');
+    await context.close();
+
+    const desktop = await browser.newContext({viewport:{width:1440,height:1000}, reducedMotion:'no-preference', serviceWorkers:'block'});
+    const pointerPage = await desktop.newPage();
+    await pointerPage.goto(`${base}/explore.html?era=baroque`);
+    await pointerPage.mouse.move(1100,450);
+    await pointerPage.waitForFunction(() => parseFloat(document.querySelector('.motion-scene').style.getPropertyValue('--light-x')) > 0);
+    await pointerPage.locator('#motion-toggle').click();
+    await pointerPage.mouse.move(300,500);
+    assert.equal(await pointerPage.locator('.motion-scene').evaluate(el => el.style.getPropertyValue('--light-x')), '', 'Paused scenes ignore pointer motion');
+    await desktop.close();
+    const unavailable = await browser.newContext({serviceWorkers:'block'});
+    await unavailable.addInitScript(() => { Object.defineProperty(window, 'localStorage', {get() { throw new Error('Storage unavailable'); }}); });
+    const privatePage = await unavailable.newPage();
+    await privatePage.goto(base);
+    await privatePage.locator('#motion-toggle').click();
+    assert.equal(await privatePage.locator('#motion-toggle').textContent(), 'Resume motion');
+    await unavailable.close();
+    console.log('Passed desktop pointer response and motion controls without storage.');
+  } finally { await browser.close(); }
+})().catch(error => { console.error(error); process.exitCode = 1; });

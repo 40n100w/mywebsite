@@ -56,7 +56,7 @@ All internal assets use relative paths, so the site works at both a user/organiz
 - Responsive layout and reduced-motion support
 - Twelve distinct chapter compositions, from illuminated manuscript and measured folio to illustrated journal and experimental publication
 - Twelve generated architectural surrounds, from cave mouths and carved portals to garden arbors and experimental pavilions; image-based chapter entrances and homepage previews
-- An artwork-led opening, chapter contents, numbered time rail, and accessible mobile period selector
+- An artwork-led opening, chapter contents, numbered time rail, and bottom navigation for mobile periods and contents
 - Locally hosted, licensed typography and responsive layouts with reduced-motion support
 - A visual homepage index previewing all twelve chapter designs
 - Keyboard-operable teaching studies for perspective, composition, scale, color, and viewing context
@@ -104,6 +104,16 @@ Run `sh scripts/validate.sh` before publishing. The same validation runs automat
 
 `js/art-direction.js` describes each chapter’s visual interpretation and featured artwork. `js/period-experience.js` adds its opening composition and interactive teaching study; `css/explore.css` carries each visual language through the full chapter. Keep artwork attribution and interpretive-study labels visible when changing images. The homepage index is static HTML and remains navigable without JavaScript.
 
-`css/architecture.css` builds the chapter entrances from the twelve transparent WebP illustrations in `assets/architecture/`. These AI-generated architectural studies are labeled as imagined settings. On desktop the structures surround live text and artwork; on phones they appear above the reading area. The homepage loads chapter-preview images lazily. The service worker caches images as they are visited instead of downloading the entire image set at install time.
+`css/architecture.css` builds the chapter entrances from the twelve transparent WebP illustrations in `assets/architecture/`. These AI-generated architectural studies are labeled as imagined settings. On desktop the structures surround live text and artwork; on phones they frame the artwork directly beneath the chapter title. The homepage loads chapter-preview images lazily. The service worker caches images as they are visited instead of downloading the entire image set at install time.
 
 The optional browser smoke check requires Playwright and Chromium (both supplied in the prepared cloud environment). Start the Python server above, then run `node scripts/smoke-browser.cjs`. Set `SITE_URL` or `CHROMIUM_PATH` when using a different local server or browser binary. It checks all chapters, mobile layouts, visual-study controls, viewing images, quiz feedback, saved progress, navigation, and offline reading.
+
+`css/mobile.css` provides the phone reading layout: compact period previews, 16px body text, native bottom-sheet menus, expandable image/object records, and a full-screen image viewer with zoom. `js/mobile.js` preserves keyboard focus, real anchor links, and desktop navigation when the viewport changes. Run `node scripts/smoke-mobile.cjs` for touch journeys at 320, 390, and 430px, image delivery, viewer zoom, and reference-page checks. Browser checks use Chromium emulation; physical iOS/Safari testing remains a separate device check.
+
+Inline artworks use responsive WebP derivatives in `assets/responsive/`; the viewer keeps the full original files. To regenerate them after changing source images, install ImageMagick 7 and run `node scripts/build-responsive-images.mjs`. This updates the image manifest/helpers, mobile architectural CSS, and static homepage image attributes. The derivatives are committed, so serving or deploying the site still requires no build step.
+
+`js/motion.js` and `css/motion.css` add period-specific atmosphere, one-time artwork and heading reveals, mobile dialog entrances, and native page fades where supported. Firelight, stained light, theatrical illumination, mist, garden light, and geometric planes follow each chapter’s visual language; Neoclassicism and Realism use restrained daylight. The decorative layers sit behind the content, and the artwork remains unchanged.
+
+The motion control appears on the homepage and chapters. Its preference stays in local storage and follows navigation; system reduced-motion preferences take priority and update immediately. Ambient animation pauses outside the viewport, behind dialogs, and when the tab is hidden. Pointer response is limited to mouse devices, phone depth movement is capped at six pixels, and JavaScript schedules frames only for input events. No animation library, video assets, additional image downloads, or continuous JavaScript animation loop is used.
+
+Run `node scripts/smoke-motion.cjs` to verify actual movement, pause/resume, off-screen and dialog suspension, preference persistence, live reduced-motion changes, browser back navigation, desktop pointer response, and controls when storage is unavailable.

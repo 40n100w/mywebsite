@@ -6,9 +6,9 @@
   const get = id => document.getElementById(id);
   // Generated architectural studies frame live content; they are not historical evidence.
   const surroundPath = `assets/architecture/${era}.webp`;
-  document.querySelector('.explore-hero').insertAdjacentHTML('afterbegin', `<div class="architectural-surround" aria-hidden="true"><img src="${surroundPath}" alt="" width="1536" height="1024" decoding="async" fetchpriority="high"></div>`);
+  document.querySelector('.explore-hero').insertAdjacentHTML('afterbegin', `<div class="architectural-surround" aria-hidden="true"></div>`);
   document.querySelector('.hero-colophon').insertAdjacentHTML('afterend', '<p class="surround-credit">Architectural surround · AI-generated interpretation</p>');
-  document.querySelector('.design-note').insertAdjacentHTML('afterbegin', `<figure class="architecture-study"><img src="${surroundPath}" alt="${design.structure}" width="1536" height="1024" loading="lazy" decoding="async"><figcaption>AI-generated architectural study · An imagined setting, not a historic building</figcaption></figure>`);
+  document.querySelector('.design-note').insertAdjacentHTML('afterbegin', `<figure class="architecture-study"><img ${window.responsiveImageAttributes(surroundPath, "(max-width: 760px) calc(100vw - 40px), 40vw")} alt="${design.structure}" loading="lazy" decoding="async"><figcaption>AI-generated architectural study · An imagined setting, not a historic building</figcaption></figure>`);
   const headingParts = {
     prehistoric: ['Prehistoric', 'Art'], ancient: ['Ancient', 'Art'], medieval: ['Medieval', 'Art'],
     renaissance: ['The', 'Renaissance'], 'post-impressionism': ['Post-', 'Impressionism'],
@@ -29,7 +29,7 @@
   get('design-note').textContent = design.note;
   get('hero-artwork').innerHTML = `
     <button class="hero-image-button" type="button" aria-label="Open a full view: ${artwork.title}">
-      <img src="${artwork.src}" alt="${artwork.alt}" fetchpriority="high" decoding="async">
+      <img ${window.responsiveImageAttributes(artwork.src, "(max-width: 760px) 60vw, 36vw")} alt="${artwork.alt}" fetchpriority="high" decoding="async">
     </button>
     <figcaption><b>${artwork.title}</b><span>${artwork.type}</span><span class="hero-credit">${artwork.credit} · Select image to view in full</span></figcaption>`;
   get('hero-artwork').querySelector('button').addEventListener('click', () => {
@@ -47,12 +47,6 @@
   }));
   get('era-select').addEventListener('change', event => {
     location.href = `explore.html?era=${encodeURIComponent(event.target.value)}`;
-  });
-
-  // Intrinsic dimensions reserve space before lazy artwork images arrive.
-  document.querySelectorAll('img[src]').forEach(img => {
-    const size = window.artworkDimensions[img.getAttribute('src')];
-    if (size) { img.width = size[0]; img.height = size[1]; }
   });
 
   const svg = content => `<svg viewBox="0 0 600 400" role="img" aria-label="${design.lab}: an illustrative teaching diagram" xmlns="http://www.w3.org/2000/svg">${content}</svg>`;

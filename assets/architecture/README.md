@@ -2,7 +2,7 @@
 
 These twelve illustrations were generated with OpenAI image generation on 2026-10-18 for Art Compass. They are imagined architectural studies, not documentary images, reconstructions, or representations of specific historic buildings. The source PNGs were encoded as WebP at quality 85, preserving their 1536 × 1024 dimensions and transparency.
 
-The shared generation brief requested a front-facing architectural portal, materially detailed surfaces, a large transparent opening for live page content, structural elements at the edges, and no text, people, or artworks. Desktop pages use CSS border-image slicing so the columns and arch define a clear reading area; mobile pages show the whole illustration at its original proportions. Image generation supplied all depicted structures and materials.
+The shared generation brief requested a front-facing architectural portal, materially detailed surfaces, a large transparent opening for live page content, structural elements at the edges, and no text, people, or artworks. Desktop pages use CSS border-image slicing so the columns and arch define a clear reading area; phone pages use a compact surround around the opening artwork. Image generation supplied all depicted structures and materials.
 
 | File | Intended reference |
 | --- | --- |

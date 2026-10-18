@@ -88,7 +88,8 @@ const eras = ['prehistoric','ancient','medieval','renaissance','baroque','neocla
     }
     assert.deepEqual(errors, [], 'Browser runtime/network errors');
     await page.goto(`${base}/explore.html?era=renaissance`);
-    await page.locator('#era-select').selectOption('baroque');
+    await page.locator('[data-sheet=mobile-periods]').click();
+    await page.locator('#mobile-periods a[href="explore.html?era=baroque"]').click();
     await page.waitForURL('**/explore.html?era=baroque');
     assert.equal(await page.locator('body').getAttribute('data-era'), 'baroque');
     await context.close();
