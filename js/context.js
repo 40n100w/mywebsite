@@ -1,98 +1,206 @@
 window.periodContext = {
-  prehistoric: [
-    ['History','Human communities survived through hunting, gathering, migration, and—later—settled farming. Images preserved knowledge before writing existed.','Shared images turned experience into durable memory. They helped communities transmit stories, recognize places and animals, and imagine a past larger than one lifetime.'],
-    ['Religion & belief','Life depended on forces people could not fully control. Caves, burials, animals, fertility, and the sky acquired ritual or spiritual importance.','Making an image could transform an animal, body, or place into a focus for ceremony. Art gave unseen relationships a visible, repeatable form.'],
-    ['Culture & society','Knowledge passed through speech, demonstration, and communal ritual. Identity depended on kinship and participation rather than institutions or written law.','Repeated signs and objects created shared visual languages. Making and viewing them reinforced belonging and distinguished one community’s practices from another’s.'],
-    ['Economics','Materials came directly from the environment, while food production determined mobility, settlement, and available time for specialized making.','Decorated tools, vessels, ornaments, and monuments gave practical materials social value. Rare pigments and skilled objects also became markers of exchange and status.'],
-    ['Power','Authority was local and probably tied to age, skill, ritual knowledge, or control of resources rather than centralized government.','Those who organized ceremonies, monuments, or specialized making could shape collective memory and demonstrate leadership without written proclamations.'],
-    ['Technology & materials','Stone tools, fire, mineral pigments, carving, weaving, pottery, and large-scale stone moving expanded what people could make.','Art encouraged closer control of pigments, surfaces, fibers, clay, and construction. Symbolic goals pushed technical experimentation beyond immediate survival.']
+  "prehistoric": [
+    [
+      "What survives",
+      "Stone, bone, and protected cave surfaces survive more readily than many fibers, skins, and wooden objects.",
+      "The surviving record favors certain materials. It cannot tell us how much of everyday visual culture has disappeared."
+    ],
+    [
+      "Building together",
+      "Moving and arranging Stonehenge’s stones required coordinated work over a long period.",
+      "The monument offers evidence of planning and collective effort. The precise organization and beliefs of its builders remain matters of interpretation."
+    ],
+    [
+      "Objects on the move",
+      "People carried materials and portable objects across landscapes. A small carved figure invites a different encounter from a cave wall.",
+      "Material analysis, findspots, and traces of use can support interpretations of movement or handling; resemblance alone cannot establish a shared ritual."
+    ]
   ],
-  ancient: [
-    ['History','Agriculture produced cities, writing, states, and empires from Egypt and Mesopotamia to Greece and Rome. Institutions needed durable public identities.','Monuments made rulers and victories appear timeless. Later societies used ancient images and buildings to define law, citizenship, empire, and “classical” authority.'],
-    ['Religion & belief','Polytheistic religions connected divine order with kingship, civic life, nature, and the afterlife. Temples and tombs mediated between human and sacred worlds.','Statues and sacred architecture gave gods a public presence. Canonical forms standardized ritual and helped religious ideas travel across regions and empires.'],
-    ['Culture & society','Citizenship, class, gender, enslavement, and ethnicity structured daily life. Public spaces staged who belonged and who held prestige.','Portraits, theaters, temples, and civic sculpture modeled ideal bodies and behavior. They also preserved unequal social systems by presenting hierarchy as natural order.'],
-    ['Economics','Agricultural surplus, taxation, slavery, conquest, and long-distance trade funded specialized workshops and enormous building programs.','Luxury objects advertised wealth and stimulated trade in stone, metal, glass, and pigment. Standard forms helped workshops reproduce desirable goods across empires.'],
-    ['Power','Pharaohs, kings, city-states, and emperors joined political authority to divine favor, military success, and civic tradition.','Scale, idealization, inscriptions, and controlled public placement turned art into governance. Images allowed a ruler’s authority to appear far beyond their physical presence.'],
-    ['Technology & materials','Writing, mathematics, bronze and iron work, stone engineering, arches, concrete, roads, and shipping enabled ambitious art and architecture.','Demand for temples, statues, and infrastructure advanced surveying, quarrying, casting, vaulting, and standardized production—techniques that reshaped entire cities.']
+  "ancient": [
+    [
+      "The royal workshop",
+      "Nefertiti’s bust was found in a sculptor’s workshop at Amarna, within a royal environment.",
+      "Its balanced form belongs to the practice of constructing royal images. We should be cautious about treating this particular bust as a public monument."
+    ],
+    [
+      "A civic sanctuary",
+      "The Parthenon joined worship of Athena with the resources and ambitions of fifth-century BCE Athens.",
+      "Architecture and sculpture made civic identity visible. That identity existed alongside imperial power, enslavement, and exclusions from citizenship."
+    ],
+    [
+      "The imperial body",
+      "Roman imperial portraits could circulate recognizable models of the ruler across distant settings.",
+      "The Prima Porta statue combines an ideal body with military and sacred imagery. Its cuirass presents the return of Roman standards within a larger claim to order."
+    ]
   ],
-  medieval: [
-    ['History','After western Rome fragmented, courts, monasteries, towns, and regional kingdoms formed overlapping networks. Trade, pilgrimage, invasion, and crusade connected distant cultures.','Manuscripts, textiles, relics, and buildings preserved histories that political borders could not. Their survival strongly shaped later ideas of the medieval past.'],
-    ['Religion & belief','Christianity dominated much of Europe while Jewish, Islamic, Byzantine, and local traditions interacted across regions. Worship organized time, learning, and patronage.','Icons, illuminated books, and cathedrals made theology sensory and memorable. Images taught stories, structured devotion, and turned sacred space into collective experience.'],
-    ['Culture & society','Most people lived in agricultural communities, while monasteries, courts, guilds, and growing towns concentrated literacy and skilled production.','Public worship and visual storytelling created shared cultural reference points. Guild-made objects also elevated craft knowledge and community identity.'],
-    ['Economics','Land, tithes, pilgrimage, urban trade, and guild labor financed long projects. Precious materials often arrived through extensive international networks.','Cathedrals generated employment, pilgrimage traffic, and civic competition. Portable luxury arts moved wealth and techniques between courts, churches, and trading centers.'],
-    ['Power','Church authorities, monarchs, nobles, and cities competed and cooperated. Patronage displayed legitimacy in a world without a single political center.','Crowns, seals, tombs, manuscripts, and churches made authority visible. Art could unite rule with sacred approval or assert a town’s independence and prosperity.'],
-    ['Technology & materials','Parchment, stained glass, embroidery, metalwork, pointed arches, rib vaults, and flying buttresses supported intricate surfaces and soaring buildings.','Ambitious sacred spaces coordinated many crafts and engineering systems. Their solutions transformed construction, urban skylines, and the organization of skilled labor.']
+  "medieval": [
+    [
+      "Making a manuscript",
+      "Preparing vellum, mixing pigments, writing, and decorating a Gospel book required resources and sustained skill.",
+      "The Book of Kells turns reading and looking into an encounter with a richly worked surface. Its ornament belongs to a religious use of the book."
+    ],
+    [
+      "Telling a conquest",
+      "The Bayeux embroidery narrates the events around the Norman conquest of England in 1066.",
+      "Selection, inscription, and sequence frame a political account. The work is evidence of how the conquest was represented, not an unmediated record of events."
+    ],
+    [
+      "Building for worship",
+      "Chartres brought together stonework, sculpture, stained glass, funding, and generations of maintenance.",
+      "The resulting building shaped collective worship and civic identity. Its effect depends on light, movement, and a scale that a screen can only suggest."
+    ]
   ],
-  renaissance: [
-    ['History','Italian city-states grew wealthy as scholars recovered classical texts, Constantinople fell, print expanded, and European exploration altered global exchange.','Renaissance images made classical antiquity a reusable cultural language. They also helped later Europeans define a selective story of modernity and “rebirth.”'],
-    ['Religion & belief','Christian institutions remained major patrons, but humanism encouraged study of nature, antiquity, and individual experience alongside faith.','Sacred figures became physically and emotionally immediate. Artists’ naturalism changed devotional expectations and helped religious stories inhabit believable human space.'],
-    ['Culture & society','Courts, merchants, scholars, and urban workshops valued education, reputation, and individual achievement. Artists increasingly claimed intellectual status.','Portraits elevated individual identity, while prints spread new ideals of beauty, knowledge, and authorship. The celebrated artist emerged as a recognizable cultural figure.'],
-    ['Economics','Banking, Mediterranean commerce, court competition, and workshop systems concentrated wealth and created wider markets for paintings, prints, and luxury goods.','Art converted commercial wealth into prestige. Collecting, commissions, and reproducible prints helped create a market in which style and authorship carried economic value.'],
-    ['Power','Republics, dynasties, popes, and foreign powers competed through diplomacy, war, ceremony, and cultural display.','Palaces, monuments, and portraits made political ambition persuasive. Classical imagery allowed new rulers to borrow the authority of ancient republics and empires.'],
-    ['Technology & materials','Oil painting, linear perspective, anatomy, printing, improved pigments, measurement, and architectural drawing expanded visual control.','Artistic investigation advanced observation, diagramming, printing, and design. Images became tools for science, engineering, navigation, and the circulation of knowledge.']
+  "renaissance": [
+    [
+      "Workshop knowledge",
+      "Artists learned through making, copying, drawing, and collaboration as well as through reading.",
+      "The featured works show different uses of those skills. Leonardo’s tonal modeling and Botticelli’s contour should not be collapsed into one technique."
+    ],
+    [
+      "Household and court culture",
+      "Wealthy patrons supported portraits and mythological subjects alongside religious commissions.",
+      "A work such as The Birth of Venus could connect classical learning with elite display. Subject and setting helped determine how a painting was read."
+    ],
+    [
+      "The civic figure",
+      "Michelangelo’s David came to stand outside Florence’s seat of government rather than in its originally intended cathedral setting.",
+      "Public placement gave the biblical hero a civic role. A work’s meaning can change when its audience and location change."
+    ]
   ],
-  baroque: [
-    ['History','Religious division, global empire, scientific change, and centralized monarchies made seventeenth-century life intensely competitive and unstable.','Baroque spectacle created durable images of courts, churches, conquest, and global encounter. Its theatrical language still shapes public ceremony and mass persuasion.'],
-    ['Religion & belief','Catholic reform promoted emotionally direct devotion, while Protestant regions developed different markets and subjects. Missionary expansion carried European images abroad.','Dramatic light, gesture, and illusion made belief feel immediate. Religious art invited viewers to experience revelation, suffering, and wonder as present events.'],
-    ['Culture & society','Court ceremony, urban festivals, theater, music, and a growing art market turned public life into performance.','Art blurred boundaries between architecture, painting, sculpture, and theater. It trained audiences to expect immersion, motion, and emotional participation.'],
-    ['Economics','Colonial extraction, slavery, trade, and expanding merchant wealth supplied luxury materials and supported both court patronage and open art markets.','Portraits and interiors displayed new wealth; still life pictured global commodities. Art made consumption visible while often concealing the exploitation behind it.'],
-    ['Power','Absolute monarchs and powerful churches used controlled ceremony to centralize authority, while republics promoted civic and commercial identities.','Palaces, avenues, portraits, and public sculpture choreographed how subjects encountered power. Grandeur became an administrative as well as an aesthetic strategy.'],
-    ['Technology & materials','Optics, astronomy, print, advanced stage machinery, large canvases, and complex engineering changed how space and vision could be manipulated.','Illusionistic ceilings, controlled light, and integrated interiors turned technical knowledge into wonder. Their spatial strategies influenced theaters, museums, and urban planning.']
+  "baroque": [
+    [
+      "The chapel encounter",
+      "Caravaggio’s Calling of Saint Matthew was made for a chapel in Rome, where viewers encountered it within a religious setting.",
+      "Directed light and gesture made the painted event forceful in that space. Its persuasive effect belongs to an encounter with a particular audience."
+    ],
+    [
+      "Prestige and close viewing",
+      "Bernini’s David belonged to the collection of Cardinal Scipione Borghese, a major patron of sculpture.",
+      "The twisting body rewards movement around the work and imagines action beyond it. Virtuoso carving also advertised artistic skill and patronal prestige."
+    ],
+    [
+      "Different markets",
+      "Churches and courts were important patrons, but private collecting and commercial markets also shaped seventeenth-century art.",
+      "The dramatic Italian works here do not account for every Baroque subject. Trade and empire connected materials and wealth through unequal systems."
+    ]
   ],
-  neoclassicism: [
-    ['History','Enlightenment debate, archaeological discoveries, revolution, and Napoleon’s empire made Greece and Rome newly urgent political models.','Neoclassical images gave revolutions and new states a visual language. Their symbols still frame courthouses, monuments, currencies, and civic institutions.'],
-    ['Religion & belief','Secular moral philosophy and civic virtue gained prominence, though churches and personal faith remained influential. Antiquity offered alternative moral exemplars.','Art transferred the gravity of sacred painting to civic sacrifice and public ethics. Moral narratives encouraged viewers to judge private choices by collective consequences.'],
-    ['Culture & society','Academies, salons, museums, print culture, and elite travel standardized taste while debates about citizenship exposed deep exclusions.','Clear narratives and classical forms became tools of public education. Women artists and changing audiences also challenged who could produce authoritative history painting.'],
-    ['Economics','Industrial growth and an expanding middle class increased demand for prints, ceramics, furniture, fashion, and public buildings.','Classical motifs moved from elite excavation to mass-produced goods. Design made civic refinement purchasable and linked consumer taste to education and status.'],
-    ['Power','Revolutionaries, republics, and emperors all claimed antiquity. The same visual language could support liberty, discipline, or imperial domination.','Severe geometry and Roman symbols made political programs appear rational and inevitable. Public art helped invent national heroes and rituals of citizenship.'],
-    ['Technology & materials','Archaeology, measured drawing, print reproduction, industrial ceramics, and new building methods circulated accurate ancient forms widely.','Artists and designers translated excavation into pattern books and products. Visual documentation helped archaeology become a systematic modern discipline.']
+  "neoclassicism": [
+    [
+      "Ancient models circulate",
+      "Excavations, printed illustrations, travel, and academies made selected Greek and Roman forms widely available.",
+      "Artists and manufacturers adapted those forms for paintings, monuments, and goods. A modern classical image is a selective reconstruction of antiquity."
+    ],
+    [
+      "Politics can change a reading",
+      "David painted the Oath of the Horatii before the French Revolution, within a system of royal patronage.",
+      "Its emphasis on sacrifice later lent itself to revolutionary readings. Political meaning cannot be inferred from style alone."
+    ],
+    [
+      "Who can make an example?",
+      "History painting carried prestige while women faced unequal access to training and professional opportunities.",
+      "Kauffman’s Cornelia makes a woman’s gesture the center of a moral argument. Its subject and authorship complicate a narrowly masculine account of civic virtue."
+    ]
   ],
-  romanticism: [
-    ['History','Revolution, Napoleonic war, nationalism, industrialization, and colonial expansion destabilized faith in reason and orderly progress.','Romantic images transformed contemporary conflict into memory, trauma, and national myth. They also made personal response a legitimate way to interpret history.'],
-    ['Religion & belief','Institutional religion coexisted with renewed mysticism, folklore, pantheism, and a search for spiritual meaning in nature and imagination.','Landscapes and ruins became sites of contemplation. Art expanded spiritual experience beyond churches and allowed awe, doubt, and solitude to carry sacred weight.'],
-    ['Culture & society','Folklore, individual genius, emotion, the outsider, and the distinctive character of nations challenged universal academic rules.','Artists elevated subjective experience and vernacular traditions. Their model of creative authenticity still shapes literature, music, tourism, and ideas of artistic identity.'],
-    ['Economics','Factories, railways, urban growth, and global commerce changed landscapes and labor while creating new patrons and publishing markets.','Art exposed human costs hidden inside trade and progress. Picturesque landscapes also helped turn nature, ruins, and distant places into consumable experiences.'],
-    ['Power','Empires and nation-states used heroic imagery, while artists also pictured occupation, massacre, revolt, and dispossession from the victim’s perspective.','Emotionally charged images mobilized sympathy and national feeling. They could legitimize liberation movements or romanticize conquest and cultural difference.'],
-    ['Technology & materials','Industrial pigments, lithography, illustrated publishing, steam travel, and improved watercolor made rapid production and wider circulation possible.','Reproductive images created mass audiences for political events and distant landscapes. Artists’ color experiments broadened the expressive possibilities of modern paint.']
+  "romanticism": [
+    [
+      "Remembering violence",
+      "Goya painted The Third of May in 1814, looking back to executions during the French occupation in 1808.",
+      "The painting constructs an encounter with victims and executioners. It should be read as a later representation, not as a direct visual transcript of the event."
+    ],
+    [
+      "The viewer in the landscape",
+      "Friedrich places a figure between the viewer and a partly obscured view.",
+      "The arrangement invites identification while withholding a complete view. The landscape becomes an occasion to consider distance, uncertainty, and human scale."
+    ],
+    [
+      "Trade and its human cost",
+      "Turner’s Slave Ship connects a turbulent seascape with the violence of the Atlantic slave trade.",
+      "Its color can attract before the bodies in the water become legible. Looking closely unsettles the first impression of a beautiful storm."
+    ]
   ],
-  realism: [
-    ['History','The revolutions of 1848, industrial capitalism, urbanization, and expanding journalism made ordinary contemporary conditions impossible to ignore.','Realist art established daily life and social conflict as subjects worthy of serious history. It helped create a visual record of people previously excluded.'],
-    ['Religion & belief','Secular politics and scientific observation challenged inherited authority, while faith remained embedded in rural and domestic life.','Artists redirected moral attention from saints and heroes toward laborers, poverty, and material conditions, making social observation a form of ethical witness.'],
-    ['Culture & society','Class divisions, gendered labor, crowded cities, and rural displacement shaped experience. New publics encountered art through salons, newspapers, and exhibitions.','Large-scale images of workers disrupted academic hierarchies. They forced elite audiences to confront whose lives counted as culturally significant.'],
-    ['Economics','Factories, wage labor, railways, commodity markets, and mechanized agriculture reorganized work and expanded the urban middle class.','Art revealed the bodies and landscapes behind economic production. Independent artists also challenged official systems and helped develop a competitive modern market.'],
-    ['Power','Governments confronted revolution, socialism, censorship, and demands for broader political participation.','Direct images of labor and inequality could appear politically threatening without depicting a specific event. Representation itself became a struggle over public visibility.'],
-    ['Technology & materials','Photography, portable materials, industrial pigments, rail travel, and illustrated journalism altered expectations of accuracy and immediacy.','Painters distinguished observation from mechanical recording, while photography and print adopted Realism’s attention to evidence, labor, and contemporary life.']
+  "realism": [
+    [
+      "Exhibition hierarchies",
+      "Academic traditions often ranked history painting above scenes of ordinary life.",
+      "Courbet gave workers substantial pictorial space. The choice challenged expectations about which subjects deserved serious public attention."
+    ],
+    [
+      "Labor and land",
+      "Gleaning meant collecting grain left after the harvest. Millet places the bending figures close to the viewer.",
+      "The contrast between foreground scarcity and distant abundance makes social difference available to interpretation without turning the scene into a simple diagram."
+    ],
+    [
+      "Observation and professional authority",
+      "Bonheur studied animals closely and worked within a public exhibition culture that offered women unequal opportunities.",
+      "The Horse Fair makes anatomical knowledge and compositional control conspicuous. Its market scene broadens this chapter beyond images of poverty alone."
+    ]
   ],
-  impressionism: [
-    ['History','Paris was rebuilt, war and the Commune disrupted France, and railways connected cities to suburbs, coasts, and new forms of leisure.','Impressionist paintings became a defining memory of modern Paris and middle-class leisure, influencing how later audiences imagine nineteenth-century urban life.'],
-    ['Religion & belief','Public life became increasingly secular in subject and rhythm. Immediate perception often replaced religious or mythological narrative as a source of meaning.','By treating ordinary light and fleeting sensation with seriousness, artists made attentive seeing itself feel valuable—almost a modern form of contemplation.'],
-    ['Culture & society','Boulevards, cafés, theaters, parks, and domestic interiors created new ways of looking, socializing, and negotiating gender in public.','Cropped viewpoints and casual scenes changed visual culture. They taught audiences to see modern life as fragmented, mobile, and shaped by the observer’s position.'],
-    ['Economics','Department stores, dealers, collectors, tourism, and independent exhibitions weakened the official Salon and supported new artistic careers.','Artists and dealers helped create the modern gallery market. A recognizable personal touch became a source of authenticity and commercial distinction.'],
-    ['Power','Urban redesign regulated crowds and displayed state confidence, while recent war and civil violence remained close beneath scenes of leisure.','Views of public space documented who could move freely and who worked behind leisure. Their apparent ease quietly recorded modern social boundaries.'],
-    ['Technology & materials','Portable paint tubes, synthetic pigments, photography, railways, and color science enabled outdoor work, unusual cropping, and rapid studies.','Broken brushwork and optical color changed painting’s purpose from polished description to embodied perception, influencing photography, cinema, and modern design.']
+  "impressionism": [
+    [
+      "Exhibiting independently",
+      "Artists organized eight Impressionist exhibitions between 1874 and 1886, with changing participation.",
+      "These exhibitions offered alternatives to the Salon. They did not create a uniform style or end artists’ dependence on dealers, collectors, and criticism."
+    ],
+    [
+      "Access to modern spaces",
+      "Class and gender shaped who could move through streets, theaters, workplaces, and private rooms.",
+      "Morisot’s domestic scene and Degas’s rehearsal reveal different positions of looking and being looked at. Modern life includes work as well as leisure."
+    ],
+    [
+      "Tools and deliberate choices",
+      "Portable paints, rail travel, photography, and circulating prints were among the resources available to artists.",
+      "These conditions opened possibilities, but they do not explain every brushstroke. Monet’s harbor and Degas’s interior use different methods of composing a view."
+    ]
   ],
-  'post-impressionism': [
-    ['History','Industrial unrest, colonial expansion, urban alienation, and disappointment with naturalism encouraged artists to seek structure, symbolism, or emotional intensity.','Distinctive visual languages made radical individuality central to modern art. Later movements treated these experiments as multiple paths beyond representation.'],
-    ['Religion & belief','Artists explored personal spirituality, symbolism, folk belief, and non-European traditions, often through unequal colonial access and romanticized assumptions.','Color and form became carriers of inner meaning rather than description. Art offered individualized spiritual systems outside established institutions.'],
-    ['Culture & society','Psychology, nightlife, mass entertainment, and growing unease with bourgeois convention encouraged deliberately subjective or systematic approaches.','Artists legitimized personal vision, visible process, and formal experiment. Their strong identities helped create the modern idea of an artist with a signature language.'],
-    ['Economics','Dealers, critics, independent societies, and collectors supported artists outside academies, while colonial trade circulated objects and images.','Recognizable styles became market identities. The dealer-critic system could elevate experimental work before broad public acceptance and reshape artistic careers.'],
-    ['Power','Colonial states and industrial societies generated both new contacts and profound inequalities. Some artists sought escape without understanding the power enabling it.','Art could criticize modern alienation, but it also helped exoticize colonized cultures. Its legacy requires examining innovation alongside appropriation.'],
-    ['Technology & materials','Synthetic colors, optical research, color printing, posters, and photography allowed systematic dots, flat contours, and intense non-naturalistic palettes.','Experiments with color and structure laid groundwork for abstraction, modern graphic design, expressionism, and new theories of visual perception.']
+  "post-impressionism": [
+    [
+      "An exhibition is not a single method",
+      "Seurat exhibited La Grande Jatte at the final Impressionist exhibition in 1886.",
+      "Its measured surface could coexist with other approaches. The later label Post-Impressionism should not erase such overlaps."
+    ],
+    [
+      "Personal networks",
+      "Letters, friendships, dealers, and exhibitions connected artists whose aims often differed.",
+      "Van Gogh’s correspondence discusses choices of color and subject. Cézanne’s repeated work on a motif shows sustained inquiry rather than a single stylistic breakthrough."
+    ],
+    [
+      "Unequal circulation",
+      "European artists encountered Japanese prints and other cultural objects through commercial and imperial networks.",
+      "Such encounters could transform formal choices while obscuring the makers and contexts of borrowed forms. Innovation and unequal access need to be considered together."
+    ]
   ],
-  modernism: [
-    ['History','World wars, revolution, fascism, communism, migration, decolonization, and mass media shattered confidence in inherited European traditions.','Modern art became an arena for competing visions of freedom, order, identity, and progress. Its institutions helped shift cultural influence across global centers.'],
-    ['Religion & belief','Traditional faith interacted with psychoanalysis, spiritualism, secular ideology, and interest in non-Western belief systems—sometimes appropriated without context.','Abstraction offered experiences of transcendence without conventional sacred imagery. Surrealism and symbolism made dreams and the unconscious modern sources of revelation.'],
-    ['Culture & society','Mass urban life, feminism, changing sexuality, migration, cinema, advertising, and popular culture disrupted stable identities and distinctions between high and low art.','Collage, performance, abstraction, and Pop expanded who and what art could represent. Artists helped redefine modern identity as constructed, contested, and reproducible.'],
-    ['Economics','Industrial production and consumer capitalism promised abundance while intensifying labor systems and inequality. New museums, galleries, and collectors shaped value.','Designers pursued affordable functional objects; other artists critiqued commodities by reusing their images. Art became both a market product and a tool for questioning markets.'],
-    ['Power','States used propaganda and censored “degenerate” or oppositional work. Artists joined revolutionary movements, fled persecution, or challenged official ideology.','Posters, photomontage, monuments, and abstraction could mobilize or resist power. Control of museums and cultural narratives became part of geopolitical competition.'],
-    ['Technology & materials','Photography, film, radio, steel, concrete, electricity, aviation, plastics, and mechanical reproduction transformed space, speed, and communication.','Artists adopted industrial materials and reproducible media, collapsing boundaries between art, design, architecture, publishing, film, and everyday objects.']
+  "modernism": [
+    [
+      "Schools and experiments",
+      "Kandinsky’s geometric work developed through sustained artistic inquiry, including his years teaching at the Bauhaus.",
+      "Composition VIII organizes visual relationships without depicting an ordinary scene. Its abstraction has a specific intellectual and institutional setting."
+    ],
+    [
+      "Exchange and appropriation",
+      "European artists encountered objects from other cultures through collections shaped in part by colonial power.",
+      "Picasso’s experiments raise questions about formal borrowing and unequal recognition. A story of individual invention alone leaves those relationships out."
+    ],
+    [
+      "A Mexican modernism",
+      "Kahlo’s self-representation connects personal experience with dress, bodily imagery, and Mexican cultural and political contexts.",
+      "The Two Fridas uses recognizable figures and symbolic connections. It demonstrates why modernism cannot be narrated as a steady move away from representation."
+    ]
   ],
-  contemporary: [
-    ['History','Decolonization, civil-rights movements, globalization, migration, environmental crisis, digital networks, and continuing conflict created a plural, interconnected field.','Contemporary art keeps historical narratives open to revision. It brings suppressed archives, contested monuments, and living memory into public debate.'],
-    ['Religion & belief','Global traditions, secular life, Indigenous knowledge, personal spirituality, and fundamentalism coexist. Artists often examine belief through identity, ritual, and place.','Installations and performances can create temporary communal or contemplative spaces. Art also questions who may represent sacred traditions and how institutions display them.'],
-    ['Culture & society','Feminist, queer, Black, Indigenous, disability, and decolonial movements challenged whose experiences museums and media considered authoritative.','Artists expanded representation and made audiences participants. Museums revised collections, language, access, and hiring in response—unevenly and with continuing debate.'],
-    ['Economics','Global fairs, mega-galleries, cultural tourism, digital markets, precarious labor, and extreme wealth shape both production and visibility.','Artists expose supply chains, unpaid labor, extraction, and institutional finance. Alternative spaces and social practice propose other ways to create and distribute value.'],
-    ['Power','Surveillance, borders, policing, climate policy, protest, and information warfare shape public life. Cultural institutions face demands for accountability.','Images and performances can mobilize attention, preserve testimony, and contest official narratives. They can also be absorbed by markets or circulate without context.'],
-    ['Technology & materials','Video, the internet, smartphones, data, biotechnology, AI, digital fabrication, and recycled materials continually expand artistic media.','Artists humanize or criticize new systems before laws and conventions settle. Their experiments influence interface design, public understanding, and debates about authorship.']
+  "contemporary": [
+    [
+      "Recognition and interpretation",
+      "Basquiat’s paintings entered institutions and markets that shaped their visibility and value.",
+      "An artist overview can help situate his recurring concerns."
+    ],
+    [
+      "Participation has conditions",
+      "Kusama’s mirror environments make a visitor’s reflected presence part of the experience.",
+      "Physical entry, duration, and the position of other viewers matter. A photograph communicates only part of the work’s spatial encounter."
+    ],
+    [
+      "Material meets a site",
+      "Walker made A Subtlety for the former Domino Sugar Refinery in Brooklyn in 2014.",
+      "Sugar, monumental bodily imagery, and the industrial setting connect consumption with racialized labor and power. The work’s temporary site is part of its meaning."
+    ]
   ]
 };

@@ -4,11 +4,11 @@ window.artworkDimensions = {"assets/museum/augustus-prima-porta.jpg":[1920,2880]
 window.eraDesigns = {
   prehistoric: {
     name: 'Prehistoric', date: 'c. 40,000–3,000 BCE', slug: 'lascaux', artworkTitle: "Lascaux Cave Paintings",
-    label: 'The first marks', phrase: 'Before words. Beyond memory.',
-    vocabulary: ['Earth', 'Trace', 'Ritual'], treatment: 'A cave-wall encounter',
+    label: 'Marks that remain', phrase: 'Traces without written explanations.',
+    vocabulary: ['Earth', 'Trace', 'Material'], treatment: 'A cave-wall encounter',
     structure: 'An irregular limestone cave mouth with warm ochre mineral surfaces.',
     note: 'An eroded cave mouth gives the opening its sheltering form. Rough mineral surfaces and warm, localized light frame the chapter like an encounter with a marked rock wall.',
-    lab: 'A surface becomes a memory', action: 'Bring the marks into light',
+    lab: 'Marks meet a surface', action: 'Bring the marks into light',
     before: 'Darkness conceals the marks. Imagine encountering this surface by a small, moving source of light.',
     after: 'The animal follows the surface. Contour and repetition make a living presence out of a few marks.'
   },
@@ -131,8 +131,8 @@ window.eraArtwork = function (slug) {
   return {
     src: media?.path || `assets/works/${slug}.jpg`,
     title,
-    type: media ? 'Artwork reproduction' : 'AI-generated interpretive study',
-    credit: media ? `${media.license} · ${media.artist}` : 'An interpretation, not the original artwork',
-    alt: `${media ? 'Reproduction of' : 'AI-generated interpretive study for'} ${title}`
+    type: media ? 'Artwork reproduction' : '',
+    credit: media ? `${media.license} · ${media.artist}` : '',
+    alt: `${media ? 'Reproduction of' : 'Illustration inspired by'} ${title}`
   };
 };

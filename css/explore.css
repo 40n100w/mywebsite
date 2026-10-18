@@ -240,15 +240,9 @@ h2 em { font-family: var(--serif); font-weight: 400; }
 .learning-lab { padding: 5rem var(--pad); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; border-bottom: 1px solid; }
 #takeaways { padding-left: 1.5rem; }
 #takeaways li { padding: .7rem 0; font-size: .9rem; }
-#knowledge-check { border: 1px solid; padding: 2rem; }
-#knowledge-check fieldset { border: 0; margin: 0 0 1rem; padding: 0; }
-#knowledge-check legend { font: .65rem var(--mono); text-transform: uppercase; margin-bottom: 1rem; }
-#quiz-options { display: grid; gap: .5rem; }
-#quiz-options label { display: flex; gap: .65rem; align-items: center; padding: .6rem; border: 1px solid color-mix(in srgb, currentColor 30%, transparent); font-size: .82rem; cursor: pointer; }
-#quiz-options input { accent-color: var(--era-ink); flex-shrink: 0; }
-#knowledge-check button { min-height: 44px; padding: .8rem 1rem; background: var(--era-ink); color: var(--era-paper); border: 1px solid var(--era-ink); font: .68rem var(--mono); }
-#knowledge-check #mark-complete { background: transparent; color: var(--era-ink); }
-#quiz-result, #progress-status { font-size: .78rem; margin: 1rem 0; }
+.reading-progress { align-self: end; border-top: 1px solid; padding-top: 1.5rem; max-width: 28rem; }
+#mark-complete { min-height: 44px; padding: .8rem 1rem; background: transparent; color: var(--era-ink); border: 1px solid var(--era-ink); font: .68rem var(--mono); }
+#progress-status { font-size: .78rem; margin: 1rem 0; }
 .era-sources { padding: 5rem var(--pad); }
 .era-sources > div { display: grid; grid-template-columns: .7fr 1.3fr; gap: 4rem; }
 .era-sources ul { list-style: none; padding: 0; margin: 3rem 0 2rem; }
@@ -557,7 +551,6 @@ body[data-era='contemporary'] { --era-paper: #f1f0ec; --era-ink: #262528; --era-
   .compare-images img { height: 180px; }
   .compare-questions { grid-template-columns: 1fr; gap: 0; }
   .learning-lab { padding-block: 3rem; }
-  #knowledge-check { padding: 1.25rem; }
   .era-sources { padding-block: 3rem; }
   .era-sources li > div { flex-direction: column; gap: .4rem; }
   .era-sources li span { text-align: left; }

@@ -43,14 +43,13 @@ All internal assets use relative paths, so the site works at both a user/organiz
 - Chronological, scroll-driven narrative
 - Twelve original AI-generated, period-specific visual environments
 - Dedicated explorer view for every period with 36 featured works
-- Locally stored public-domain and Creative Commons reproductions where reuse is verified, with clearly labeled interpretive studies elsewhere
+- Locally stored public-domain and Creative Commons reproductions where reuse is verified, with illustrations elsewhere
 - Persistent reading progress and current-era indicator
 - Full period index for non-linear exploration
 - Dates, defining characteristics, historical context, landmark works, and artists
-- Political, social, economic, and military impact analysis
-- Two-way historical analysis across belief, culture, economics, power, and technology: what shaped each period and what its art changed in return
-- Key literary, philosophical, religious, and oral works that shaped each period’s thinking
-- A defining intellectual shift for every period, including an illustrated explanation of Plato’s ideal Forms
+- Three historical connections tied to the featured works in each chapter
+- Contextual texts and interpretive questions, with archaeological evidence in the prehistoric chapter
+- Approximate dates and explicit geographic scope, allowing for overlap and competing practices
 - Local, privacy-safe world maps showing representative centers and wider zones of influence or exchange
 - Architecture, furniture, decorative design, and graphic-design context
 - Responsive layout and reduced-motion support
@@ -60,19 +59,19 @@ All internal assets use relative paths, so the site works at both a user/organiz
 - Locally hosted, licensed typography and responsive layouts with reduced-motion support
 - A visual homepage index previewing all twelve chapter designs
 - Keyboard-operable teaching studies for perspective, composition, scale, color, and viewing context
-- A period-specific eight-act narrative that moves from historical setting and intellectual catalyst through visual breakthroughs, makers, cultural consequences, legacy, and transition
+- Six connected sections: works, visual language, historical context, ideas, daily life and design, comparison and reflection
 - Era-level museum and heritage sources, reflection prompts, a public glossary, accessible map text, and a visible motion control
 - Explicit source, medium, location, dimensions where available, and two close-looking prompts for every featured work
 - Full-image viewing that preserves each work’s natural proportions
-- Previous-era comparisons and live act progress throughout each eight-part chapter
-- Era-specific visual ruptures, visual DNA, emotional arcs, physical-scale studies, and animated exchange-route narratives
+- Curated comparisons within and across periods, with live section progress
+- Visual cues, notes on original size and setting, and geographic context
 - Guided close-looking reveals and cross-era page transitions with reduced-motion fallbacks
-- Three-item chapter synthesis, a knowledge check, and optional progress stored only in the visitor’s browser
+- Three chapter takeaways and optional progress stored only in the visitor’s browser
 - Embedded map data for direct offline reading plus an installable service-worker shell when served over HTTP
 
 ## Notes
 
-The works-and-makers sections combine licensed reproductions with AI-generated studies where reusable imagery is unavailable or uncertain. Reproductions display their image license, creator credit, and provenance link. Chapter, architecture, design, and any explicitly labeled study images are AI-generated editorial interpretations rather than documentary evidence.
+The works-and-makers sections combine licensed reproductions with AI-generated studies where reusable imagery is unavailable or uncertain. Reproductions display their image license and creator credit. The sources page includes copyable provenance and museum reference addresses. Chapter, architecture, design, and study images are AI-generated editorial interpretations rather than documentary evidence. Close-looking prompts refer to the original works; generated images cannot verify their details.
 
 Historical dates and interpretations are provided for general educational use. Visitors should consult museum, archive, or scholarly sources before relying on the site for academic research.
 
@@ -89,7 +88,7 @@ Never commit credentials, private keys, personal information, or environment fil
 
 ## Editorial and rights information
 
-- `about.html` explains the project’s method, generated imagery, geographic framework, and limitations.
+- `about.html` explains the project’s method, imagery, geographic framework, and limitations.
 - `sources.html` collects museum and cultural-heritage sources used by the era pages.
 - `js/work-records.js` keeps all 36 work records keyed to their own source so citations cannot drift by display order.
 - `glossary.html` defines recurring visual concepts.
@@ -102,11 +101,11 @@ Run `sh scripts/validate.sh` before publishing. The same validation runs automat
 
 ## Design and browser checks
 
-`js/art-direction.js` describes each chapter’s visual interpretation and featured artwork. `js/period-experience.js` adds its opening composition and interactive teaching study; `css/explore.css` carries each visual language through the full chapter. Keep artwork attribution and interpretive-study labels visible when changing images. The homepage index is static HTML and remains navigable without JavaScript.
+`js/art-direction.js` describes each chapter’s visual interpretation and featured artwork. `js/period-experience.js` adds its opening composition and interactive teaching study; `css/explore.css` carries each visual language through the full chapter. Keep artwork attribution accurate and alt text descriptive when changing images. The homepage index is static HTML and remains navigable without JavaScript.
 
-`css/architecture.css` builds the chapter entrances from the twelve transparent WebP illustrations in `assets/architecture/`. These AI-generated architectural studies are labeled as imagined settings. On desktop the structures surround live text and artwork; on phones they frame the artwork directly beneath the chapter title. The homepage loads chapter-preview images lazily. The service worker caches images as they are visited instead of downloading the entire image set at install time.
+`css/architecture.css` builds the chapter entrances from the twelve transparent WebP illustrations in `assets/architecture/`. These architectural illustrations frame the reading experience. On desktop the structures surround live text and artwork; on phones they frame the artwork directly beneath the chapter title. The homepage loads chapter-preview images lazily. The service worker caches images as they are visited instead of downloading the entire image set at install time.
 
-The optional browser smoke check requires Playwright and Chromium (both supplied in the prepared cloud environment). Start the Python server above, then run `node scripts/smoke-browser.cjs`. Set `SITE_URL` or `CHROMIUM_PATH` when using a different local server or browser binary. It checks all chapters, mobile layouts, visual-study controls, viewing images, quiz feedback, saved progress, navigation, and offline reading.
+The optional browser smoke check requires Playwright and Chromium (both supplied in the prepared cloud environment). Start the Python server above, then run `node scripts/smoke-browser.cjs`. Set `SITE_URL` or `CHROMIUM_PATH` when using a different local server or browser binary. It checks all chapters, mobile layouts, visual-study controls, viewing images, saved progress, navigation, and offline reading.
 
 `css/mobile.css` provides the phone reading layout: compact period previews, 16px body text, native bottom-sheet menus, expandable image/object records, and a full-screen image viewer with zoom. `js/mobile.js` preserves keyboard focus, real anchor links, and desktop navigation when the viewport changes. Run `node scripts/smoke-mobile.cjs` for touch journeys at 320, 390, and 430px, image delivery, viewer zoom, and reference-page checks. Browser checks use Chromium emulation; physical iOS/Safari testing remains a separate device check.
 
@@ -117,3 +116,9 @@ Inline artworks use responsive WebP derivatives in `assets/responsive/`; the vie
 The motion control appears on the homepage and chapters. Its preference stays in local storage and follows navigation; system reduced-motion preferences take priority and update immediately. Ambient animation pauses outside the viewport, behind dialogs, and when the tab is hidden. Pointer response is limited to mouse devices, phone depth movement is capped at six pixels, and JavaScript schedules frames only for input events. No animation library, video assets, additional image downloads, or continuous JavaScript animation loop is used.
 
 Run `node scripts/smoke-motion.cjs` to verify actual movement, pause/resume, off-screen and dialog suspension, preference persistence, live reduced-motion changes, browser back navigation, desktop pointer response, and controls when storage is unavailable.
+
+## Chapter content and reading flow
+
+`js/periods.js` holds chapter summaries, work readings, and design notes. `js/chapter-guide.js` defines the six-section route, opening questions, scope notes, transitions, and curated comparison pairs. `js/story.js`, `js/context.js`, `js/books-maps.js`, and `js/study-data.js` supply the narrative, historical examples, contextual reading, and chapter takeaways. `css/reading.css` adapts this structure within each period’s visual language.
+
+Run `node scripts/smoke-content.cjs` with the local server running to check section links, comparison viewing, source references, and mobile contents across all chapters. See `docs/content-review.md` for the editorial rationale and research limits.

@@ -94,7 +94,7 @@
   .story-act { padding-block: 2.75rem; }
   .story-act::before { font-size: .75rem; margin-bottom: 1.5rem; letter-spacing: .04em; }
   .section-intro h2, .origins > h2, .seeing-section h2, .legacy-section h2, .learning-lab h2, .era-sources h2 { font-size: clamp(2.1rem, 8.5vw, 3rem); }
-  .section-intro p, .work-reading p, .impact p, .book-row p, .exchange-row p, .design-notes p, .legacy-section aside p, .legacy-section > div > p, .lab-copy > p, .lab-status, .design-note > p, #takeaways li, #quiz-question, #quiz-result, #progress-status { font-size: 1rem; line-height: 1.7; }
+  .section-intro p, .work-reading p, .impact p, .book-row p, .exchange-row p, .design-notes p, .legacy-section aside p, .legacy-section > div > p, .lab-copy > p, .lab-status, .design-note > p, #takeaways li, #progress-status { font-size: 1rem; line-height: 1.7; }
   .work-reading h4, .work-title h3 small, .object-meta, .collection-link, .work-study figcaption, .visual-gallery figcaption, .architecture-study figcaption, #parallel-worlds p, #map-note, .map-text, .exchange-route, .compare-images figcaption, .compare-questions p { font-size: .875rem; line-height: 1.6; }
   .glossary-jump, .map-legend, .book-row small, .exchange-row b { font-size: .8rem; line-height: 1.6; }
   .glossary-jump a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: .25rem; }
@@ -117,13 +117,10 @@
   .looking-reveal summary, .map-text summary { min-height: 48px; display: flex; align-items: center; font-size: .9rem; }
   .notice-list { font-size: 1rem; }
   .image-open i { font-size: .75rem; padding: .6rem .75rem; }
-  .lab-controls button, .rupture-stage button, #knowledge-check button { min-height: 48px; font-size: .9rem; }
+  .lab-controls button, .rupture-stage button, #mark-complete { min-height: 48px; font-size: .9rem; }
   .lab-controls input { min-height: 48px; }
   .lab-controls label, .lab-scale { font-size: .8rem; }
-  #quiz-options label { min-height: 56px; padding: .85rem; font-size: 1rem; line-height: 1.5; }
-  #quiz-options input { width: 20px; height: 20px; }
-  #knowledge-check button { width: 100%; }
-  #knowledge-check legend { font-size: .8rem; }
+  #mark-complete { width: 100%; }
   .era-sources li > div { font-size: 1rem; }
   .era-sources li span, .era-sources > p { font-size: .875rem; }
   .era-sources > p a, footer a:not(.brand) { display: inline-flex; min-height: 44px; align-items: center; }

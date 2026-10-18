@@ -1,14 +1,206 @@
-window.experienceData={
-prehistoric:{answer:'An image can hold memory when no speaker is present.',dna:['Organic contour','Earth pigment','Material surface','Ritual repetition'],emotion:['Mystery','Recognition'],scale:['Venus of Willendorf','11 cm','Held in one hand'],rupture:['Before the mark','Experience disappears with the moment.','After the mark','An absent animal, ancestor, or idea can return.'],route:['Material knowledge','Ochre, stone, shell, and carving practices moved through encounter and migration.']},
-ancient:{answer:'An image can make authority appear permanent and ideal.',dna:['Measured geometry','Mineral and marble','Hierarchical space','Ceremonial stillness'],emotion:['Awe','Power'],scale:['Augustus of Prima Porta','About 2 m','Larger than a living body'],rupture:['Changing bodies','Individuals age, fail, and die.','Ideal bodies','The state acquires a perfected and repeatable form.'],route:['Empire and trade','Objects, makers, gods, and political symbols traveled through conquest and commerce.']},
-medieval:{answer:'An image can direct material sight toward invisible meaning.',dna:['Pointed ascent','Gold and jewel color','Layered sacred space','Processional rhythm'],emotion:['Darkness','Illumination'],scale:['Book of Kells','A single manuscript page','Intimate viewing, collective belief'],rupture:['Visible likeness','Appearance describes the earthly world.','Sacred sign','Pattern, scale, and light indicate a reality beyond sight.'],route:['Pilgrimage and translation','Travel connected shrines, courts, monasteries, workshops, and intellectual traditions.']},
-renaissance:{answer:'An image can place an individual inside a measurable world.',dna:['Circle and triangle','Balanced earth color','Linear depth','Controlled gesture'],emotion:['Discovery','Confidence'],scale:["Michelangelo’s David",'5.17 m','A civic body towering over viewers'],rupture:['Symbolic space','Importance determines scale and placement.','Perspective space','A viewer’s position organizes a coherent world.'],route:['Print and diplomacy','Texts, prints, artists, and classical models circulated between cities and courts.']},
-baroque:{answer:'An image can persuade by making an event feel physically present.',dna:['Diagonal force','Darkness and flare','Space crossing outward','Accelerating action'],emotion:['Tension','Surrender'],scale:["Bernini’s David",'Life-size marble','The implied action enters viewer space'],rupture:['Stable order','The scene remains balanced behind its frame.','Immersive event','Light and motion pull the viewer across the boundary.'],route:['Court, church, and empire','Mission, diplomacy, colonial extraction, and court competition moved forms worldwide.']},
-neoclassicism:{answer:'An image can turn political ideals into exemplary bodies and choices.',dna:['Grid and column','Restrained palette','Shallow stage','Decisive gesture'],emotion:['Order','Contradiction'],scale:['Oath of the Horatii','3.3 × 4.25 m','Public morality at theatrical scale'],rupture:['Sensory persuasion','Emotion overwhelms through movement.','Moral clarity','Geometry makes the ethical choice appear legible.'],route:['Archaeology and revolution','Excavation, print, war, and Atlantic politics circulated classical authority.']},
-romanticism:{answer:'An image can make emotion and awe forms of knowledge.',dna:['Storm curve','Saturated atmosphere','Unbounded distance','Surging motion'],emotion:['Wonder','Terror'],scale:['Wanderer above the Sea of Fog','Human figure against vast landscape','Scale is psychological, not only physical'],rupture:['Universal reason','Order claims to explain the world.','The sublime','Experience exceeds measure, language, and control.'],route:['War, travel, and empire','Displacement, nationalism, tourism, and colonial access shaped imagined landscapes.']},
-realism:{answer:'An image can force ordinary conditions into public attention.',dna:['Weighted body','Earth color','Immediate foreground','Repetitive labor'],emotion:['Familiarity','Discomfort'],scale:['The Gleaners','83.5 × 110 cm','Ordinary labor given serious museum scale'],rupture:['Heroic exception','Great art depicts exceptional people and myths.','Social condition','Work and inequality become history-sized subjects.'],route:['Rail, press, and migration','Industrial infrastructure carried people, images, commodities, and social conflict.']},
-impressionism:{answer:'An image can preserve the instability of a passing perception.',dna:['Broken stroke','High-key color','Cropped field','Flickering rhythm'],emotion:['Pleasure','Instability'],scale:['The Cradle','56 × 46 cm','A private moment at intimate scale'],rupture:['Finished object','Edges and surfaces conceal the act of painting.','Optical event','Marks remain visible and perception completes the scene.'],route:['Rail and commodity networks','Mobility, Japanese prints, imported materials, and urban markets reshaped vision.']},
-'post-impressionism':{answer:'An image can rebuild appearance through an inner or systematic truth.',dna:['Dot and plane','Expressive color','Flattened depth','Insistent rhythm'],emotion:['Perception','Interiority'],scale:['La Grande Jatte','2.08 × 3.08 m','Minute marks construct a monumental social field'],rupture:['Fleeting sensation','The instant governs the picture.','Constructed reality','System, emotion, or symbol reorganizes what is seen.'],route:['Dealers and colonial access','Exhibitions and unequal cultural contact fed distinct individual languages.']},
-modernism:{answer:'An image can break inherited form to expose a fractured reality.',dna:['Fragment and grid','Primary contrast','Multiple viewpoints','Mechanical pulse'],emotion:['Rupture','Reinvention'],scale:["Les Demoiselles d’Avignon",'2.44 × 2.34 m','Confrontation at nearly bodily scale'],rupture:['Single viewpoint','One observer stabilizes one scene.','Plural fragments','Competing views and times occupy the same surface.'],route:['Exile and mass media','War, migration, reproduction, and decolonization produced modernisms across many centers.']},
-contemporary:{answer:'An image can become a situation in which meaning is negotiated.',dna:['Network and field','Contextual color','Expanded site','Participatory change'],emotion:['Participation','Responsibility'],scale:['A Subtlety','Monumental site-specific installation','The viewer enters the history being examined'],rupture:['Self-contained object','Meaning resides inside a finished work.','Contested situation','Audience, institution, site, and system become artistic material.'],route:['Global networks','Migration, biennials, digital circulation, markets, and activism connect unequal art worlds.']}
+window.experienceData = {
+  "prehistoric": {
+    "dna": [
+      "Animal contour",
+      "Carved form",
+      "Material surface",
+      "Monumental placement"
+    ],
+    "scale": [
+      "Venus of Willendorf",
+      "11 cm",
+      "Held in one hand"
+    ],
+    "route": [
+      "Material knowledge",
+      "Ochre, stone, shell, and carving practices moved through encounter and migration."
+    ]
+  },
+  "ancient": {
+    "dna": [
+      "Balanced face",
+      "Repeated columns",
+      "Idealized body",
+      "Directed gesture"
+    ],
+    "scale": [
+      "Augustus of Prima Porta",
+      "About 2 m",
+      "Larger than a living body"
+    ],
+    "route": [
+      "Empire and trade",
+      "Objects, makers, gods, and political symbols traveled through conquest and commerce."
+    ]
+  },
+  "medieval": {
+    "dna": [
+      "Interlace",
+      "Narrative sequence",
+      "Filtered light",
+      "Layered ornament"
+    ],
+    "scale": [
+      "Book of Kells",
+      "A manuscript, viewed page by page",
+      "Fine ornament rewards close viewing; a full-page screen image changes that encounter."
+    ],
+    "route": [
+      "Pilgrimage and translation",
+      "Travel connected shrines, courts, monasteries, workshops, and intellectual traditions."
+    ]
+  },
+  "renaissance": {
+    "dna": [
+      "Clear contour",
+      "Softened edges",
+      "Bodily tension",
+      "Measured depth"
+    ],
+    "scale": [
+      "Michelangelo’s David",
+      "5.17 m",
+      "A civic body towering over viewers"
+    ],
+    "route": [
+      "Print and diplomacy",
+      "Texts, prints, artists, and classical models circulated between cities and courts."
+    ]
+  },
+  "baroque": {
+    "dna": [
+      "Diagonal force",
+      "Concentrated light",
+      "Outward action",
+      "Interlocking bodies"
+    ],
+    "scale": [
+      "Bernini’s David",
+      "Life-size marble",
+      "The implied action enters viewer space"
+    ],
+    "route": [
+      "Court, church, and empire",
+      "Mission, diplomacy, colonial extraction, and court competition moved forms worldwide."
+    ]
+  },
+  "neoclassicism": {
+    "dna": [
+      "Ordered groups",
+      "Classical forms",
+      "Shallow stage",
+      "Exemplary gesture"
+    ],
+    "scale": [
+      "Oath of the Horatii",
+      "3.3 × 4.25 m",
+      "Public morality at theatrical scale"
+    ],
+    "route": [
+      "Archaeology and revolution",
+      "Excavation, print, war, and Atlantic politics circulated classical authority."
+    ]
+  },
+  "romanticism": {
+    "dna": [
+      "Concentrated light",
+      "Turbulent color",
+      "Uncertain distance",
+      "Human scale"
+    ],
+    "scale": [
+      "Wanderer above the Sea of Fog",
+      "Human figure against vast landscape",
+      "Scale is psychological, not only physical"
+    ],
+    "route": [
+      "War, travel, and empire",
+      "Displacement, nationalism, tourism, and colonial access shaped imagined landscapes."
+    ]
+  },
+  "realism": {
+    "dna": [
+      "Weighted body",
+      "Worn surfaces",
+      "Prominent foreground",
+      "Repeated effort"
+    ],
+    "scale": [
+      "The Gleaners",
+      "83.5 × 110 cm",
+      "The bent figures dominate the foreground even though the canvas is smaller than a person."
+    ],
+    "route": [
+      "Rail, press, and migration",
+      "Industrial infrastructure carried people, images, commodities, and social conflict."
+    ]
+  },
+  "impressionism": {
+    "dna": [
+      "Abbreviated marks",
+      "Directed gaze",
+      "Cropped figures",
+      "Changing light"
+    ],
+    "scale": [
+      "The Cradle",
+      "56 × 46 cm",
+      "A private moment at intimate scale"
+    ],
+    "route": [
+      "Rail and commodity networks",
+      "Mobility, Japanese prints, imported materials, and urban markets reshaped vision."
+    ]
+  },
+  "post-impressionism": {
+    "dna": [
+      "Regular touches",
+      "Directional strokes",
+      "Color planes",
+      "Constructed depth"
+    ],
+    "scale": [
+      "La Grande Jatte",
+      "2.08 × 3.08 m",
+      "Minute marks construct a monumental social field"
+    ],
+    "route": [
+      "Dealers and colonial access",
+      "Exhibitions and unequal cultural contact fed distinct individual languages."
+    ]
+  },
+  "modernism": {
+    "dna": [
+      "Fractured space",
+      "Geometric rhythm",
+      "Doubled self",
+      "Symbolic anatomy"
+    ],
+    "scale": [
+      "Les Demoiselles d’Avignon",
+      "2.44 × 2.34 m",
+      "Confrontation at nearly bodily scale"
+    ],
+    "route": [
+      "Exile and mass media",
+      "War, migration, reproduction, and decolonization produced modernisms across many centers."
+    ]
+  },
+  "contemporary": {
+    "dna": [
+      "Layered surface",
+      "Repeated reflection",
+      "Site and material",
+      "Viewer participation"
+    ],
+    "scale": [
+      "A Subtlety",
+      "Monumental site-specific installation",
+      "The viewer enters the history being examined"
+    ],
+    "route": [
+      "Global networks",
+      "Migration, biennials, digital circulation, markets, and activism connect unequal art worlds."
+    ]
+  }
 };

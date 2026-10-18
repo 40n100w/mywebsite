@@ -40,7 +40,7 @@ const eras = ['prehistoric','ancient','medieval','renaissance','baroque','neocla
           assert(!await page.locator('#period-dialog').isVisible());
           assert(await page.locator('.menu-toggle').evaluate(el => el === document.activeElement));
         } else {
-          assert.equal(await page.locator('.story-act').count(), 8);
+          assert.deepEqual(await page.locator('.story-act').evaluateAll(sections => sections.map(section => section.id)), ['works-section', 'seeing', 'world', 'ideas', 'design', 'legacy']);
           assert.equal(await page.locator('#works .image-open').count(), 3);
           assert(await page.locator('#map-countries path').count() > 100);
           await page.waitForFunction(() => {const img=document.querySelector('.hero-artwork img');return img.complete && img.naturalWidth > 0;});
@@ -71,12 +71,6 @@ const eras = ['prehistoric','ancient','medieval','renaissance','baroque','neocla
               assert.notEqual(await page.locator('.lab-status').textContent(), before);
               if(era !== 'contemporary') assert.equal(await page.locator('#study-toggle').getAttribute('aria-pressed'), 'true');
             }
-            await page.locator('#knowledge-check button[type=submit]').click();
-            assert.match(await page.locator('#quiz-result').textContent(), /Choose an answer/);
-            const correct = await page.evaluate(id => window.studyData[id].quiz[2], era);
-            await page.locator(`#quiz-options input[value="${correct}"]`).check();
-            await page.locator('#knowledge-check button[type=submit]').click();
-            assert.match(await page.locator('#quiz-result').textContent(), /^Correct/);
             await page.locator('#mark-complete').click();
             await page.reload();
             assert.equal(await page.locator('#mark-complete').textContent(), 'Chapter complete ✓');
@@ -113,6 +107,6 @@ const eras = ['prehistoric','ancient','medieval','renaissance','baroque','neocla
     assert.equal(await offlinePage.locator('#study-toggle').getAttribute('aria-pressed'), 'true');
     assert.equal(await offlinePage.locator('#works .image-open').count(), 3);
     await offline.close();
-    console.log(`Passed: ${pages} page/viewport checks; all 12 visual studies, quizzes and progress; image dialogs; chapter navigation; cached offline chapter.`);
+    console.log(`Passed: ${pages} page/viewport checks; all 12 visual studies and saved progress; image dialogs; chapter navigation; cached offline chapter.`);
   } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exitCode = 1; });

@@ -1,5 +1,5 @@
 /* Generated architectural studies supply the structure. Text and artworks remain HTML.
-   The surrounds are decorative, local images; the captions identify them as interpretations. */
+   The surrounds are decorative, local images with descriptive captions. */
 [data-era='prehistoric'], .chapter-card.prehistoric { --architecture: url('../assets/architecture/prehistoric.webp'); }
 [data-era='ancient'], .chapter-card.ancient { --architecture: url('../assets/architecture/ancient.webp'); }
 [data-era='medieval'], .chapter-card.medieval { --architecture: url('../assets/architecture/medieval.webp'); }

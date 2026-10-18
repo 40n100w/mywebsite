@@ -7,8 +7,7 @@
   // Generated architectural studies frame live content; they are not historical evidence.
   const surroundPath = `assets/architecture/${era}.webp`;
   document.querySelector('.explore-hero').insertAdjacentHTML('afterbegin', `<div class="architectural-surround" aria-hidden="true"></div>`);
-  document.querySelector('.hero-colophon').insertAdjacentHTML('afterend', '<p class="surround-credit">Architectural surround · AI-generated interpretation</p>');
-  document.querySelector('.design-note').insertAdjacentHTML('afterbegin', `<figure class="architecture-study"><img ${window.responsiveImageAttributes(surroundPath, "(max-width: 760px) calc(100vw - 40px), 40vw")} alt="${design.structure}" loading="lazy" decoding="async"><figcaption>AI-generated architectural study · An imagined setting, not a historic building</figcaption></figure>`);
+  document.querySelector('.design-note').insertAdjacentHTML('afterbegin', `<figure class="architecture-study"><img ${window.responsiveImageAttributes(surroundPath, "(max-width: 760px) calc(100vw - 40px), 40vw")} alt="${design.structure}" loading="lazy" decoding="async"><figcaption>${design.treatment}</figcaption></figure>`);
   const headingParts = {
     prehistoric: ['Prehistoric', 'Art'], ancient: ['Ancient', 'Art'], medieval: ['Medieval', 'Art'],
     renaissance: ['The', 'Renaissance'], 'post-impressionism': ['Post-', 'Impressionism'],
@@ -31,11 +30,11 @@
     <button class="hero-image-button" type="button" aria-label="Open a full view: ${artwork.title}">
       <img ${window.responsiveImageAttributes(artwork.src, "(max-width: 760px) 60vw, 36vw")} alt="${artwork.alt}" fetchpriority="high" decoding="async">
     </button>
-    <figcaption><b>${artwork.title}</b><span>${artwork.type}</span><span class="hero-credit">${artwork.credit} · Select image to view in full</span></figcaption>`;
+    <figcaption><b>${artwork.title}</b>${artwork.type ? `<span>${artwork.type}</span>` : ''}<span class="hero-credit">${artwork.credit ? `${artwork.credit} · ` : ''}Select image to view in full</span></figcaption>`;
   get('hero-artwork').querySelector('button').addEventListener('click', () => {
     get('viewer-image').src = artwork.src;
     get('viewer-image').alt = artwork.alt;
-    get('viewer-caption').textContent = `${artwork.title} · ${artwork.type} · ${artwork.credit}`;
+    get('viewer-caption').textContent = [artwork.title, artwork.type, artwork.credit].filter(Boolean).join(' · ');
     get('image-viewer').showModal();
   });
   get('era-select').replaceChildren(...Object.entries(window.eraDesigns).map(([id, item], position) => {

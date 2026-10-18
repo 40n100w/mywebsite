@@ -1,0 +1,76 @@
+/* A clear reading sequence within each period's existing visual language. */
+.chapter-guide { display: grid; grid-template-columns: 1.25fr 1fr; gap: 2rem 4rem; padding: 3rem var(--pad); background: var(--era-field); }
+.chapter-guide h2 { max-width: 26ch; margin: .7rem 0 0; font: 500 clamp(1.8rem, 3.3vw, 3rem)/1.15 var(--display); }
+.chapter-scope { max-width: 62ch; font: .95rem/1.7 var(--sans); margin: .75rem 0 0; }
+.reading-length { margin: 0; font: .72rem/1.5 var(--mono); }
+.chapter-contents { gap: .5rem 1.5rem; }
+.chapter-contents a { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; }
+.chapter-contents a span { font: .65rem var(--mono); }
+.reading-details { margin: 1.5rem 0; border-block: 1px solid color-mix(in srgb, currentColor 25%, transparent); }
+.reading-details > summary { display: flex; align-items: center; min-height: 48px; padding: .75rem 0; font: .9rem/1.5 var(--sans); }
+.reading-details > summary::after { content: '+'; margin-left: auto; padding-left: 1rem; }
+.reading-details[open] > summary::after { content: '−'; }
+.reading-details .media-legend { margin: 0 0 1.5rem; border: 0; }
+.reading-details .media-legend p, .looking-note { font-size: .875rem; line-height: 1.65; }
+.work-row { scroll-margin-top: 5rem; }
+.work-reading h4 { margin-top: 1rem; }
+.work-reading p, .section-intro > p:last-child, #story-seeing, .book-row p, .design-notes p, .idea-study p { font-size: 1rem; line-height: 1.75; }
+.work-reading .looking-note { font-size: .875rem; margin-top: .85rem; }
+.looking-reveal summary { min-height: 44px; font-size: .85rem; }
+.collection-link a, .era-sources a, .compare-images a { text-decoration: underline; text-underline-offset: .2em; }
+.collection-link a, .compare-images a { display: inline-flex; align-items: center; min-height: 44px; font-size: .85rem; }
+.scale-study { display: block; max-width: 65ch; margin: 2rem 0 0; padding: 1.5rem 0 0; }
+.scale-study h3 { font-size: 1.6rem; }
+.scale-study p:last-child { font-size: 1rem; }
+.visual-dna { padding-top: 1rem; margin-bottom: 1.5rem; gap: .75rem; }
+.visual-dna > span { padding: .45rem .7rem; border: 1px solid color-mix(in srgb, currentColor 25%, transparent); font-size: .75rem; }
+.context-section { margin-top: 3rem; }
+.context-section > h3 { font: 500 2rem/1.15 var(--display); margin: 0 0 1.5rem; }
+.context-cases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.context-case { border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent); padding-top: 1rem; }
+.context-case h4 { font: 500 1.6rem/1.15 var(--display); margin: 0 0 1rem; }
+.context-case p, #parallel-worlds p { font: 1rem/1.75 var(--sans); }
+.context-case p:last-child { margin-bottom: 0; }
+#parallel-worlds { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.exchange-route { margin-bottom: 0; }
+.exchange-route p { font-size: .9rem; }
+.idea-study { padding: 2rem; }
+.idea-study h3 { font-size: clamp(1.7rem, 3.3vw, 2.5rem); }
+.book-row { padding-block: 1.75rem; }
+.book-row h3 { font-size: 1.75rem; }
+.section-bridge { grid-column: 1/-1; margin: 2.5rem 0 0; padding-top: 1.25rem; border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent); display: flex; justify-content: space-between; align-items: start; gap: 1rem 3rem; }
+.section-bridge > span { max-width: 65ch; font: italic 1.15rem/1.5 var(--serif); }
+.section-bridge a { display: inline-flex; gap: .6rem; align-items: center; min-height: 48px; flex-shrink: 0; font: .8rem var(--sans); text-decoration: underline; text-underline-offset: .2em; }
+.comparison-question { font: 500 1.3rem/1.4 var(--display); }
+.comparison-note { margin-top: 1.25rem; font-size: 1rem; line-height: 1.7; }
+.compare-images .image-open { cursor: zoom-in; }
+.compare-images figcaption > span { display: block; margin-top: .4rem; font-size: .75rem; }
+.compare-images figcaption b { font: 500 1rem/1.4 var(--sans); margin-top: .75rem; }
+.compare-images figcaption small { display: block; margin-top: .3rem; font-size: .75rem; }
+.reflection p.reflection-cue { margin: .75rem 0 0; font: .9rem/1.7 var(--sans); }
+.next-reading-link { display: inline-flex; min-height: 48px; align-items: center; text-decoration: underline; font-size: .9rem; }
+.era-sources li a { display: inline-block; padding-block: .5rem; }
+@media (max-width: 1050px) {
+  .context-cases { grid-template-columns: 1fr; gap: 1.5rem; }
+  .context-case { max-width: 75ch; }
+  .section-bridge { flex-direction: column; gap: .75rem; }
+}
+@media (max-width: 760px) {
+  .chapter-guide { grid-template-columns: 1fr; gap: 1.25rem; padding-block: 2rem; }
+  .chapter-guide h2 { font-size: 1.9rem; }
+  .chapter-scope { font-size: 1rem; }
+  .story-act { padding-block: 2.5rem; }
+  .story-act::before { margin-bottom: 1rem; }
+  .section-intro h2, .seeing-section h2, .legacy-section h2 { font-size: clamp(2rem, 8vw, 2.7rem); }
+  .work-row { scroll-margin-top: 1rem; }
+  .work-row .work-reading h4 { font-size: .75rem; }
+  #parallel-worlds { grid-template-columns: 1fr; gap: .75rem; }
+  .parallel-worlds { margin-top: 2rem; }
+  .idea-study { padding: 1.25rem; }
+  .idea-study h3 { font-size: 1.8rem; }
+  .section-bridge { margin-top: 2rem; }
+  .compare-images { gap: .75rem; }
+  .compare-images img { height: 180px; }
+  .compare-images figcaption { text-align: left; }
+  .comparison-question { font-size: 1.3rem; }
+}

@@ -1,7 +1,8 @@
-const CACHE = 'art-compass-v8';
+const CACHE = 'art-compass-v11';
 const CORE = [
   './', 'index.html', 'explore.html', 'about.html', 'sources.html', 'glossary.html',
   'corrections.html', 'review.html', 'css/fonts.css', 'css/styles.css', 'css/explore.css', 'css/info.css', 'css/architecture.css', 'css/mobile.css', 'css/motion.css', 'css/responsive-images.css',
+  'css/reading.css', 'js/periods.js', 'js/chapter-guide.js',
   'js/main.js', 'js/mobile.js', 'js/motion.js', 'js/responsive-images.js', 'js/context.js', 'js/books-maps.js', 'js/story.js', 'js/learning.js',
   'js/study-data.js', 'js/experience-data.js', 'js/work-records.js', 'js/artwork-media.js',
   'js/art-direction.js', 'js/period-experience.js', 'js/world-map.js', 'js/explore.js',

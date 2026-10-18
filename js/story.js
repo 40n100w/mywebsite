@@ -1,14 +1,134 @@
-window.periodStories={
-prehistoric:{thesis:'Before art described the world, it helped humans make the world meaningful.',world:'Small communities moved through landscapes understood through animals, seasons, ancestors, danger, and memory. There were no written archives; knowledge survived by being spoken, performed, marked, carried, and rebuilt.',catalyst:'The decisive change was symbolic thought: the discovery that a mark, object, or place could hold meaning beyond its physical presence.',seeing:'Look for images that cooperate with their materials. Rock contours animate animals, portable figures concentrate bodily meaning, and aligned stones turn landscape and sky into shared ceremony.',roles:['Image becomes memory','Object becomes symbol','Landscape becomes monument'],legacy:'Prehistoric making established art’s most persistent powers: to remember what is absent, bind a community, transform material, and give visible form to invisible relationships.',transition:'As agriculture produced permanent settlements, surplus, writing, and centralized authority, intimate communal symbols grew into the monumental art of cities and states.'},
-ancient:{thesis:'The first great states used ideal form to make power, belief, and social order appear permanent.',world:'Agriculture supported cities, writing, specialized labor, taxation, armies, temples, and courts. Across several independent civilizations, rulers needed images that could outlive bodies and govern across distance.',catalyst:'Political centralization joined sacred order to measured form. The physical world changed and decayed; art offered gods, rulers, and civic ideals a more durable body.',seeing:'Ancient art repeatedly disciplines nature through symmetry, hierarchy, canon, geometry, and idealization. The result is not neutral observation but a claim about how reality ought to be ordered.',roles:['Royal presence becomes timeless','Proportion becomes civic order','The ideal body becomes political power'],legacy:'Ancient monuments and texts created visual languages of citizenship, divinity, law, and empire that later republics, churches, courts, and nations repeatedly revived.',transition:'When empires fragmented and new monotheistic faiths reorganized life, art shifted from perfected earthly bodies toward signs of an invisible spiritual order.'},
-medieval:{thesis:'In a fragmented political world, sacred images and spaces made an unseen cosmic order present.',world:'Courts, monasteries, towns, pilgrimage routes, and religious communities formed overlapping networks after Rome. Literacy was concentrated, but images, ritual, architecture, and recitation reached broad publics.',catalyst:'Art no longer needed to imitate ordinary sight. Its central task was to direct attention beyond the material world toward spiritual meaning, sacred history, and salvation.',seeing:'Gold denies ordinary atmosphere, scale follows spiritual importance, pattern makes surfaces infinite, and colored light turns architecture into an experience rather than a container.',roles:['The page becomes sacred cosmos','History becomes continuous image','Structure becomes colored light'],legacy:'Medieval workshops integrated architecture, image, object, music, and ceremony into total environments while preserving and transforming knowledge across cultures.',transition:'Urban wealth, classical scholarship, print, and close observation gradually redirected attention toward measurable space, individual agency, and the visible world.'},
-renaissance:{thesis:'Humanism and observation made the world measurable—and made the individual newly significant within it.',world:'Competitive cities, courts, churches, merchants, scholars, and workshops exchanged wealth and knowledge. Classical texts returned to circulation while print widened intellectual debate.',catalyst:'Artists joined Christian subjects to ancient models, anatomy, mathematics, and empirical looking. Perspective offered a rational space organized around a human observer.',seeing:'Balanced composition, believable bodies, atmospheric light, and coherent depth make the picture behave like a window. Individual faces and artistic authorship acquire unprecedented weight.',roles:['Contour turns myth into human grace','Atmosphere creates inward presence','Anatomy becomes civic ideal'],legacy:'The Renaissance elevated the artist, standardized perspective, reshaped portraiture, and joined visual practice to science, architecture, publishing, and political prestige.',transition:'Once artists mastered stable space and balanced form, the next generation broke that stability open with movement, illusion, emotional force, and theatrical light.'},
-baroque:{thesis:'Baroque art turned image, building, and ceremony into instruments of emotional persuasion.',world:'Religious conflict, expanding empires, scientific discovery, and centralized courts made authority intensely competitive. Churches and rulers needed to move audiences, not merely instruct them.',catalyst:'The stable Renaissance picture became insufficient for an age of conflict and spectacle. Baroque art pulled viewers into the instant when certainty becomes revelation, conversion, victory, or crisis.',seeing:'Diagonal motion, deep shadow, sensory material, unstable space, and figures crossing the viewer’s boundary make experience immediate and bodily.',roles:['Light makes revelation present','Stone captures an irreversible instant','Agency intensifies sacred drama'],legacy:'Baroque strategies shaped palaces, churches, theaters, gardens, public ceremony, photography, cinema, advertising, and every later medium built around immersion and spectacle.',transition:'Its emotional excess eventually provoked a search for clarity, restraint, archaeology, and public virtue—the disciplined language of Neoclassicism.'},
-neoclassicism:{thesis:'Antiquity became a modern political language for reason, sacrifice, citizenship, and revolution.',world:'Archaeological discoveries, Enlightenment debate, expanding print, industrial production, and Atlantic revolutions challenged inherited authority and imagined society as redesignable.',catalyst:'Greece and Rome appeared to offer universal models of beauty and civic conduct. Artists replaced Baroque instability with contour, geometry, restraint, and morally legible action.',seeing:'Figures read like sculpture, spaces remain shallow and ordered, gestures carry arguments, and every distracting detail yields to the central ethical choice.',roles:['Geometry stages civic sacrifice','Domestic virtue enters history','Classical authority legitimizes a new republic'],legacy:'Neoclassicism gave modern governments, museums, banks, monuments, and civic rituals a visual grammar that still makes institutions appear rational and permanent.',transition:'Reason and discipline could not contain revolution, industrial upheaval, personal longing, or nature’s terror. Romanticism made those unruly forces its subject.'},
-romanticism:{thesis:'Romanticism claimed that imagination, emotion, memory, and awe were themselves ways of knowing.',world:'Revolution, Napoleonic war, nationalism, industrialization, and empire shattered confidence in orderly progress. Individuals confronted systems and landscapes larger than themselves.',catalyst:'Artists rejected universal academic rules for subjective experience, folklore, spiritual longing, political trauma, and the sublime mixture of beauty and fear.',seeing:'Storm, ruin, distance, saturated color, vulnerable figures, and unstable atmosphere turn the external world into an image of interior and historical experience.',roles:['War is seen from the victim’s side','Landscape becomes spiritual encounter','Color turns commerce into moral catastrophe'],legacy:'Romanticism shaped modern ideas of artistic authenticity, national culture, wilderness, political witness, creative genius, and the emotionally expressive artwork.',transition:'Its heroes and sublime visions eventually seemed inadequate to industrial labor and ordinary hardship. Realists turned their eyes toward conditions directly in front of them.'},
-realism:{thesis:'Realism made contemporary life—and the systems shaping it—worthy of the scale once reserved for heroes.',world:'Factories, railways, cities, wage labor, class conflict, revolution, and journalism reorganized daily experience. Political debate increasingly centered on whose lives counted.',catalyst:'Artists refused mythological escape and academic idealization. Observation became a social position: to depict workers and ordinary places seriously was already a political act.',seeing:'Earth color, physical weight, unidealized bodies, frontal facts, and ordinary settings insist that modern conditions be encountered without romantic distance.',roles:['Labor takes the scale of history','Poverty becomes monumental','Observation turns work into public spectacle'],legacy:'Realism expanded representation, changed journalism and photography, strengthened independent exhibition culture, and made social conditions a permanent subject of serious art.',transition:'Observation soon became more unstable. Photography, new color science, urban leisure, and rapid mobility shifted attention from what things are to how they appear in a passing instant.'},
-impressionism:{thesis:'Impressionism transformed perception from a transparent window into a fleeting event.',world:'Rebuilt boulevards, cafés, theaters, suburbs, rail travel, consumer culture, photography, and recent war made modern life mobile, fragmented, and visually crowded.',catalyst:'Portable paint and new pigments brought artists into changing light. Instead of hiding process, they recorded the speed and uncertainty of seeing.',seeing:'Broken strokes, high-key color, cropped framing, reflection, haze, and incomplete edges let the viewer’s eye assemble the scene rather than receive a polished illusion.',roles:['Atmosphere becomes the subject','Domestic intimacy becomes formal experiment','Cropping reveals labor within leisure'],legacy:'Impressionism changed painting’s surface, strengthened the independent art market, and influenced photography, cinema, design, and modern expectations of artistic immediacy.',transition:'Capturing sensation opened another question: what lies beyond the instant? Post-Impressionists answered with structure, symbolism, optical systems, and emotional color.'},
-'post-impressionism':{thesis:'There was no single next step: artists rebuilt perception through system, structure, symbol, and inner necessity.',world:'Industrial unrest, colonial expansion, psychology, nightlife, and dissatisfaction with bourgeois modernity encouraged artists to seek alternatives to naturalistic appearance.',catalyst:'Impressionism had liberated color and touch but seemed unable to provide lasting structure or deeper meaning. Each artist constructed a distinct solution.',seeing:'Dots systematize vision, directional marks charge matter with feeling, color planes stabilize nature, and contour separates symbolic image from observed space.',roles:['Optical system reorganizes society','Directional color externalizes emotion','Color planes rebuild visible structure'],legacy:'These competing solutions seeded abstraction, expressionism, symbolism, modern graphic design, and the market expectation that major artists possess a recognizable language.',transition:'Once form could follow independent logic, modern artists dismantled representation itself in response to machines, mass media, psychology, revolution, and world war.'},
-modernism:{thesis:'Modernism broke inherited form apart to discover languages adequate to a fractured modern world.',world:'Industrial production, cities, migration, psychoanalysis, revolution, two world wars, mass media, fascism, communism, and decolonization destroyed confidence in a single stable order.',catalyst:'Traditional representation seemed unable to describe new speed, violence, technology, and identity. Artists made fragmentation, abstraction, collage, and reproduction their subjects and methods.',seeing:'Multiple viewpoints coexist, geometry becomes autonomous, found material enters art, dreams interrupt logic, and industrial processes challenge the unique handmade object.',roles:['Perspective fractures into competing views','Geometry becomes independent meaning','The divided self becomes historical testimony'],legacy:'Modernism transformed architecture, typography, product design, film, museums, and everyday visual communication while establishing both the freedoms and exclusions later artists would challenge.',transition:'By the late twentieth century, no single avant-garde could claim the future. Artists turned toward plural identities, global histories, participation, institutions, and new media.'},
-contemporary:{thesis:'Contemporary art has no single center because the present itself is contested, networked, and plural.',world:'Decolonization, civil-rights movements, migration, environmental crisis, global markets, digital networks, surveillance, and widening inequality connect lives without making power equal.',catalyst:'Artists challenged modernism’s universal claims and the institutions that defined value. Any medium, archive, body, community, interface, or social system could become artistic material.',seeing:'Meaning may reside in participation, context, scale, data, repetition, reuse, or institutional critique rather than in a self-contained object alone.',roles:['Layered symbols contest historical value','Repetition turns the viewer into the work','Material and monument recover suppressed labor'],legacy:'Contemporary art continually revises archives, representation, authorship, museums, public space, technology, and the relationship between cultural attention and political action.',transition:'The next period is not waiting to begin. It is being formed now through climate change, artificial intelligence, new collective practices, and choices about whose futures become visible.'}
+window.periodStories = {
+  "prehistoric": {
+    "world": "Lascaux and the Willendorf figure belong to Ice Age Europe; Stonehenge was built much later by farming communities. Mobility, settlement, and available materials shaped different kinds of making.",
+    "seeing": "At Lascaux, outlines respond to the rock. The Willendorf figure concentrates form in a small carved body. Stonehenge organizes movement through a landscape. Look at the material and setting before assigning a purpose.",
+    "roles": [
+      "Working with the rock",
+      "A body made portable",
+      "Building a shared place"
+    ],
+    "legacy": "These survivals show the long histories of image-making, ornament, and collective building. They also expose the limits of interpretation: an object rarely preserves a complete account of its use.",
+    "transition": "The next chapter turns to courts and cities with written records. This changes the examples and evidence rather than marking a universal boundary: Stonehenge overlaps with the ancient states of Egypt and Mesopotamia."
+  },
+  "ancient": {
+    "world": "The royal workshop at Amarna, the civic sanctuary of Athens, and imperial Rome organized power differently. All could concentrate skilled labor and valuable materials, but their images addressed distinct needs.",
+    "seeing": "Compare a balanced face, repeated architectural proportions, and an idealized speaking pose. Such choices construct authority. Their meaning depends on the setting: a workshop model, a sanctuary, and an imperial image have different roles.",
+    "roles": [
+      "A composed royal presence",
+      "Proportion and civic religion",
+      "An emperor’s public image"
+    ],
+    "legacy": "Later societies repeatedly reused ancient columns, ideal bodies, and civic imagery. Each revival selected and changed those forms to suit new purposes.",
+    "transition": "Late antiquity connects Roman traditions with the Christian images and institutions discussed next. Older forms continued and changed as patrons, religious practices, and political structures shifted."
+  },
+  "medieval": {
+    "world": "Monastic communities, courts, towns, and workshops commissioned different images. Pilgrimage and trade connected distant places. The featured works span several centuries and cannot be explained by one patron, style, or religious purpose.",
+    "seeing": "Interlace can slow attention to a page; repeated figures can carry a story along cloth; stained glass can alter a building’s light. Naturalistic details and symbolic arrangements often work together.",
+    "roles": [
+      "Attention through ornament",
+      "A conquest told in sequence",
+      "A building shaped by light"
+    ],
+    "legacy": "Books, textiles, sculpture, and buildings preserve connected traditions of skilled making. They continue to shape how later audiences imagine medieval life, although survival favors some institutions and materials over others.",
+    "transition": "The Renaissance chapter follows new uses of classical learning and observation in European cities. These practices grew through medieval workshops and scholarship as well as through changing ambitions."
+  },
+  "renaissance": {
+    "world": "Florentine civic patrons, wealthy households, courts, and churches supported distinct subjects and artistic careers. Workshops trained artists in practical skills; print, travel, and correspondence circulated images and ideas.",
+    "seeing": "Botticelli uses clear contours and shallow decorative space. Leonardo softens edges through tonal transitions. Michelangelo gives a standing body poised tension. The perspective exercise explores another influential tool, rather than a formula shared by every work.",
+    "roles": [
+      "Contour and classical myth",
+      "Presence through soft edges",
+      "A civic figure under tension"
+    ],
+    "legacy": "Perspective, anatomical study, print, and new claims for artistic authorship became influential tools. Their reach depended on workshops, patrons, and circulation; they did not replace other ways of representing the world.",
+    "transition": "Sixteenth-century experiments, religious reform, and changing patronage connect these works to Baroque art. The next chapter follows artists who made light, movement, and the viewer’s position especially forceful."
+  },
+  "baroque": {
+    "world": "Catholic patrons in Italy commissioned images for devotion and display. Elsewhere, courts, civic institutions, and private buyers supported other subjects. Trade and colonial extraction supplied materials and wealth within unequal networks.",
+    "seeing": "Follow Caravaggio’s beam across the room, Bernini’s twist toward an unseen target, and Gentileschi’s intersecting arms. Light and direction make the event feel close. The effect comes from choices in composition as well as from subject matter.",
+    "roles": [
+      "Light directs the encounter",
+      "A body caught in action",
+      "Physical effort drives the drama"
+    ],
+    "legacy": "The coordination of image, space, and audience remains influential in theater, public ceremony, and exhibition design. Baroque works show how persuasive effects can serve different patrons and purposes.",
+    "transition": "Neoclassicism renewed selected ancient models amid archaeology and political debate. Its order overlapped with other eighteenth-century styles; it was one response among several, rather than the inevitable end of Baroque drama."
+  },
+  "neoclassicism": {
+    "world": "Excavations, published images, academies, and travel made ancient objects available to new audiences. Monarchies, revolutionaries, and emerging republics all used classical models, while access to citizenship and cultural authority remained unequal.",
+    "seeing": "In David’s painting, arches divide the groups and gestures direct attention to the oath. Kauffman makes a domestic exchange exemplary. Greenough borrows an ancient monumental body for Washington. Clear form can support different political arguments.",
+    "roles": [
+      "An oath staged as an example",
+      "Virtue expressed through a gesture",
+      "A modern leader in antique form"
+    ],
+    "legacy": "Classical motifs still lend prestige to civic buildings and monuments. Reading them closely means asking who commissioned them and what version of public life they present.",
+    "transition": "Romanticism overlapped with Neoclassicism. The next chapter explores a different emphasis: emotion, historical violence, and experiences of nature that resist tidy explanation."
+  },
+  "romanticism": {
+    "world": "Revolution and war changed European societies while industry and empire transformed landscapes and trade. Goya, Friedrich, and Turner responded to different circumstances; their works do not express one shared political position.",
+    "seeing": "Goya brings an execution close through light and repeated bodies. Friedrich sets a figure against uncertain distance. Turner makes color and weather difficult to separate from violence. Scale, visibility, and viewpoint shape the emotional encounter.",
+    "roles": [
+      "Facing an execution",
+      "Looking into uncertain distance",
+      "Beauty interrupted by violence"
+    ],
+    "legacy": "These works make feeling part of historical and visual inquiry. Their appeal also calls for care: national myths, picturesque ruins, and exotic landscapes can conceal the power relations that produced them.",
+    "transition": "Realist artists also used emotion and carefully shaped compositions. The next chapter shifts attention toward contemporary work and the public visibility of people often excluded from prestigious subjects."
+  },
+  "realism": {
+    "world": "Industrial change, the upheavals of 1848, and debates about class formed part of these painters’ world. Exhibitions brought representations of rural labor and urban markets before audiences with different interests.",
+    "seeing": "Watch how bent backs, obscured faces, worn clothing, and overlapping animals organize attention. Consider the original paintings’ size as well as their subjects. A work can make an argument through what it gives prominence.",
+    "roles": [
+      "Repetitive labor made prominent",
+      "Scarcity beside abundance",
+      "Observation in a crowded market"
+    ],
+    "legacy": "Realism challenged hierarchies of subject matter and helped establish contemporary social conditions as major artistic concerns. It remains useful for asking how representation grants or withholds attention.",
+    "transition": "Impressionist painters shared an interest in contemporary life while developing other approaches to surface, light, and viewpoint. The movements overlap; one did not simply replace the other."
+  },
+  "impressionism": {
+    "world": "Railways, rebuilt Parisian streets, entertainment venues, and domestic interiors offered subjects shaped by class and gender. Independent exhibitions created an alternative to the official Salon, although artists pursued different markets and careers.",
+    "seeing": "Monet’s abbreviated marks suggest a harbor in changing light. Morisot directs attention through a gaze and a veil. Degas crops a rehearsal like a partial view. Loose paint and selective framing can be carefully planned.",
+    "roles": [
+      "Recognizing a harbor through atmosphere",
+      "A gaze across a veil",
+      "Rehearsal beyond the stage"
+    ],
+    "legacy": "The group’s exhibitions and approaches to visible brushwork broadened artistic possibilities. Their paintings preserve selective views of modern life, including the work and restrictions surrounding leisure.",
+    "transition": "Seurat, van Gogh, and Cézanne developed distinct approaches alongside and after these experiments. The next chapter compares their uses of color, rhythm, and structure rather than treating them as one school."
+  },
+  "post-impressionism": {
+    "world": "Artists worked through exhibitions, correspondence, dealers, and personal networks. Their aims differed: systematic color relationships, expressive direction, and the construction of space. The retrospective label groups these differences for study.",
+    "seeing": "Seurat organizes a surface with measured touches of color. Van Gogh gives strokes a strong direction. Cézanne builds relationships through patches and planes. Compare how the mark operates before deciding what experience each painting offers.",
+    "roles": [
+      "Color within a measured system",
+      "Direction across the surface",
+      "Depth built through color"
+    ],
+    "legacy": "Later artists drew different lessons from these works: organized color, expressive marks, and constructed space. Their influence branches in several directions rather than leading to one necessary style.",
+    "transition": "The Modernism chapter follows some of those branches into fragmented space, abstraction, and self-representation. Many artists continued to depict recognizable subjects while changing how images worked."
+  },
+  "modernism": {
+    "world": "Schools, exhibitions, migration, colonial encounters, and political upheaval connected artists unevenly. These works belong to different European and Mexican contexts. Some precede the First World War; later events cannot explain them all.",
+    "seeing": "Picasso compresses space and makes bodies difficult to reconcile. Kandinsky organizes relationships between circles, lines, and color. Kahlo doubles a recognizable self and connects it through symbolic anatomy. Each work establishes its own terms of attention.",
+    "roles": [
+      "Confrontation through fractured space",
+      "Relationships without a depicted scene",
+      "A doubled self and a connecting artery"
+    ],
+    "legacy": "Modernist experiments reshaped painting, design, architecture, and visual communication. Their histories also involve exclusion, appropriation, and arguments over who could define modern life.",
+    "transition": "Contemporary practices continue many modernist experiments while questioning institutions, authorship, and access. The approximate 1970 boundary is a teaching convention; Kusama’s mirror environments, for example, began earlier."
+  },
+  "contemporary": {
+    "world": "Museums, markets, public commissions, artist-run spaces, and digital networks shape access to art. Basquiat, Kusama, and Walker worked within different circumstances. International visibility does not mean resources or authority are equally shared.",
+    "seeing": "A painted mark can revise another mark. A reflected body can become part of a room. Sugar can connect an installation with histories of labor and consumption. Ask what the setting adds to the encounter.",
+    "roles": [
+      "A surface that records revision",
+      "The viewer enters the reflection",
+      "Material and site carry history"
+    ],
+    "legacy": "These practices expand the questions we can ask: who participates, what sustains the work, and which histories does its setting make visible? A photograph or study image preserves only part of such an encounter.",
+    "transition": "There is no settled next chapter. Revisit an earlier work and compare how its patron, material, or setting shaped meaning. The differences can be as revealing as the connections."
+  }
 };
