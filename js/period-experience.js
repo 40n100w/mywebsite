@@ -32,10 +32,7 @@
     </button>
     <figcaption><b>${artwork.title}</b>${artwork.type ? `<span>${artwork.type}</span>` : ''}<span class="hero-credit">${artwork.credit ? `${artwork.credit} · ` : ''}Select image to view in full</span></figcaption>`;
   get('hero-artwork').querySelector('button').addEventListener('click', () => {
-    get('viewer-image').src = artwork.src;
-    get('viewer-image').alt = artwork.alt;
-    get('viewer-caption').textContent = [artwork.title, artwork.type, artwork.credit].filter(Boolean).join(' · ');
-    get('image-viewer').showModal();
+    window.openArtworkImage({src:artwork.src, preview:get('hero-artwork').querySelector('img').currentSrc, alt:artwork.alt, caption:[artwork.title, artwork.type, artwork.credit].filter(Boolean).join(' · ')});
   });
   get('era-select').replaceChildren(...Object.entries(window.eraDesigns).map(([id, item], position) => {
     const option = document.createElement('option');

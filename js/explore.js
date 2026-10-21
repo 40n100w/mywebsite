@@ -112,21 +112,21 @@ const compareFigure = slug => {
 $('era-compare').innerHTML = `<p class="comparison-question">${escapeHTML(guide.comparison.question)}</p><div class="compare-images">${compareFigure(guide.comparison.slugs[0])}<i aria-hidden="true">↔</i>${compareFigure(guide.comparison.slugs[1])}</div><p class="comparison-note">${escapeHTML(guide.comparison.note)}</p>`;
 $('era-sources').innerHTML = workImages[p.id].map(slug => { const work = workInfo(slug); return `<li><div><a href="sources.html#source-${slug}"><b>${escapeHTML(work.title)}</b></a><span>${escapeHTML(work.record.source[1])} · reference details</span></div></li>`; }).join('');
 
-const viewer = $('image-viewer');
 $('content').addEventListener('click', event => {
   const button = event.target.closest('.image-open');
   if (!button) return;
-  $('viewer-image').src = button.dataset.image;
-  $('viewer-image').alt = button.dataset.alt;
-  $('viewer-caption').textContent = button.dataset.caption;
-  viewer.showModal();
+  window.openArtworkImage({src:button.dataset.image, preview:button.querySelector('img').currentSrc, alt:button.dataset.alt, caption:button.dataset.caption});
 });
-$('viewer-close').addEventListener('click', () => viewer.close());
-viewer.addEventListener('click', event => { if (event.target === viewer) viewer.close(); });
 const study = window.studyData[p.id];
 $('takeaways').innerHTML = study.takeaways.map(item => `<li>${escapeHTML(item)}</li>`).join('');
 const progressKey = 'art-compass-progress';
-const getProgress = () => { try { const saved = JSON.parse(localStorage.getItem(progressKey) || '[]'); return Array.isArray(saved) ? saved : []; } catch { return []; } };
+const validPeriods = new Set(periods.map(period => period.id));
+const getProgress = () => {
+  try {
+    const saved = JSON.parse(localStorage.getItem(progressKey) || '[]');
+    return Array.isArray(saved) ? [...new Set(saved.filter(id => validPeriods.has(id)))] : [];
+  } catch { return []; }
+};
 const showProgress = () => {
   const done = getProgress();
   $('progress-status').textContent = `${done.length} of ${periods.length} chapters marked complete. Progress stays only on this device.`;
@@ -139,6 +139,8 @@ $('mark-complete').addEventListener('click', () => {
   catch { $('progress-status').textContent = 'Progress storage is unavailable in this browser mode.'; }
 });
 showProgress();
+window.addEventListener('storage', event => { if (event.key === progressKey || event.key === null) showProgress(); });
+window.addEventListener('pageshow', showProgress);
 const acts = [...document.querySelectorAll('.story-act')];
 const actObserver = new IntersectionObserver(entries => entries.forEach(entry => {
   if (entry.isIntersecting) $('time-now').textContent = `${p.name} · Section ${acts.indexOf(entry.target) + 1} of ${acts.length}`;

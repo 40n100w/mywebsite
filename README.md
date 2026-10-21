@@ -122,3 +122,13 @@ Run `node scripts/smoke-motion.cjs` to verify actual movement, pause/resume, off
 `js/periods.js` holds chapter summaries, work readings, and design notes. `js/chapter-guide.js` defines the six-section route, opening questions, scope notes, transitions, and curated comparison pairs. `js/story.js`, `js/context.js`, `js/books-maps.js`, and `js/study-data.js` supply the narrative, historical examples, contextual reading, and chapter takeaways. `css/reading.css` adapts this structure within each period’s visual language.
 
 Run `node scripts/smoke-content.cjs` with the local server running to check section links, comparison viewing, source references, and mobile contents across all chapters. See `docs/content-review.md` for the editorial rationale and research limits.
+
+## Reliability and failure-path checks
+
+`js/image-viewer.js` opens original artwork files, falls back to the current preview when necessary, and provides loading and error states. Offline chapters use the cached explorer shell while retaining the requested period. Images are available offline once loaded; the site does not pre-download every artwork. Service-worker caches are separated by deployment scope, and cleanup preserves caches owned by other apps.
+
+Sources and glossary entries are included directly in their HTML pages, so they remain readable without JavaScript. After changing source records, attribution, glossary definitions, or their renderers, run `node scripts/build-reference-pages.mjs` and commit the updated HTML. Validation checks for stale generated content. The renderers in `js/sources.js` and `js/glossary.js` run during generation rather than in visitors’ browsers. Deployment still requires no build step.
+
+Run `node scripts/smoke-regressions.cjs` for offline navigation and images, HTTP failure recovery, cache isolation, GitHub Pages project paths, saved-progress repair and cross-tab updates, image-loading failures, references without JavaScript, denied storage, and 200% text resizing. It starts its own temporary local server and uses Playwright and Chromium. See `docs/bug-audit.md` for the audit findings and verification limits.
+
+The self-contained 404 page supports root hosting and this repository’s `/mywebsite/` project path. If that project path changes, update both its fallback link and small routing script; the script’s CSP hash must be updated as well. Static validation detects a mismatched hash.

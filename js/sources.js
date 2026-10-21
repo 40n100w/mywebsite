@@ -1,3 +1,4 @@
+/* Build-time renderer: scripts/build-reference-pages.mjs embeds this content in HTML. */
 const names = {prehistoric:'Prehistoric Art',ancient:'Ancient Art',medieval:'Medieval Art',renaissance:'The Renaissance',baroque:'Baroque',neoclassicism:'Neoclassicism',romanticism:'Romanticism',realism:'Realism',impressionism:'Impressionism','post-impressionism':'Post-Impressionism',modernism:'Modernism',contemporary:'Contemporary Art'};
 const escapeHTML = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
 const citation = ([title, institution, address]) => `<b>${escapeHTML(title)}</b><div><span>${escapeHTML(institution)}</span><span class="source-address">${escapeHTML(address)}</span></div>`;

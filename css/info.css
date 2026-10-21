@@ -13,6 +13,7 @@
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 .source-list li { scroll-margin-top: 1rem; }
+body { overflow-wrap: anywhere; }
 .source-address { display: block; margin-top: .5rem; font: .8rem/1.65 monospace; overflow-wrap: anywhere; }
 .source-note, .source-return { grid-column: 1/-1; margin: 0; }
 .source-return { display: inline-flex; align-items: center; min-height: 44px; font-size: .9rem; }

@@ -5,13 +5,20 @@
 .viewer-toolbar button { min-height: 44px; padding: .65rem 1rem; border: 1px solid #ffffff80; background: #141414; color: #fff; font: .8rem var(--sans); }
 .viewer-image-stage { flex: 1; min-height: 0; width: 100%; overflow: auto; display: grid; place-items: center; overscroll-behavior: contain; }
 .image-viewer .viewer-image-stage img { flex: none; height: 100%; width: 100%; object-fit: contain; }
+.image-viewer .viewer-image-stage img[hidden] { display: none; }
+#viewer-status { margin: 0; font: .875rem/1.5 var(--sans); }
+#viewer-status:empty { display: none; }
+.viewer-toolbar button:disabled { opacity: .55; cursor: wait; }
 .image-viewer.is-zoomed .viewer-image-stage { display: block; }
 .image-viewer.is-zoomed .viewer-image-stage img { width: 200%; max-width: none; height: auto; max-height: none; }
 
 @media (max-width: 760px) {
   :root { --pad: max(20px, env(safe-area-inset-left), env(safe-area-inset-right)); }
   html { scroll-padding-top: 1rem; scroll-padding-bottom: calc(5rem + env(safe-area-inset-bottom)); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-  body { font-size: 1rem; padding-top: env(safe-area-inset-top); }
+  body { font-size: 1rem; padding-top: env(safe-area-inset-top); overflow-wrap: anywhere; }
+  body > header { flex-wrap: wrap; }
+  body[data-era] .explore-hero h1 { min-width: 0; max-width: 100%; flex-wrap: wrap; }
+  body[data-era] .explore-hero h1 span { min-width: 0; }
   body:has(dialog[open]) { overflow: hidden; }
   button, a, summary, input, select { touch-action: manipulation; }
   button, select, summary { min-height: 48px; }

@@ -1,6 +1,7 @@
 #!/bin/sh
 set -eu
 for file in js/*.js sw.js; do node --check "$file"; done
+node scripts/build-reference-pages.mjs --check
 node - <<'NODE'
 const fs=require('fs'),vm=require('vm'),box={window:{}};
 vm.runInNewContext(fs.readFileSync('js/work-records.js','utf8'),box);
@@ -12,6 +13,7 @@ python3 - <<'PY'
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
+import base64, hashlib, re
 class Parser(HTMLParser):
     def __init__(self): super().__init__(); self.links=[]
     def handle_starttag(self,tag,attrs):
@@ -23,9 +25,13 @@ for page in Path('.').glob('*.html'):
     for link in parser.links:
         parsed=urlsplit(link)
         if parsed.scheme or parsed.netloc or link.startswith('#'): continue
-        target=(page.parent/parsed.path)
-        if parsed.path in ('','.'): target=Path('index.html')
+        local_path=parsed.path.removeprefix('/mywebsite/').lstrip('/')
+        target=(page.parent/local_path)
+        if local_path in ('','.'): target=Path('index.html')
         assert target.exists(), f'broken local link in {page}: {link}'
+for script in re.findall(r'<script>(.*?)</script>', Path('404.html').read_text(), re.S):
+    digest=base64.b64encode(hashlib.sha256(script.encode()).digest()).decode()
+    assert f"'sha256-{digest}'" in Path('404.html').read_text(), '404 script does not match its CSP hash'
 for stylesheet in Path('css').glob('*.css'):
     css=stylesheet.read_text(); assert css.count('{')==css.count('}'), f'unbalanced braces: {stylesheet}'
 for path in ['about.html','sources.html','glossary.html','corrections.html','review.html','manifest.webmanifest','sw.js','assets/world-110m.geojson','js/world-map.js','js/work-records.js','js/artwork-media.js','js/experience-data.js']:
